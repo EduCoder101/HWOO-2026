@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)file:///C:/Users/pell/OneDrive%20-%20Roseville%20College/Downloads/lesson3-grid-references-scale.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3 · Grid References &amp; Scale | Place &amp; Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./Lesson3 grid references scale_files/css2" rel="stylesheet">
+<style>
+/* ─── CSS Variables ─── */
+:root {
+  --color-bg: #F5F7F3;
+  --color-card: #FFFFFF;
+  --color-card-border: #D4DDCF;
+  --color-text: #2D3A2D;
+  --color-text-muted: #5E6E58;
+  --color-heading: #1B3A2A;
+  --color-accent: #3A7D5C;
+  --color-accent-light: #E2F0E8;
+  --color-accent-hover: #2D6148;
+  --color-sage: #6B8F71;
+  --color-sage-light: #EAF2EB;
+  --color-sage-border: #B8D4B8;
+  --color-support: #4A7FA0;
+  --color-support-light: #E4EEF5;
+  --color-extension: #7B6B9E;
+  --color-extension-light: #EEEAF5;
+  --color-stage-1: #3A7D5C;
+  --color-stage-2: #4A7FA0;
+  --color-stage-3: #8A6B3D;
+  --color-stage-4: #7B6B9E;
+  --color-divider: #C8D4C2;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 2px 8px rgba(40, 60, 40, 0.06), 0 1px 3px rgba(40, 60, 40, 0.04);
+  --shadow-hover: 0 4px 16px rgba(40, 60, 40, 0.1);
+  --max-width: 860px;
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Layout ─── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ─── Header ─── */
+.lesson-header {
+  background: linear-gradient(135deg, #1B3A2A 0%, #2D5E40 100%);
+  color: white;
+  padding: 2.5rem 2rem 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.lesson-header .phase-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(255,255,255,0.15);
+  padding: 0.3em 0.8em;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.lesson-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-header .lesson-number {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.lesson-header .subtitle {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+/* ─── Lesson Summary ─── */
+.lesson-summary {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.lesson-summary .summary-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+}
+
+.lesson-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lesson-summary li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.lesson-summary li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+/* ─── Metadata Grid ─── */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.meta-item {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.meta-item .meta-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.meta-item .meta-value {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+/* ─── Learning Intention & SC ─── */
+.li-sc-card {
+  background: var(--color-accent-light);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.li-sc-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.li-sc-card .li-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.li-sc-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.li-sc-card li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.li-sc-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ─── Section Headings ─── */
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 2.5rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-divider);
+}
+
+/* ─── Stage Cards ─── */
+.stage-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.stage-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.stage-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.stage-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stage-1 .stage-number { background: var(--color-stage-1); }
+.stage-2 .stage-number { background: var(--color-stage-2); }
+.stage-3 .stage-number { background: var(--color-stage-3); }
+.stage-4 .stage-number { background: var(--color-stage-4); }
+
+.stage-card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.stage-card-header .stage-context {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.stage-card-body {
+  padding: 1.5rem;
+}
+
+.stage-card-body h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.stage-card-body h4:first-child {
+  margin-top: 0;
+}
+
+.stage-card-body p {
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+}
+
+.stage-card-body ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.stage-card-body li {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+/* ─── Differentiation Tags ─── */
+.diff-block {
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin: 0.85rem 0;
+  font-size: 0.9rem;
+}
+
+.diff-block.extension {
+  background: var(--color-extension-light);
+  border-left: 3px solid var(--color-extension);
+}
+
+.diff-block.support {
+  background: var(--color-support-light);
+  border-left: 3px solid var(--color-support);
+}
+
+.diff-label {
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+
+.diff-block.extension .diff-label { color: var(--color-extension); }
+.diff-block.support .diff-label { color: var(--color-support); }
+
+/* ─── Place card gallery removed – cards are a separate printable resource ─── */
+
+/* ─── Collapsible Sections ─── */
+.collapsible {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.collapsible-header:hover {
+  background: var(--color-sage-light);
+}
+
+.collapsible-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-sage);
+  margin: 0;
+}
+
+.collapsible-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-sage-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-sage);
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.collapsible.open .collapsible-icon {
+  transform: rotate(180deg);
+}
+
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.collapsible.open .collapsible-body {
+  max-height: 5000px;
+}
+
+.collapsible-content {
+  padding: 0 1.25rem 1.25rem;
+  font-size: 0.92rem;
+}
+
+.collapsible-content h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin: 1rem 0 0.4rem;
+}
+
+.collapsible-content h4:first-child { margin-top: 0; }
+
+.collapsible-content p {
+  margin-bottom: 0.75rem;
+}
+
+.collapsible-content ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.collapsible-content li {
+  margin-bottom: 0.3rem;
+}
+
+/* ─── Printable Templates ─── */
+.printable-section {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.printable-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.printable-header h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4em 0.9em;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.print-btn:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+.printable-body {
+  padding: 1.5rem;
+}
+
+/* ─── Travel Plan Proforma ─── */
+.proforma-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-top: 0.75rem;
+}
+
+.proforma-table th {
+  background: var(--color-accent-light);
+  color: var(--color-heading);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-card-border);
+  font-size: 0.82rem;
+}
+
+.proforma-table td {
+  padding: 0.75rem;
+  border: 1px solid var(--color-card-border);
+  height: 2.8rem;
+}
+
+.proforma-table .row-label {
+  font-weight: 500;
+  background: #F5F7F3;
+  width: 60px;
+  text-align: center;
+}
+
+/* When printing proforma, stretch rows to fill A4 */
+body.printing-template-a4 .proforma-table td {
+  height: 2.6cm;
+}
+
+body.printing-template-a4 .proforma-table th {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.proforma-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.proforma-subtitle {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.proforma-footer {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+/* ─── Cue Sheet ─── */
+.cue-sheet {
+  border: 2px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+}
+
+.cue-sheet h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-heading);
+}
+
+.cue-mnemonic {
+  background: var(--color-accent-light);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.cue-step {
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.cue-step strong {
+  color: var(--color-heading);
+}
+
+/* Two-up layout: on screen show stacked, when printed fills A4 top and bottom */
+.cue-sheet-pair {
+  max-width: 500px;
+}
+
+body.printing-template-a4 .cue-sheet-pair {
+  max-width: 100%;
+}
+
+body.printing-template-a4 .cue-sheet-pair .cue-sheet {
+  min-height: 12.5cm;
+}
+
+/* ─── Page-level Print Button ─── */
+.page-print-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.page-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5em 1.1em;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.page-print-btn:hover {
+  background: var(--color-text);
+  color: white;
+  border-color: var(--color-text);
+}
+
+/* ─── Footer ─── */
+.page-footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-divider);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── Print Package ─── */
+.print-package {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.print-package-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  background: var(--color-accent-light);
+  border-bottom: 1px solid var(--color-card-border);
+  transition: background 0.15s ease;
+}
+
+.print-package-header:hover {
+  background: #D0E8D8;
+}
+
+.print-package-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.print-package-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.print-package.open .print-package-body {
+  max-height: 3000px;
+}
+
+.print-package.open .collapsible-icon {
+  transform: rotate(180deg);
+}
+
+.print-package-content {
+  padding: 1.25rem;
+}
+
+.class-size-input {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.class-size-input label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-heading);
+}
+
+.class-size-input input {
+  width: 70px;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid var(--color-card-border);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  text-align: center;
+  transition: border-color 0.15s ease;
+}
+
+.class-size-input input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.print-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #EEF1EC;
+  font-size: 0.88rem;
+  gap: 0.75rem;
+}
+
+.print-item:last-child {
+  border-bottom: none;
+}
+
+.print-item-info {
+  flex: 1;
+}
+
+.print-item-name {
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 0.15rem;
+}
+
+.print-item-detail {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.print-item-qty {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  min-width: 40px;
+  text-align: center;
+}
+
+.print-item-action .print-btn {
+  white-space: nowrap;
+}
+
+.print-item-action .separate-tag {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* ─── Print Styles ─── */
+@media print {
+  body { background: white; font-size: 11pt; }
+  .container { max-width: 100%; padding: 0; }
+  .lesson-header { 
+    background: var(--color-heading) !important; 
+    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact; 
+  }
+  .stage-card, .collapsible, .printable-section { 
+    box-shadow: none; 
+    break-inside: avoid; 
+  }
+  .collapsible-body { max-height: none !important; }
+  .print-btn, .page-print-btn, .page-print-bar, .print-package { display: none; }
+  .place-card { break-inside: avoid; }
+}
+
+/* Print individual template - A4 */
+body.printing-template-a4 .container > *:not(.print-target) { display: none !important; }
+body.printing-template-a4 .print-target {
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+body.printing-template-a4 .print-target .printable-header { display: none !important; }
+body.printing-template-a4 .print-target .printable-body {
+  padding: 1.5cm;
+}
+
+@page {
+  margin: 1.5cm;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══ PAGE PRINT ═══ -->
+<div class="page-print-bar">
+  <button class="page-print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+    Print Lesson
+  </button>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="lesson-header">
+  <div class="phase-tag">Phase 1 · Local</div>
+  <h1><span class="lesson-number">Lesson 3 ·</span> Grid References &amp; Scale</h1>
+  <div class="subtitle">Map Skills: Grid References and Scale</div>
+</div>
+
+<!-- ═══ LESSON SUMMARY ═══ -->
+<div class="lesson-summary">
+  <div class="summary-label">Lesson at a Glance</div>
+  <ul>
+    <li>Teach four-figure grid references using the Sydney atlas map ('along the corridor, up the stairs')</li>
+    <li>Show real-world examples of maps that use grid references (bushwalking, emergency services, topographic)</li>
+    <li>Guided practice using grid references on a world map</li>
+    <li>Split the class in half: one stream works with a world map, the other with an Australia map. Pairs use the atlas to find specific locations, then plot them on blank A3 maps using grid references</li>
+    <li>Students write inquiry questions about the places they discover on post-it notes for the inquiry wall</li>
+    <li>Completed maps go up as classroom displays for the rest of the unit</li>
+    <li>Teach scale bars: what they are and how to use them to convert map distance to real distance</li>
+    <li>Estimation challenge: estimate distance first, then measure with scale bar, then verify on Google Maps</li>
+    <li>Round-the-world travel plan: students given five destinations, choose their route order, record grid references and distances for each stop</li>
+  </ul>
+</div>
+
+<!-- ═══ PRINT PACKAGE ═══ -->
+<div class="print-package" id="print-package">
+  <div class="print-package-header" onclick="toggleCollapsible(&#39;print-package&#39;)">
+    <h3>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print Package
+    </h3>
+    <div class="collapsible-icon">▾</div>
+  </div>
+  <div class="print-package-body">
+    <div class="print-package-content">
+      <div class="class-size-input">
+        <label for="classSize">Students in class:</label>
+        <input type="number" id="classSize" value="28" min="1" max="40" onchange="updateQuantities()" oninput="updateQuantities()">
+      </div>
+
+      <!-- Printable from this page -->
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Grid Reference Cue Sheet</div>
+          <div class="print-item-detail">A4 (2 per page, cut in half) · Support students only · Adjust quantity to match</div>
+        </div>
+        <div class="print-item-qty" data-rule="support-2up" title="2 per A4 page">3 pgs</div>
+        <div class="print-item-action">
+          <button class="print-btn" onclick="printTemplate(&#39;cue-sheet&#39;,&#39;a4&#39;)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Travel Plan Proforma</div>
+          <div class="print-item-detail">A4 · 1 per student</div>
+        </div>
+        <div class="print-item-qty" data-rule="each">28</div>
+        <div class="print-item-action">
+          <button class="print-btn" onclick="printTemplate(&#39;proforma-travel&#39;,&#39;a4&#39;)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Travel Plan Sets (A–E slips)</div>
+          <div class="print-item-detail">A4 sheet · Cut into slips · 1 slip per pair</div>
+        </div>
+        <div class="print-item-qty" data-rule="pair">14</div>
+        <div class="print-item-action">
+          <button class="print-btn" onclick="printTemplate(&#39;travel-sets&#39;,&#39;a4&#39;)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <!-- Prepare separately -->
+      <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid var(--color-card-border);">
+        <div style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--color-text-muted); margin-bottom:0.5rem;">Prepare Separately</div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Place Cards: World Set (8 cards)</div>
+          <div class="print-item-detail">Playing-card size · Colour · Card stock · 1 set per pair in world stream</div>
+        </div>
+        <div class="print-item-qty" data-rule="half-pair">7</div>
+        <div class="print-item-action"><span class="separate-tag">Prepare separately</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Place Cards: Australia Set (8 cards)</div>
+          <div class="print-item-detail">Playing-card size · Colour · Card stock · 1 set per pair in Australia stream</div>
+        </div>
+        <div class="print-item-qty" data-rule="half-pair">7</div>
+        <div class="print-item-action"><span class="separate-tag">Prepare separately</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">A3 World Map (blank, country names only)</div>
+          <div class="print-item-detail">A3 · With grid reference axes · 1 per pair in world stream</div>
+        </div>
+        <div class="print-item-qty" data-rule="half-pair">7</div>
+        <div class="print-item-action"><span class="separate-tag">Prepare separately</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">A3 Australia Map (blank, state names only)</div>
+          <div class="print-item-detail">A3 · With grid reference axes · 1 per pair in Australia stream</div>
+        </div>
+        <div class="print-item-qty" data-rule="half-pair">7</div>
+        <div class="print-item-action"><span class="separate-tag">Prepare separately</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ METADATA ═══ -->
+<div class="meta-grid">
+  <div class="meta-item">
+    <div class="meta-label">Teaching Mode</div>
+    <div class="meta-value">Explicit teaching with structured application</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Grouping</div>
+    <div class="meta-value">Whole class → Individual/pairs → Individual</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Duration</div>
+    <div class="meta-value">90 minutes</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Syllabus</div>
+    <div class="meta-value">Foundational skills enabling all subsequent map work from L4 onwards</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Prior Knowledge</div>
+    <div class="meta-value">Compass directions (L2); map symbols and keys (L2); atlas orientation (L1)</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Enables</div>
+    <div class="meta-value">Annotated map work (L4); Sydney labelling (L6); coordinate work (L9)</div>
+  </div>
+</div>
+
+<!-- ═══ LEARNING INTENTION & SC ═══ -->
+<div class="li-sc-card">
+  <h2>Learning Intention</h2>
+  <p class="li-text">Use grid references to locate places on a map and use scale to estimate real-world distance.</p>
+  <h2>Success Criteria</h2>
+  <ul>
+    <li>Use a four-figure grid reference to locate a place on a map</li>
+    <li>Give the grid reference for a named location</li>
+    <li>Use a scale bar to estimate the distance between two points</li>
+    <li>Explain why maps use grid references and scale</li>
+  </ul>
+</div>
+
+<!-- ═══ LESSON STRUCTURE ═══ -->
+<h2 class="section-heading">Lesson Structure</h2>
+
+<!-- STAGE 1 -->
+<div class="stage-card stage-1">
+  <div class="stage-card-header">
+    <div class="stage-number">1</div>
+    <div>
+      <h3>Grid References</h3>
+      <div class="stage-context">Classroom · Whole class then guided practice</div>
+    </div>
+  </div>
+  <div class="stage-card-body">
+    <h4>Explicit teaching of grid references</h4>
+    <p>Introduce the grid reference system using the atlas map of Sydney. Establish the convention: the horizontal axis (eastings) is read first, then the vertical axis (northings). Teach the mnemonic <strong>'along the corridor, up the stairs'</strong> and work through several examples as a class, moving from teacher-led to student-called answers. Students practise giving and finding four-figure grid references on the Sydney atlas map.</p>
+
+    <h4>Where else do grid references appear?</h4>
+    <p>Briefly show students 2–3 examples of grid references in real-world contexts: a bushwalking map, an emergency services map, and a topographic map extract. The point is not to analyse these maps in detail but to establish that grid references are a universal navigation tool, not just a classroom exercise. If your school's area has a published bushwalking or topographic map, use it – the local connection is more powerful than a generic example.</p>
+
+    <h4>Guided practice on a world map</h4>
+    <p>Shift to the world map in the atlas. Work through 3–4 grid references as a class to establish that the same system operates at any scale. This is a bridge to the matching exercise that follows and prepares students for coordinate work in Lesson 9.</p>
+
+    <div class="diff-block support">
+      <div class="diff-label">Support</div>
+      Provide a grid reference cue sheet with the mnemonic and a worked example that stays on the desk throughout the lesson. This is the reference point students return to whenever they lose the axis order. <em>Printable cue sheet below.</em>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 2 -->
+<div class="stage-card stage-2">
+  <div class="stage-card-header">
+    <div class="stage-number">2</div>
+    <div>
+      <h3>Place Matching Exercise</h3>
+      <div class="stage-context">Classroom · Individual or pairs · Two streams</div>
+    </div>
+  </div>
+  <div class="stage-card-body">
+    <p>The class splits into two streams. Half work with a world map (A3 printout, country borders and names only – no cities, landmarks or other features marked), half with a map of Australia (A3 printout, state borders and names only). Each stream receives a set of 8 place cards, each containing a photograph, a short description, and the place name.</p>
+
+    <p>Students must <strong>use the atlas to find each place</strong>, then locate the corresponding position on their blank A3 map using the grid reference system. They record the grid reference, then arrange the card around the A3 map and draw a line connecting it to the correct location. The atlas is the navigation tool; the A3 map is the display.</p>
+
+    <p><strong>Post-it notes and pens</strong> should be available at each table. As students read the place cards and discuss with their partner, they write down any questions about the places they are finding ('What is palm oil?', 'Why is Venice flooding?', 'How big is the Murray-Darling?'). These go onto an inquiry wall – either the question wall from Lesson 1 if it is still displayed, or a fresh sheet. These questions are not answered now. They sit and wait until the relevant content arrives later in the unit.</p>
+
+    <h4>World Map Stream – 8 places</h4>
+    <div style="background:var(--color-accent-light); border-radius:var(--radius-sm); padding:1rem 1.25rem; margin:0.5rem 0 1rem; font-size:0.9rem;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tbody><tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600; width:35%;">Mumbai, India</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">One of the world's largest cities with over 20 million people. Built on a narrow peninsula surrounded by the Arabian Sea.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">L15</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Borneo, Indonesia/Malaysia</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">The world's third-largest island, shared by three countries. Home to some of the oldest rainforests on Earth.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">L14</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Machu Picchu, Peru</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">An ancient Inca citadel built high in the Andes Mountains around 1450. A World Heritage Site rediscovered in 1911.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">WH</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Serengeti, Tanzania</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">A vast grassland ecosystem famous for the annual migration of over a million wildebeest. One of Africa's most important national parks.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">WH</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Great Wall of China</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">A series of fortifications stretching over 20,000 km across northern China. Built over many centuries to protect against invasion.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">WH</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Venice, Italy</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">A city built on 118 small islands connected by canals and bridges. Rising sea levels and flooding are threatening its survival.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">WH</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Amazon River, South America</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">The world's largest river by water volume, flowing through tropical rainforest. The Amazon basin contains extraordinary biodiversity.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">–</td>
+        </tr>
+        <tr>
+          <td style="padding:0.4rem 0; font-weight:600;">Reykjavik, Iceland</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">The world's most northerly capital city. Iceland sits on the Mid-Atlantic Ridge where two tectonic plates are pulling apart.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">–</td>
+        </tr>
+      </tbody></table>
+    </div>
+
+    <h4>Australia Map Stream – 8 places</h4>
+    <div style="background:var(--color-accent-light); border-radius:var(--radius-sm); padding:1rem 1.25rem; margin:0.5rem 0 1rem; font-size:0.9rem;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tbody><tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600; width:35%;">Murray-Darling Basin</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">Australia's largest river system, stretching across four states. Supports much of Australia's farming but faces serious environmental challenges.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">L13</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Uluru-Kata Tjuta</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">A sacred site for the Anangu people and a World Heritage Site. The massive sandstone formation rises 348 metres above the desert.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">WH</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Great Barrier Reef</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">The world's largest coral reef system, stretching over 2,300 km along Queensland's coast. Visible from space and home to thousands of species.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">WH</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Sydney / Roseville</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">Home base. Australia's largest city, built around one of the world's great natural harbours. Roseville sits on the North Shore.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">Home</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Kakadu National Park</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">A vast national park in the Northern Territory with Aboriginal rock art dating back tens of thousands of years. Cultural and natural World Heritage Site.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">WH</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Broken Hill, NSW</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">A remote mining city in far western NSW, over 1,100 km from Sydney. One of Australia's most isolated communities.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">L12</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--color-card-border);">
+          <td style="padding:0.4rem 0; font-weight:600;">Hobart, Tasmania</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">Australia's southernmost state capital, at the foot of Mount Wellington. A small city with strong connections to Antarctic research.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">–</td>
+        </tr>
+        <tr>
+          <td style="padding:0.4rem 0; font-weight:600;">Coober Pedy, SA</td>
+          <td style="padding:0.4rem 0; color:var(--color-text-muted);">An opal mining town where many residents live underground to escape extreme heat. A striking example of human adaptation to environment.</td>
+          <td style="padding:0.4rem 0 0.4rem 0.5rem; font-size:0.78rem; color:var(--color-accent); white-space:nowrap;">–</td>
+        </tr>
+      </tbody></table>
+    </div>
+
+    <p style="font-size:0.85rem; color:var(--color-text-muted); font-style:italic; background:var(--color-sage-light); padding:0.75rem 1rem; border-radius:var(--radius-sm); margin:0.75rem 0;">
+      <strong>Place cards are a separate printable resource.</strong> Use the place names and descriptions above as the content brief. Each card should be approximately playing-card size, printed in colour on card stock, with: place name, a photograph, and the 1–2 sentence description. One set of 8 per pair.
+    </p>
+
+    <div class="diff-block extension">
+      <div class="diff-label">Fast Finishers</div>
+      Pairs who complete their set early choose additional places to add to the map – either places of personal significance (somewhere they have travelled, where a family member lives) or places they find interesting in the atlas. They create their own mini place card (name, grid reference, one sentence about why they chose it) and add it to the display.
+    </div>
+
+    <div class="diff-block support">
+      <div class="diff-label">Support</div>
+      Pre-highlight the approximate region on the A3 map where each place is located (e.g. a light circle around South America for Machu Picchu) so students are searching within a bounded area rather than scanning the entire map. Pair supported students with a confident atlas navigator.
+    </div>
+
+    <p><strong>Close:</strong> Pin or display both annotated maps on the classroom wall. These become reference displays for the remainder of the unit. Brief whole-class share: each stream nominates one place that surprised them and one question from the post-it notes that they most want answered.</p>
+  </div>
+</div>
+
+<!-- STAGE 3 -->
+<div class="stage-card stage-3">
+  <div class="stage-card-header">
+    <div class="stage-number">3</div>
+    <div>
+      <h3>Scale</h3>
+      <div class="stage-context">Classroom · Whole class then individual</div>
+    </div>
+  </div>
+  <div class="stage-card-body">
+    <h4>Explicit teaching of scale bars</h4>
+    <p>Introduce scale bars using the atlas. Establish the principle: a map is a scaled-down representation of the real world, and the scale bar tells you how to convert map distance to real distance. Demonstrate with one worked example on the atlas – measure a distance with a ruler, then use the scale bar to convert to kilometres.</p>
+
+    <h4>Estimation challenge</h4>
+    <p>Students work through 3–4 distance pairs at different scales (local, national, global). For each pair the sequence is:</p>
+    <ul>
+      <li><strong>Estimate</strong> the distance first (gut feel, recorded in books)</li>
+      <li><strong>Measure</strong> on the atlas using the scale bar</li>
+      <li><strong>Verify</strong> using the Google Maps distance tool (teacher-operated, projected)</li>
+    </ul>
+    <p>After each round, discuss: how close were the estimates? What makes distance hard to estimate on a map? The estimation step is the most important part – it builds spatial intuition, not just procedural scale bar use.</p>
+  </div>
+</div>
+
+<!-- STAGE 4 -->
+<div class="stage-card stage-4">
+  <div class="stage-card-header">
+    <div class="stage-number">4</div>
+    <div>
+      <h3>Travel Plan</h3>
+      <div class="stage-context">Classroom · Individual</div>
+    </div>
+  </div>
+  <div class="stage-card-body">
+    <p>Students plan a round-the-world trip from Sydney. Each pair or individual receives one of five pre-made travel sets (see below), each containing five destinations drawn from the place cards used in Stage 2. Distributing different sets means pairs cannot simply copy each other's routes, and the closing discussion produces a wider range of comparisons. Students decide the order of their route, then for each stop they record: the grid reference, the estimated distance from the previous stop, and the scale-bar-calculated distance. The final entry returns to Sydney.</p>
+
+    <p>The teacher may provide a proforma for this task or have students work in their books. <em>Printable proforma below.</em></p>
+
+    <h4>Travel Plan Sets</h4>
+    <p>Five pre-made sets mixing world and Australian places. Print or project these, and distribute one set per pair/individual. Each set is designed to produce a route that crosses multiple continents.</p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:0.6rem; margin:0.75rem 0 1rem;">
+      <div style="background:var(--color-accent-light); border-radius:var(--radius-sm); padding:0.75rem; font-size:0.85rem;">
+        <div style="font-weight:600; color:var(--color-heading); margin-bottom:0.4rem;">Set A</div>
+        <ol style="padding-left:1.1rem; margin:0;">
+          <li>Mumbai, India</li>
+          <li>Great Barrier Reef</li>
+          <li>Venice, Italy</li>
+          <li>Amazon River</li>
+          <li>Uluru-Kata Tjuta</li>
+        </ol>
+      </div>
+      <div style="background:var(--color-accent-light); border-radius:var(--radius-sm); padding:0.75rem; font-size:0.85rem;">
+        <div style="font-weight:600; color:var(--color-heading); margin-bottom:0.4rem;">Set B</div>
+        <ol style="padding-left:1.1rem; margin:0;">
+          <li>Machu Picchu, Peru</li>
+          <li>Murray-Darling Basin</li>
+          <li>Great Wall of China</li>
+          <li>Reykjavik, Iceland</li>
+          <li>Kakadu National Park</li>
+        </ol>
+      </div>
+      <div style="background:var(--color-accent-light); border-radius:var(--radius-sm); padding:0.75rem; font-size:0.85rem;">
+        <div style="font-weight:600; color:var(--color-heading); margin-bottom:0.4rem;">Set C</div>
+        <ol style="padding-left:1.1rem; margin:0;">
+          <li>Serengeti, Tanzania</li>
+          <li>Hobart, Tasmania</li>
+          <li>Borneo</li>
+          <li>Venice, Italy</li>
+          <li>Broken Hill, NSW</li>
+        </ol>
+      </div>
+      <div style="background:var(--color-accent-light); border-radius:var(--radius-sm); padding:0.75rem; font-size:0.85rem;">
+        <div style="font-weight:600; color:var(--color-heading); margin-bottom:0.4rem;">Set D</div>
+        <ol style="padding-left:1.1rem; margin:0;">
+          <li>Great Wall of China</li>
+          <li>Coober Pedy, SA</li>
+          <li>Amazon River</li>
+          <li>Mumbai, India</li>
+          <li>Great Barrier Reef</li>
+        </ol>
+      </div>
+      <div style="background:var(--color-accent-light); border-radius:var(--radius-sm); padding:0.75rem; font-size:0.85rem;">
+        <div style="font-weight:600; color:var(--color-heading); margin-bottom:0.4rem;">Set E</div>
+        <ol style="padding-left:1.1rem; margin:0;">
+          <li>Reykjavik, Iceland</li>
+          <li>Uluru-Kata Tjuta</li>
+          <li>Serengeti, Tanzania</li>
+          <li>Machu Picchu, Peru</li>
+          <li>Borneo</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="diff-block extension">
+      <div class="diff-label">Extension</div>
+      Students choose their own five destinations from the atlas (any places, not limited to the place cards) and build a custom travel plan. They must justify at least two of their choices with a geographical reason (e.g. 'I chose the Sahara Desert because it is the largest hot desert and I want to see how people live there').
+    </div>
+
+    <div class="diff-block support">
+      <div class="diff-label">Support</div>
+      Reduce to three stops instead of five. Provide the grid references for two of the three stops, requiring students to find only one independently. The estimation and scale-bar steps remain – do not remove these, as they are the core skill being practised.
+    </div>
+
+    <p><strong>Close:</strong> 2–3 students share their route with the class. Brief discussion: which routes covered the greatest total distance? Did anyone find a more efficient order for the same five stops?</p>
+  </div>
+</div>
+
+<!-- ═══ PRINTABLE TEMPLATES ═══ -->
+<h2 class="section-heading">Printable Templates</h2>
+
+<!-- Travel Plan Proforma -->
+<div class="printable-section" id="proforma-travel">
+  <div class="printable-header">
+    <h3>Travel Plan Proforma</h3>
+    <button class="print-btn" onclick="printTemplate(&#39;proforma-travel&#39;, &#39;a4&#39;)">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print A4
+    </button>
+  </div>
+  <div class="printable-body">
+    <div class="proforma-title">My Round-the-World Travel Plan</div>
+    <div class="proforma-subtitle">Name: ___________________________ &nbsp;&nbsp; Date: _______________</div>
+    <table class="proforma-table">
+      <thead>
+        <tr>
+          <th style="width:50px">Stop</th>
+          <th>Place Name</th>
+          <th style="width:110px">Grid Reference</th>
+          <th style="width:120px">Estimated Distance</th>
+          <th style="width:120px">Scale-bar Distance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="row-label">Start</td><td>Sydney, Australia</td><td></td><td style="text-align:center">–</td><td style="text-align:center">–</td></tr>
+        <tr><td class="row-label">1</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="row-label">2</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="row-label">3</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="row-label">4</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="row-label">5</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="row-label">Return</td><td>Sydney, Australia</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="proforma-footer"><strong>Total distance:</strong> _____________ km</div>
+  </div>
+</div>
+
+<!-- Grid Reference Cue Sheet (prints 2 per A4 page) -->
+<div class="printable-section" id="cue-sheet">
+  <div class="printable-header">
+    <h3>Grid Reference Cue Sheet (Support) – prints 2 per page</h3>
+    <button class="print-btn" onclick="printTemplate(&#39;cue-sheet&#39;, &#39;a4&#39;)">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print A4 (2-up)
+    </button>
+  </div>
+  <div class="printable-body">
+    <div class="cue-sheet-pair">
+      <div class="cue-sheet">
+        <h4>How to Read a Grid Reference</h4>
+        <div class="cue-mnemonic">Along the corridor, up the stairs</div>
+        <div class="cue-step"><strong>Step 1:</strong> Read the number along the <strong>bottom</strong> of the map (the easting). This is your first two digits.</div>
+        <div class="cue-step"><strong>Step 2:</strong> Read the number up the <strong>side</strong> of the map (the northing). This is your second two digits.</div>
+        <div class="cue-step"><strong>Step 3:</strong> Put them together. Easting first, northing second.</div>
+        <div class="cue-step" style="margin-top:1rem; padding:0.75rem; background:var(--color-accent-light); border-radius:6px;">
+          <strong>Example:</strong> To find grid reference <strong>3847</strong><br>
+          → Go along to line <strong>38</strong><br>
+          → Go up to line <strong>47</strong><br>
+          → The place is in the square above and to the right of where the lines cross.
+        </div>
+      </div>
+      <div style="border-top:2px dashed var(--color-card-border); margin:1rem 0;"></div>
+      <div class="cue-sheet">
+        <h4>How to Read a Grid Reference</h4>
+        <div class="cue-mnemonic">Along the corridor, up the stairs</div>
+        <div class="cue-step"><strong>Step 1:</strong> Read the number along the <strong>bottom</strong> of the map (the easting). This is your first two digits.</div>
+        <div class="cue-step"><strong>Step 2:</strong> Read the number up the <strong>side</strong> of the map (the northing). This is your second two digits.</div>
+        <div class="cue-step"><strong>Step 3:</strong> Put them together. Easting first, northing second.</div>
+        <div class="cue-step" style="margin-top:1rem; padding:0.75rem; background:var(--color-accent-light); border-radius:6px;">
+          <strong>Example:</strong> To find grid reference <strong>3847</strong><br>
+          → Go along to line <strong>38</strong><br>
+          → Go up to line <strong>47</strong><br>
+          → The place is in the square above and to the right of where the lines cross.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Travel Plan Sets -->
+<div class="printable-section" id="travel-sets">
+  <div class="printable-header">
+    <h3>Travel Plan Sets (A–E)</h3>
+    <button class="print-btn" onclick="printTemplate(&#39;travel-sets&#39;, &#39;a4&#39;)">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print A4
+    </button>
+  </div>
+  <div class="printable-body">
+    <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1rem;">Cut along the dotted lines. Distribute one set per pair or individual.</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.25rem;">
+      <div style="border:2px dashed var(--color-card-border); border-radius:var(--radius-sm); padding:1rem;">
+        <div style="font-family:var(--font-display); font-weight:700; font-size:1rem; color:var(--color-heading); margin-bottom:0.5rem;">Set A – Round the World</div>
+        <div style="font-size:0.85rem; margin-bottom:0.25rem;">Start and finish: <strong>Sydney, Australia</strong></div>
+        <ol style="padding-left:1.2rem; font-size:0.9rem; margin-top:0.5rem;">
+          <li style="margin-bottom:0.2rem;">Mumbai, India</li>
+          <li style="margin-bottom:0.2rem;">Great Barrier Reef, Australia</li>
+          <li style="margin-bottom:0.2rem;">Venice, Italy</li>
+          <li style="margin-bottom:0.2rem;">Amazon River, South America</li>
+          <li style="margin-bottom:0.2rem;">Uluru-Kata Tjuta, Australia</li>
+        </ol>
+      </div>
+      <div style="border:2px dashed var(--color-card-border); border-radius:var(--radius-sm); padding:1rem;">
+        <div style="font-family:var(--font-display); font-weight:700; font-size:1rem; color:var(--color-heading); margin-bottom:0.5rem;">Set B – Round the World</div>
+        <div style="font-size:0.85rem; margin-bottom:0.25rem;">Start and finish: <strong>Sydney, Australia</strong></div>
+        <ol style="padding-left:1.2rem; font-size:0.9rem; margin-top:0.5rem;">
+          <li style="margin-bottom:0.2rem;">Machu Picchu, Peru</li>
+          <li style="margin-bottom:0.2rem;">Murray-Darling Basin, Australia</li>
+          <li style="margin-bottom:0.2rem;">Great Wall of China</li>
+          <li style="margin-bottom:0.2rem;">Reykjavik, Iceland</li>
+          <li style="margin-bottom:0.2rem;">Kakadu National Park, Australia</li>
+        </ol>
+      </div>
+      <div style="border:2px dashed var(--color-card-border); border-radius:var(--radius-sm); padding:1rem;">
+        <div style="font-family:var(--font-display); font-weight:700; font-size:1rem; color:var(--color-heading); margin-bottom:0.5rem;">Set C – Round the World</div>
+        <div style="font-size:0.85rem; margin-bottom:0.25rem;">Start and finish: <strong>Sydney, Australia</strong></div>
+        <ol style="padding-left:1.2rem; font-size:0.9rem; margin-top:0.5rem;">
+          <li style="margin-bottom:0.2rem;">Serengeti, Tanzania</li>
+          <li style="margin-bottom:0.2rem;">Hobart, Tasmania</li>
+          <li style="margin-bottom:0.2rem;">Borneo, Indonesia/Malaysia</li>
+          <li style="margin-bottom:0.2rem;">Venice, Italy</li>
+          <li style="margin-bottom:0.2rem;">Broken Hill, NSW</li>
+        </ol>
+      </div>
+      <div style="border:2px dashed var(--color-card-border); border-radius:var(--radius-sm); padding:1rem;">
+        <div style="font-family:var(--font-display); font-weight:700; font-size:1rem; color:var(--color-heading); margin-bottom:0.5rem;">Set D – Round the World</div>
+        <div style="font-size:0.85rem; margin-bottom:0.25rem;">Start and finish: <strong>Sydney, Australia</strong></div>
+        <ol style="padding-left:1.2rem; font-size:0.9rem; margin-top:0.5rem;">
+          <li style="margin-bottom:0.2rem;">Great Wall of China</li>
+          <li style="margin-bottom:0.2rem;">Coober Pedy, South Australia</li>
+          <li style="margin-bottom:0.2rem;">Amazon River, South America</li>
+          <li style="margin-bottom:0.2rem;">Mumbai, India</li>
+          <li style="margin-bottom:0.2rem;">Great Barrier Reef, Australia</li>
+        </ol>
+      </div>
+      <div style="border:2px dashed var(--color-card-border); border-radius:var(--radius-sm); padding:1rem; grid-column: 1 / -1; max-width:50%;">
+        <div style="font-family:var(--font-display); font-weight:700; font-size:1rem; color:var(--color-heading); margin-bottom:0.5rem;">Set E – Round the World</div>
+        <div style="font-size:0.85rem; margin-bottom:0.25rem;">Start and finish: <strong>Sydney, Australia</strong></div>
+        <ol style="padding-left:1.2rem; font-size:0.9rem; margin-top:0.5rem;">
+          <li style="margin-bottom:0.2rem;">Reykjavik, Iceland</li>
+          <li style="margin-bottom:0.2rem;">Uluru-Kata Tjuta, Australia</li>
+          <li style="margin-bottom:0.2rem;">Serengeti, Tanzania</li>
+          <li style="margin-bottom:0.2rem;">Machu Picchu, Peru</li>
+          <li style="margin-bottom:0.2rem;">Borneo, Indonesia/Malaysia</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COLLAPSIBLE REFERENCE SECTIONS ═══ -->
+<h2 class="section-heading">Reference</h2>
+
+<!-- Teaching Notes -->
+<div class="collapsible" id="teaching-notes">
+  <div class="collapsible-header" onclick="toggleCollapsible(&#39;teaching-notes&#39;)">
+    <h3>Teaching Notes</h3>
+    <div class="collapsible-icon">▾</div>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-content">
+      <h4>Grid reference axis order – address explicitly</h4>
+      <p>Students will confuse eastings and northings. The mnemonic 'along the corridor, up the stairs' anchors the correct order (horizontal first, then vertical), but expect to reinforce this multiple times during Stage 1. When students give a grid reference incorrectly (northing first), do not simply correct it – show them where the wrong reference points to on the map. Seeing the error land in the wrong place is more instructive than being told the order.</p>
+
+      <h4>Scale bar misconception – 'bigger map means bigger place'</h4>
+      <p>Some students will assume that a place which takes up more space on a map is physically larger. The shift between atlas pages (Sydney map vs world map) is the moment this surfaces. When introducing scale, make the comparison explicit: Sydney takes up a full page in the atlas and the whole of Australia takes up a full page – are they the same size? Use this to establish that scale determines how much of the real world fits on the page, not how big the place is.</p>
+
+      <h4>Inquiry wall – harvest, don't answer</h4>
+      <p>The place cards will generate questions about content that arrives later in the unit. The inquiry wall captures these without derailing the lesson. If students ask directly, acknowledge the question, confirm it's a good one, and point them to the wall. Some of these questions will be answered directly by Lessons 13–15; others will surface during the World Heritage investigation. The wall becomes more powerful the longer it accumulates.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Materials & Resources -->
+<div class="collapsible" id="materials">
+  <div class="collapsible-header" onclick="toggleCollapsible(&#39;materials&#39;)">
+    <h3>Materials &amp; Resources</h3>
+    <div class="collapsible-icon">▾</div>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-content">
+      <h4>Stage 1 – Grid References</h4>
+      <ul>
+        <li><strong>Atlas</strong> – one per student. Sydney map (with grid reference system) and world map pages. Confirm grid lines are visible and labelled at print resolution in the school's atlas edition before the lesson.</li>
+        <li><strong>Real-world grid reference examples</strong> – 2–3 examples projected on the interactive whiteboard. Options: a section of a bushwalking map, a topographic map extract (<a href="https://topo.maptiles.nsw.gov.au/" target="_blank">NSW Spatial Services</a>), an emergency services grid map. No printing needed.</li>
+        <li><strong>Interactive whiteboard</strong> – for displaying grid reference examples and demonstrating the system.</li>
+        <li><strong>Grid reference cue sheet</strong> (support) – A5, one per supported student. Printable version above.</li>
+      </ul>
+
+      <h4>Stage 2 – Place Matching Exercise</h4>
+      <ul>
+        <li><strong>A3 world map printout</strong> – one per pair in the world stream. Country borders and names only – no cities, landmarks or other features. Must include a visible grid reference system with labelled axes. Source from a copyright-free base map or create a simplified version.</li>
+        <li><strong>A3 Australia map printout</strong> – one per pair in the Australia stream. State borders and names only. Same grid reference requirements.</li>
+        <li><strong>Place cards</strong> – two sets: 8 world, 8 Australia. Playing-card size, printed in colour on card stock or laminated. One set per pair. Suggested content shown in the place card gallery above.</li>
+        <li><strong>Post-it notes and pens</strong> – at each table, for inquiry wall questions.</li>
+        <li><strong>Glue sticks or adhesive putty</strong> – for attaching cards around the A3 map.</li>
+        <li><strong>Rulers and fine-tip markers</strong> – for drawing connection lines.</li>
+        <li><strong>Inquiry wall</strong> – the question wall from L1 or a fresh sheet of butcher's paper.</li>
+        <li><strong>Blank mini cards</strong> (fast finishers) – available on request.</li>
+      </ul>
+
+      <h4>Stage 3 – Scale</h4>
+      <ul>
+        <li><strong>Atlas</strong> – same as Stage 1. Scale bars on Sydney, Australia and world maps.</li>
+        <li><strong>Rulers</strong> – one per student.</li>
+        <li><strong>Google Maps</strong> on the interactive whiteboard – distance measure tool, teacher-operated. <a href="https://www.google.com/maps" target="_blank">Open Google Maps</a></li>
+      </ul>
+
+      <h4>Stage 4 – Travel Plan</h4>
+      <ul>
+        <li><strong>Atlas</strong> – world map page for route planning.</li>
+        <li><strong>Travel plan proforma</strong> (optional) – printable version above.</li>
+        <li><strong>Travel plan sets</strong> – five pre-made sets of five destinations each (Sets A–E, listed in Stage 4 above). Print or project one set per pair/individual. Distribute different sets across the class.</li>
+        <li><strong>Rulers</strong> – same as Stage 3.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Atlas Work -->
+<div class="collapsible" id="atlas-work">
+  <div class="collapsible-header" onclick="toggleCollapsible(&#39;atlas-work&#39;)">
+    <h3>Atlas Work</h3>
+    <div class="collapsible-icon">▾</div>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-content">
+      <p><strong>When:</strong> Stages 1, 2, 3 and 4 – the atlas is the primary tool throughout this lesson.</p>
+      <p><strong>Task:</strong> Stage 1: locate places on the Sydney atlas map using four-figure grid references, then repeat on the world map. Stage 2: use the atlas to find each place from the place cards and determine its grid reference on the blank A3 map. Stage 3: use the scale bar on three different atlas maps (Sydney, Australia, world) to measure distances. Stage 4: use the world map to plan a travel route with grid references and distances.</p>
+      <p><strong>Page reference:</strong> Confirm against school atlas edition before the lesson and insert page numbers for: Sydney map with grid, Australia map with grid, world map with grid.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Observational Assessment -->
+<div class="collapsible" id="assessment">
+  <div class="collapsible-header" onclick="toggleCollapsible(&#39;assessment&#39;)">
+    <h3>Observational Assessment</h3>
+    <div class="collapsible-icon">▾</div>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-content">
+      <h4>What to look for</h4>
+      <ul>
+        <li><strong>Stage 1 – grid reference accuracy:</strong> Are students reading eastings before northings consistently? Can they give a grid reference for a named place (the reverse operation), or only find a place from a given reference?</li>
+        <li><strong>Stage 2 – matching exercise:</strong> Are students using the atlas and grid system to locate places, or scanning the A3 map visually? Listen to pair conversation – are they articulating the process ('go along to 34, then up to 57') or guessing? Note also the quality of questions going onto the inquiry wall.</li>
+        <li><strong>Stage 3 – estimation and scale:</strong> How far off are the initial estimates? Can students use a ruler and scale bar independently?</li>
+        <li><strong>Stage 4 – travel plan:</strong> Can students combine both skills (grid reference + scale) in an applied context? This is the real test of whether the lesson has landed.</li>
+      </ul>
+
+      <h4>How to capture</h4>
+      <p>Phase 1 Observation Checklist. Columns: <em>Uses grid references</em> · <em>Uses scale bar</em>. Code during Stages 2 and 4 – these are the independent application moments.</p>
+
+      <h4>What it tells you</h4>
+      <p>Students who cannot reliably give or find a four-figure grid reference by the end of Stage 2 will need a brief check-in before Lesson 4, where grid references are used in the annotated local map work. Students who struggle with scale bar use should be flagged – the skill is reinforced through Lessons 6–14, so it is not essential that every student is fluent by the end of this lesson, but those who cannot attempt the process at all will need targeted support.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="page-footer">
+  Year 5 Geography: Place &amp; Space · Roseville College · Lesson 3 · Draft
+</div>
+
+</div><!-- /container -->
+
+<script>
+function toggleCollapsible(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+function printTemplate(id, size) {
+  const el = document.getElementById(id);
+  el.classList.add('print-target');
+  document.body.classList.add('printing-template-' + size);
+  window.print();
+  document.body.classList.remove('printing-template-' + size);
+  el.classList.remove('print-target');
+}
+
+function updateQuantities() {
+  const n = parseInt(document.getElementById('classSize').value) || 28;
+  const pairs = Math.ceil(n / 2);
+  const halfPairs = Math.ceil(pairs / 2);
+  const supportCount = Math.max(4, Math.ceil(n * 0.2));
+  const supportPages = Math.ceil(supportCount / 2);
+
+  document.querySelectorAll('.print-item-qty').forEach(el => {
+    const rule = el.dataset.rule;
+    if (rule === 'each') el.textContent = n;
+    else if (rule === 'pair') el.textContent = pairs;
+    else if (rule === 'half-pair') el.textContent = halfPairs;
+    else if (rule === 'support-2up') el.textContent = supportPages + ' pgs';
+    else if (rule === 'support-copies') el.textContent = '(' + supportCount + ' copies)';
+  });
+}
+
+// Initialise on load
+document.addEventListener('DOMContentLoaded', updateQuantities);
+</script>
+
+
+</body></html>
