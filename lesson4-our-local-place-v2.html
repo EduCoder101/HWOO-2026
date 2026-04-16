@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4 &middot; Our Local Place &ndash; Roseville and the North Shore | Place &amp; Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #F5F7F3;
+  --color-card: #FFFFFF;
+  --color-card-border: #D4DDCF;
+  --color-text: #2D3A2D;
+  --color-text-muted: #5E6E58;
+  --color-heading: #1B3A2A;
+  --color-accent: #3A7D5C;
+  --color-accent-light: #E2F0E8;
+  --color-accent-hover: #2D6148;
+  --color-sage: #6B8F71;
+  --color-sage-light: #EAF2EB;
+  --color-sage-border: #B8D4B8;
+  --color-support: #4A7FA0;
+  --color-support-light: #E4EEF5;
+  --color-extension: #7B6B9E;
+  --color-extension-light: #EEEAF5;
+  --color-stage-1: #3A7D5C;
+  --color-stage-2: #4A7FA0;
+  --color-stage-3: #8A6B3D;
+  --color-stage-4: #7B6B9E;
+  --color-divider: #C8D4C2;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
+  --shadow-hover: 0 4px 16px rgba(40,60,40,0.1);
+  --max-width: 1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem 1.5rem 4rem}
+.lesson-header{background:linear-gradient(135deg,#1B3A2A 0%,#2D5E40 100%);color:white;padding:2.5rem 2rem 2rem;border-radius:var(--radius);margin-bottom:1.5rem;position:relative;overflow:hidden}
+.lesson-header::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
+.lesson-header .phase-tag{display:inline-block;font-family:var(--font-body);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;background:rgba(255,255,255,.15);padding:.3em .8em;border-radius:20px;margin-bottom:1rem}
+.lesson-header h1{font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}
+.lesson-header .lesson-number{font-weight:400;opacity:.7}
+.lesson-header .subtitle{font-size:1.05rem;opacity:.85;font-weight:400}
+.lesson-summary{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-card)}
+.lesson-summary .summary-label{font-family:var(--font-display);font-size:.85rem;font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.lesson-summary ul{list-style:none;padding:0;margin:0}
+.lesson-summary li{position:relative;padding-left:1.25rem;margin-bottom:.35rem;font-size:.9rem;line-height:1.5}
+.lesson-summary li::before{content:'\203A';position:absolute;left:0;color:var(--color-accent);font-weight:700;font-size:1.1rem;line-height:1.35}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-bottom:2rem}
+.meta-item{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);padding:.85rem 1rem}
+.meta-item .meta-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:.25rem}
+.meta-item .meta-value{font-size:.9rem;line-height:1.45;color:var(--color-text)}
+.li-sc-card{background:var(--color-accent-light);border-left:4px solid var(--color-accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.5rem;margin-bottom:2.5rem}
+.li-sc-card h2{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--color-heading);margin-bottom:.5rem}
+.li-sc-card .li-text{font-size:1rem;margin-bottom:1rem;font-weight:500}
+.li-sc-card ul{list-style:none;padding:0}
+.li-sc-card li{position:relative;padding-left:1.5rem;margin-bottom:.4rem;font-size:.95rem}
+.li-sc-card li::before{content:'\2713';position:absolute;left:0;color:var(--color-accent);font-weight:700}
+.section-heading{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--color-heading);margin:2.5rem 0 1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--color-divider)}
+
+/* Stage cards: two-column layout with materials sidebar */
+.stage-card{background:var(--color-card);border-radius:var(--radius);border:1px solid var(--color-card-border);box-shadow:var(--shadow-card);margin-bottom:1.5rem;overflow:hidden;transition:box-shadow .2s ease}
+.stage-card:hover{box-shadow:var(--shadow-hover)}
+.stage-card-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--color-card-border)}
+.stage-number{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:white;flex-shrink:0}
+.stage-1 .stage-number{background:var(--color-stage-1)}
+.stage-2 .stage-number{background:var(--color-stage-2)}
+.stage-3 .stage-number{background:var(--color-stage-3)}
+.stage-4 .stage-number{background:var(--color-stage-4)}
+.stage-card-header h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading)}
+.stage-card-header .stage-context{font-size:.8rem;color:var(--color-text-muted);font-weight:400}
+
+.stage-card-content{display:flex}
+.stage-card-body{flex:1;padding:1.5rem;min-width:0}
+.stage-card-body h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading);margin:1.25rem 0 .5rem}
+.stage-card-body h4:first-child{margin-top:0}
+.stage-card-body p{margin-bottom:.85rem;font-size:.95rem}
+.stage-card-body ul,.stage-card-body ol{padding-left:1.25rem;margin-bottom:.85rem}
+.stage-card-body li{margin-bottom:.35rem;font-size:.95rem}
+
+/* Materials sidebar */
+.stage-materials{width:220px;flex-shrink:0;background:var(--color-sage-light);border-left:1px solid var(--color-card-border);padding:1.25rem;font-size:.82rem;display:flex;flex-direction:column}
+.stage-materials-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-sage);margin-bottom:.75rem}
+.stage-materials ul{list-style:none;padding:0;margin:0}
+.stage-materials li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;line-height:1.4;color:var(--color-text)}
+.stage-materials li::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--color-sage)}
+.stage-materials .mat-note{font-size:.75rem;color:var(--color-text-muted);font-style:italic;display:block;margin-top:.15rem}
+
+.diff-block{border-radius:var(--radius-sm);padding:.85rem 1rem;margin:.85rem 0;font-size:.9rem}
+.diff-block.extension{background:var(--color-extension-light);border-left:3px solid var(--color-extension)}
+.diff-block.support{background:var(--color-support-light);border-left:3px solid var(--color-support)}
+.diff-label{font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.diff-block.extension .diff-label{color:var(--color-extension)}
+.diff-block.support .diff-label{color:var(--color-support)}
+.collapsible{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.collapsible-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;transition:background .15s ease}
+.collapsible-header:hover{background:var(--color-sage-light)}
+.collapsible-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-sage);margin:0}
+.collapsible-icon{width:24px;height:24px;border-radius:50%;background:var(--color-sage-light);display:flex;align-items:center;justify-content:center;color:var(--color-sage);font-size:.85rem;transition:transform .25s ease;flex-shrink:0}
+.collapsible.open .collapsible-icon{transform:rotate(180deg)}
+.collapsible-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.collapsible.open .collapsible-body{max-height:5000px}
+.collapsible-content{padding:0 1.25rem 1.25rem;font-size:.92rem}
+.collapsible-content h4{font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--color-heading);margin:1rem 0 .4rem}
+.collapsible-content h4:first-child{margin-top:0}
+.collapsible-content p{margin-bottom:.75rem}
+.collapsible-content ul{padding-left:1.25rem;margin-bottom:.75rem}
+.collapsible-content li{margin-bottom:.3rem}
+.page-print-bar{display:flex;justify-content:flex-end;margin-bottom:1.5rem}
+.page-print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5em 1.1em;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--color-text-muted);background:var(--color-card);border:1px solid var(--color-card-border);border-radius:6px;cursor:pointer;transition:all .15s ease}
+.page-print-btn:hover{background:var(--color-text);color:white;border-color:var(--color-text)}
+.page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
+.print-package{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden;box-shadow:var(--shadow-card)}
+.print-package-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;background:var(--color-accent-light);border-bottom:1px solid var(--color-card-border);transition:background .15s ease}
+.print-package-header:hover{background:#D0E8D8}
+.print-package-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-accent);margin:0;display:flex;align-items:center;gap:.5rem}
+.print-package-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.print-package.open .print-package-body{max-height:3000px}
+.print-package.open .collapsible-icon{transform:rotate(180deg)}
+.print-package-content{padding:1.25rem}
+.class-size-input{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-card-border)}
+.class-size-input label{font-weight:600;font-size:.9rem;color:var(--color-heading)}
+.class-size-input input{width:70px;padding:.4rem .6rem;border:2px solid var(--color-card-border);border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--color-heading);text-align:center}
+.class-size-input input:focus{outline:none;border-color:var(--color-accent)}
+.print-item{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #EEF1EC;font-size:.88rem;gap:.75rem}
+.print-item:last-child{border-bottom:none}
+.print-item-info{flex:1}
+.print-item-name{font-weight:600;color:var(--color-heading);margin-bottom:.15rem}
+.print-item-detail{font-size:.78rem;color:var(--color-text-muted)}
+.print-item-qty{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--color-accent);min-width:50px;text-align:center}
+.print-item-action .separate-tag{font-size:.72rem;color:var(--color-text-muted);font-style:italic;white-space:nowrap}
+
+/* Responsive: stack materials below on narrow screens */
+@media (max-width: 800px) {
+  .stage-card-content{flex-direction:column}
+  .stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}
+}
+
+@media print{body{background:white;font-size:11pt}.container{max-width:100%;padding:0}.lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-card,.collapsible{box-shadow:none;break-inside:avoid}.collapsible-body{max-height:none!important}.page-print-btn,.page-print-bar,.print-package{display:none}.stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="page-print-bar">
+  <button class="page-print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print Lesson
+  </button>
+</div>
+
+<div class="lesson-header">
+  <div class="phase-tag">Phase 1 &middot; Local</div>
+  <h1><span class="lesson-number">Lesson 4 &middot;</span> Our Local Place &ndash; Roseville and the North Shore</h1>
+  <div class="subtitle">Understanding the human and physical features that make our area distinctive</div>
+</div>
+
+<div class="lesson-summary">
+  <div class="summary-label">Lesson at a Glance</div>
+  <ul>
+    <li>Guided inquiry into local place: students shift from passive observation to active investigation</li>
+    <li>Virtual tour of Roseville and North Shore using Google Maps street view, satellite and terrain layers</li>
+    <li>Small group feature investigation: locate and categorise features, mark on large annotated class map</li>
+    <li>Individual writing: three sentences describing what makes our local area distinctive</li>
+    <li>ACH&ndash;01 integration: Cammeraygal Country map shows how Aboriginal peoples understand the same place</li>
+  </ul>
+</div>
+
+<div class="print-package" id="print-package">
+  <div class="print-package-header" onclick="toggleCollapsible('print-package')">
+    <h3>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Preparation Checklist
+    </h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="print-package-body">
+    <div class="print-package-content">
+      <div class="class-size-input">
+        <label for="classSize">Students in class:</label>
+        <input type="number" id="classSize" value="28" min="1" max="40" onchange="updateQuantities()" oninput="updateQuantities()">
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Outline map &ndash; Roseville and North Shore</div>
+          <div class="print-item-detail">A4 or A3 blank map showing the coastline, major roads and waterways, grid reference axes, but no feature labels. Used as the foundation for annotation during Stage 3.</div>
+        </div>
+        <div class="print-item-qty" data-rule="table-sets">1 set</div>
+        <div class="print-item-action"><span class="separate-tag">Source or draw</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Local landmarks word bank</div>
+          <div class="print-item-detail">A4 sheet with 15&ndash;20 local features with simple illustrations or icons. Used for support students in Stage 3.</div>
+        </div>
+        <div class="print-item-qty">1&ndash;2 pgs</div>
+        <div class="print-item-action"><span class="separate-tag">Print if needed</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Sydney atlas or map page</div>
+          <div class="print-item-detail">Current atlas page showing the Sydney region at sufficient scale to identify the North Shore. Students use this as reference during Stage 3.</div>
+        </div>
+        <div class="print-item-qty" data-rule="table-sets">1 set</div>
+        <div class="print-item-action"><span class="separate-tag">Source from school atlas</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Cammeraygal Country map (printed or digital)</div>
+          <div class="print-item-detail">Indigenous map of the local area showing Cammeraygal Country. Used in Stage 1 and Stage 2 for discussion.</div>
+        </div>
+        <div class="print-item-qty">1&ndash;2</div>
+        <div class="print-item-action"><span class="separate-tag">Source (curriculum)</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Large paper sheets (A2 or butcher's paper)</div>
+          <div class="print-item-detail">One per group for the annotated feature map created during Stage 3.</div>
+        </div>
+        <div class="print-item-qty" data-rule="table-sets">1 set</div>
+        <div class="print-item-action"><span class="separate-tag">Supply from stock</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Coloured pencils or markers</div>
+          <div class="print-item-detail">At least two colours per group (green for physical, blue for human, or student choice).</div>
+        </div>
+        <div class="print-item-qty">Class supply</div>
+        <div class="print-item-action"><span class="separate-tag">From stock</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Google Maps access</div>
+          <div class="print-item-detail">Computer/laptop and large screen or projector for Stage 2 virtual tour. Requires internet connection.</div>
+        </div>
+        <div class="print-item-qty">Whole class</div>
+        <div class="print-item-action"><span class="separate-tag">Check</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-item"><div class="meta-label">Teaching Mode</div><div class="meta-value">Guided inquiry</div></div>
+  <div class="meta-item"><div class="meta-label">Grouping</div><div class="meta-value">Whole class discussion, then small groups (3&ndash;4)</div></div>
+  <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">50 minutes</div></div>
+  <div class="meta-item"><div class="meta-label">Syllabus</div><div class="meta-value">GE3&ndash;1, GE3&ndash;2</div></div>
+  <div class="meta-item"><div class="meta-label">Prior Knowledge</div><div class="meta-value">Physical vs human features (L1); compass directions and map symbols (L2); grid references and scale (L3); atlas navigation (L1&ndash;3)</div></div>
+  <div class="meta-item"><div class="meta-label">Enables</div><div class="meta-value">L5 &ndash; pull factors and why people live in a place. The local investigation methodology recurs in Phase 2 (Sydney) and Phase 3 (NSW &amp; Australia).</div></div>
+</div>
+
+<div class="li-sc-card">
+  <h2>Learning Intention</h2>
+  <p class="li-text">Describe the human and physical features that characterise our local area</p>
+  <h2>Success Criteria</h2>
+  <ul>
+    <li>Name and locate at least five key features of Roseville and the North Shore</li>
+    <li>Clearly distinguish between human and physical features</li>
+    <li>Describe at least two things that make our local area distinctive</li>
+  </ul>
+</div>
+
+<h2 class="section-heading">Lesson Structure</h2>
+
+<!-- STAGE 1 -->
+<div class="stage-card stage-1">
+  <div class="stage-card-header">
+    <div class="stage-number">1</div>
+    <div><h3>Framing the Inquiry</h3><div class="stage-context">10 min &middot; Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Begin with a question that frames the investigation: <em>What makes Roseville and the North Shore distinctive? What do we notice about this place that someone from elsewhere might not?</em></p>
+      <p>Discuss briefly as a whole class. Students are not yet answering the question &ndash; they are building curiosity. List a few observations on the board: things the class already knows about the area (beaches, national parks, transport links, schools, harbours). Do not provide answers; invite students to think about what they will investigate.</p>
+      <p>Introduce the teaching mode: instead of the teacher telling them facts, students will investigate using maps and observations. Explain that they will work in small groups to explore features and then share their findings. Emphasise that <strong>physical features</strong> (water, land, vegetation) and <strong>human features</strong> (buildings, roads, services) tell us different stories about a place.</p>
+      <p>Preview the Cammeraygal Country map: show students how Aboriginal peoples represented and understood this same place for thousands of years. Ask: <em>Why might the Cammeraygal map look different from the maps we normally use? What does it tell us?</em> This introduces the concept that how we represent a place shapes how we understand it and belong to it.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Cammeraygal Country map <span class="mat-note">displayed on board or printed A3</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 2 -->
+<div class="stage-card stage-2">
+  <div class="stage-card-header">
+    <div class="stage-number">2</div>
+    <div><h3>Virtual Exploration</h3><div class="stage-context">12 min &middot; Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Teacher leads a whole-class Google Maps exploration of Roseville and the North Shore using a large screen or projector. Start in street view at Roseville College, then zoom out to satellite view to show the local geography (beaches, water, vegetation, roads, built areas). Switch to terrain view to show topography.</p>
+      <p>As the tour progresses, students observe and note interesting features. Ask guiding questions: <em>What physical features do you notice? Where are the human-made features? What looks dense? What looks open?</em> Do not label features for students &ndash; they should describe what they see in their own words. This is observation, not instruction.</p>
+      <p>Use the compass rose and grid reference knowledge from L2 and L3: point out where features are located (north of the school, near the railway station, along the coast). This reinforces that map reading skills are tools for investigation, not separate exercises.</p>
+      <p>Show the Cammeraygal Country map overlay (or print). Discuss: <em>How did the Cammeraygal peoples navigate and understand this place without modern maps? What landmarks would have been important to them?</em></p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps on IWB <span class="mat-note">pre-loaded at Roseville College, street view</span></li>
+        <li>Cammeraygal Country map <span class="mat-note">for comparison</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 3 -->
+<div class="stage-card stage-3">
+  <div class="stage-card-header">
+    <div class="stage-number">3</div>
+    <div><h3>Feature Investigation and Annotation</h3><div class="stage-context">18 min &middot; Small groups (3&ndash;4)</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Organise students into mixed-ability groups of 3&ndash;4. Each group receives a large sheet of paper with a simple outline map of the Roseville/North Shore area and a printed atlas open to the Sydney region page.</p>
+      <p>The task: locate at least five distinctive features on the map (physical and human) and annotate the map with labels, descriptions and simple symbols. Students must categorise each feature as physical or human. Circulate and ask: <em>Why did you choose that feature? What makes it distinctive? Is that physical or human?</em></p>
+      <p>Groups work cooperatively, taking turns to locate features using both the atlas (for reference) and their memory from the virtual tour. They annotate the map with colour coding (green for physical, blue for human) or symbols (e.g. trees for parks, buildings for towns, wavy lines for water). The map becomes a shared record of the group&rsquo;s investigation.</p>
+      <p>The purpose of annotation is to make thinking visible and to create a class artefact that will be displayed and discussed. Individual accountability is built in: each student must contribute at least one feature and its description.</p>
+      <div class="diff-block extension">
+        <div class="diff-label">Extension</div>
+        <p>Some groups may identify features quickly. Ask them to locate features using grid references from the atlas: <em>Can you find the train station? Give me its grid reference. What&rsquo;s near it? Does the train line shape how the area looks?</em> This deepens map reading and spatial reasoning.</p>
+      </div>
+      <div class="diff-block support">
+        <div class="diff-label">Support</div>
+        <p>For students who struggle to identify features, provide a word bank of local landmarks and features (e.g. beaches, Roseville College, railway line, national parks, harbours, gardens, shopping centres, playgrounds). Keep their focus narrow: <em>Find two physical features and one human feature.</em> Pair them with a confident investigator if needed.</p>
+      </div>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Outline map of Roseville/North Shore <span class="mat-note">one per group, A3 or larger</span></li>
+        <li>Large paper (A2 or butcher's) <span class="mat-note">for annotation, one per group</span></li>
+        <li>Sydney atlas page <span class="mat-note">one per group</span></li>
+        <li>Coloured pencils/markers <span class="mat-note">green for physical, blue for human</span></li>
+        <li>Landmarks word bank <span class="mat-note">for support groups only</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 4 -->
+<div class="stage-card stage-4">
+  <div class="stage-card-header">
+    <div class="stage-number">4</div>
+    <div><h3>Individual Synthesis and Writing</h3><div class="stage-context">8 min &middot; Individual</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Bring the class back together. Display the annotated class maps on the wall. Ask: <em>Looking at all our maps, what patterns do you see? What features appear on most maps? Why do you think those features are important to our local area?</em></p>
+      <p>Then ask students to write three sentences individually about their local place. The sentences should answer: <em>What makes Roseville and the North Shore distinctive?</em> Sentences must include at least one physical feature and one human feature.</p>
+      <p>Provide a sentence starter to scaffold: <em>The North Shore is distinctive because&hellip;</em> or <em>One thing that makes our local area special is&hellip;</em> Students write on paper or (if available) type on a device. Collect these sentences &ndash; they are the first individual written assessment in the unit.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Annotated maps from Stage 3 <span class="mat-note">displayed for reference</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-heading">Reference</h2>
+
+<div class="collapsible" id="teaching-notes">
+  <div class="collapsible-header" onclick="toggleCollapsible('teaching-notes')">
+    <h3>Teaching Notes</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+
+    <h4>First Guided Inquiry Lesson</h4>
+    <p>This is the first guided inquiry lesson. Students are more accustomed to explicit teaching (L1&ndash;3). The shift requires clear framing: explain that instead of the teacher showing and telling, students will investigate and discover. Circulate actively during Stage 3 &ndash; students may need redirecting if they become passive or off-task. Expect some groups to finish early or struggle; have extension questions ready (grid references, comparative observations) or provide a narrower scope (fewer features) for support.</p>
+
+    <h4>Feature Distinction</h4>
+    <p>Students may struggle with the boundary between physical and human features, especially in built areas (e.g. Is a garden path human or physical? Is a beach with a boardwalk physical or human?). This is productive confusion. Use it: ask students to justify their categorisation. Accept nuance &ndash; a feature can be both. The goal is not taxonomic correctness but clear thinking about what shapes a place.</p>
+
+    <h4>Cammeraygal Map as Primary Source</h4>
+    <p>The Cammeraygal Country map is not decoration. It is a primary source that shows students how a different people understand and represent the same place. Use it in Stage 1 and Stage 2 as an opportunity to explore knowledge systems, navigation, and belonging. Do not treat it as &lsquo;Aboriginal knowledge&rsquo; as an add-on; it is equally valid geography. This lesson is a curriculum integration point (ACH&ndash;01).</p>
+
+    <h4>Individual Writing</h4>
+    <p>The three-sentence writing task is the first collected individual assessment. Keep the barrier low &ndash; the goal is for students to consolidate their thinking, not to produce polished prose. Sentence starters help. If a student writes vaguely (e.g. &lsquo;The North Shore is good&rsquo;), ask: &lsquo;What feature makes it good? Is that a physical or human feature?&rsquo; Do not correct grammar in the lesson; focus on geographical reasoning. These sentences form a baseline for writing assessment that will develop across L5&ndash;7.</p>
+
+  </div></div>
+</div>
+
+<div class="collapsible" id="materials">
+  <div class="collapsible-header" onclick="toggleCollapsible('materials')">
+    <h3>Materials &amp; Resources</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <ul>
+      <li>Google Maps (satellite, street view, terrain view) &ndash; Roseville and North Shore region</li>
+      <li>Paper atlas (Sydney region page)</li>
+      <li>Cammeraygal Country indigenous map (primary source)</li>
+      <li>Outline maps (Roseville/North Shore, one per group)</li>
+      <li>Large paper or A3 sheets for annotation (one per group)</li>
+      <li>Coloured pencils or markers (supply from class stock)</li>
+      <li>Landmarks word bank (for support groups)</li>
+      <li>Sentence starters for Stage 4 writing task (projected or on board)</li>
+      <li>Large screen or projector for Google Maps display</li>
+      <li>Computer with internet access</li>
+    </ul>
+  </div></div>
+</div>
+
+<div class="collapsible" id="atlas-work">
+  <div class="collapsible-header" onclick="toggleCollapsible('atlas-work')">
+    <h3>Atlas Work</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <p>Students use the Sydney region atlas page as reference during Stage 3 to locate features and understand the local area within the broader Sydney context. The atlas serves two purposes: (1) as a navigation tool to check where features are located and (2) as a comparison point &ndash; students can see how the North Shore sits relative to other Sydney suburbs. Encourage students to use compass directions (from L2) and grid references (from L3) to locate and describe features. If time allows, compare the atlas page with the Cammeraygal Country map: how are they similar? How are they different?</p>
+  </div></div>
+</div>
+
+<div class="collapsible" id="assessment">
+  <div class="collapsible-header" onclick="toggleCollapsible('assessment')">
+    <h3>Observational Assessment</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+
+    <h4>What to Look For</h4>
+    <ul>
+      <li>Can students identify and name at least five features of the local area and locate them on a map?</li>
+      <li>Do students clearly categorise features as physical or human (not simply list them)?</li>
+      <li>Can students articulate what makes the North Shore distinctive (e.g. &lsquo;There are lots of beaches and bushland close together&rsquo; or &lsquo;The rail line connects us to the city&rsquo;)? Are their reasons grounded in observed features?</li>
+      <li>In group work, do all students contribute to the annotated map? Are contributions distributed or is one student dominating?</li>
+    </ul>
+
+    <h4>How to Capture</h4>
+    <p>Circulate during Stage 3 and note which groups/students can distinguish features clearly and which need support. Make brief notes on a clipboard about key observations &ndash; use a checklist with student names. Collect the three-sentence writing from Stage 4 &ndash; read for feature identification and categorisation. Keep annotated maps as evidence of group thinking.</p>
+
+    <h4>What It Tells You</h4>
+    <p>This assessment shows whether students can apply L1 knowledge (feature distinction) in an investigation context. If students struggle to categorise or name features, flag this for L5 &ndash; they may need more direct teaching on local features before moving to pull factors. If students write vague descriptions (e.g. &lsquo;The North Shore is nice&rsquo;), this suggests they need scaffolding in how to provide geographical reasons. Strong responses show readiness for L5&rsquo;s pull factors work.</p>
+
+  </div></div>
+</div>
+
+<div class="page-footer">Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; Lesson 4 &middot; Draft</div>
+
+</div>
+
+<script>
+function toggleCollapsible(id){const el=document.getElementById(id);el.classList.toggle('open')}
+
+function updateQuantities() {
+  const n = parseInt(document.getElementById('classSize').value) || 28;
+  const tables = Math.ceil(n / 5);
+
+  document.querySelectorAll('.print-item-qty').forEach(el => {
+    const rule = el.dataset.rule;
+    if (rule === 'each') el.textContent = n;
+    else if (rule === 'table-sets') el.textContent = tables + ' set' + (tables > 1 ? 's' : '');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', updateQuantities);
+</script>
+</body>
+</html>

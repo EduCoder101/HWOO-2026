@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 9 &middot; Coordinates: Locating Places on Earth | Place &amp; Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #F5F7F3;
+  --color-card: #FFFFFF;
+  --color-card-border: #D4DDCF;
+  --color-text: #2D3A2D;
+  --color-text-muted: #5E6E58;
+  --color-heading: #1B3A2A;
+  --color-accent: #3A7D5C;
+  --color-accent-light: #E2F0E8;
+  --color-accent-hover: #2D6148;
+  --color-sage: #6B8F71;
+  --color-sage-light: #EAF2EB;
+  --color-sage-border: #B8D4B8;
+  --color-support: #4A7FA0;
+  --color-support-light: #E4EEF5;
+  --color-extension: #7B6B9E;
+  --color-extension-light: #EEEAF5;
+  --color-stage-1: #3A7D5C;
+  --color-stage-2: #4A7FA0;
+  --color-stage-3: #8A6B3D;
+  --color-stage-4: #7B6B9E;
+  --color-divider: #C8D4C2;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
+  --shadow-hover: 0 4px 16px rgba(40,60,40,0.1);
+  --max-width: 1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem 1.5rem 4rem}
+.lesson-header{background:linear-gradient(135deg,#1B3A2A 0%,#2D5E40 100%);color:white;padding:2.5rem 2rem 2rem;border-radius:var(--radius);margin-bottom:1.5rem;position:relative;overflow:hidden}
+.lesson-header::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
+.lesson-header .phase-tag{display:inline-block;font-family:var(--font-body);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;background:rgba(255,255,255,.15);padding:.3em .8em;border-radius:20px;margin-bottom:1rem}
+.lesson-header h1{font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}
+.lesson-header .lesson-number{font-weight:400;opacity:.7}
+.lesson-header .subtitle{font-size:1.05rem;opacity:.85;font-weight:400}
+.lesson-summary{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-card)}
+.lesson-summary .summary-label{font-family:var(--font-display);font-size:.85rem;font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.lesson-summary ul{list-style:none;padding:0;margin:0}
+.lesson-summary li{position:relative;padding-left:1.25rem;margin-bottom:.35rem;font-size:.9rem;line-height:1.5}
+.lesson-summary li::before{content:'\203A';position:absolute;left:0;color:var(--color-accent);font-weight:700;font-size:1.1rem;line-height:1.35}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-bottom:2rem}
+.meta-item{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);padding:.85rem 1rem}
+.meta-item .meta-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:.25rem}
+.meta-item .meta-value{font-size:.9rem;line-height:1.45;color:var(--color-text)}
+.li-sc-card{background:var(--color-accent-light);border-left:4px solid var(--color-accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.5rem;margin-bottom:2.5rem}
+.li-sc-card h2{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--color-heading);margin-bottom:.5rem}
+.li-sc-card .li-text{font-size:1rem;margin-bottom:1rem;font-weight:500}
+.li-sc-card ul{list-style:none;padding:0}
+.li-sc-card li{position:relative;padding-left:1.5rem;margin-bottom:.4rem;font-size:.95rem}
+.li-sc-card li::before{content:'\2713';position:absolute;left:0;color:var(--color-accent);font-weight:700}
+.section-heading{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--color-heading);margin:2.5rem 0 1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--color-divider)}
+.stage-card{background:var(--color-card);border-radius:var(--radius);border:1px solid var(--color-card-border);box-shadow:var(--shadow-card);margin-bottom:1.5rem;overflow:hidden;transition:box-shadow .2s ease}
+.stage-card:hover{box-shadow:var(--shadow-hover)}
+.stage-card-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--color-card-border)}
+.stage-number{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:white;flex-shrink:0}
+.stage-1 .stage-number{background:var(--color-stage-1)}
+.stage-2 .stage-number{background:var(--color-stage-2)}
+.stage-3 .stage-number{background:var(--color-stage-3)}
+.stage-4 .stage-number{background:var(--color-stage-4)}
+.stage-card-header h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading)}
+.stage-card-header .stage-context{font-size:.8rem;color:var(--color-text-muted);font-weight:400}
+.stage-card-content{display:flex}
+.stage-card-body{flex:1;padding:1.5rem;min-width:0}
+.stage-card-body h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading);margin:1.25rem 0 .5rem}
+.stage-card-body h4:first-child{margin-top:0}
+.stage-card-body p{margin-bottom:.85rem;font-size:.95rem}
+.stage-card-body ul,.stage-card-body ol{padding-left:1.25rem;margin-bottom:.85rem}
+.stage-card-body li{margin-bottom:.35rem;font-size:.95rem}
+.diff-block{border-radius:var(--radius-sm);padding:.85rem 1rem;margin:.85rem 0;font-size:.9rem}
+.diff-block.extension{background:var(--color-extension-light);border-left:3px solid var(--color-extension)}
+.diff-block.support{background:var(--color-support-light);border-left:3px solid var(--color-support)}
+.diff-label{font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.diff-block.extension .diff-label{color:var(--color-extension)}
+.diff-block.support .diff-label{color:var(--color-support)}
+.stage-materials{width:220px;flex-shrink:0;background:var(--color-sage-light);border-left:1px solid var(--color-card-border);padding:1.25rem;font-size:.82rem;display:flex;flex-direction:column}
+.stage-materials-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-sage);margin-bottom:.75rem}
+.stage-materials ul{list-style:none;padding:0;margin:0}
+.stage-materials li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;line-height:1.4;color:var(--color-text)}
+.stage-materials li::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--color-sage)}
+.stage-materials .mat-note{font-size:.75rem;color:var(--color-text-muted);font-style:italic;display:block;margin-top:.15rem}
+.collapsible{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.collapsible-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;transition:background .15s ease}
+.collapsible-header:hover{background:var(--color-sage-light)}
+.collapsible-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-sage);margin:0}
+.collapsible-icon{width:24px;height:24px;border-radius:50%;background:var(--color-sage-light);display:flex;align-items:center;justify-content:center;color:var(--color-sage);font-size:.85rem;transition:transform .25s ease;flex-shrink:0}
+.collapsible.open .collapsible-icon{transform:rotate(180deg)}
+.collapsible-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.collapsible.open .collapsible-body{max-height:5000px}
+.collapsible-content{padding:0 1.25rem 1.25rem;font-size:.92rem}
+.collapsible-content h4{font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--color-heading);margin:1rem 0 .4rem}
+.collapsible-content h4:first-child{margin-top:0}
+.collapsible-content p{margin-bottom:.75rem}
+.collapsible-content ul{padding-left:1.25rem;margin-bottom:.75rem}
+.collapsible-content li{margin-bottom:.3rem}
+.page-print-bar{display:flex;justify-content:flex-end;margin-bottom:1.5rem}
+.page-print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5em 1.1em;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--color-text-muted);background:var(--color-card);border:1px solid var(--color-card-border);border-radius:6px;cursor:pointer;transition:all .15s ease}
+.page-print-btn:hover{background:var(--color-text);color:white;border-color:var(--color-text)}
+.page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
+
+/* Print Package */
+.print-package{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden;box-shadow:var(--shadow-card)}
+.print-package-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;background:var(--color-accent-light);border-bottom:1px solid var(--color-card-border);transition:background .15s ease}
+.print-package-header:hover{background:#D0E8D8}
+.print-package-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-accent);margin:0;display:flex;align-items:center;gap:.5rem}
+.print-package-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.print-package.open .print-package-body{max-height:3000px}
+.print-package.open .collapsible-icon{transform:rotate(180deg)}
+.print-package-content{padding:1.25rem}
+.class-size-input{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-card-border)}
+.class-size-input label{font-weight:600;font-size:.9rem;color:var(--color-heading)}
+.class-size-input input{width:70px;padding:.4rem .6rem;border:2px solid var(--color-card-border);border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--color-heading);text-align:center;transition:border-color .15s ease}
+.class-size-input input:focus{outline:none;border-color:var(--color-accent)}
+.print-item{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #EEF1EC;font-size:.88rem;gap:.75rem}
+.print-item:last-child{border-bottom:none}
+.print-item-info{flex:1}
+.print-item-name{font-weight:600;color:var(--color-heading);margin-bottom:.15rem}
+.print-item-detail{font-size:.78rem;color:var(--color-text-muted)}
+.print-item-qty{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--color-accent);min-width:50px;text-align:center}
+.print-item-action .separate-tag{font-size:.72rem;color:var(--color-text-muted);font-style:italic;white-space:nowrap}
+
+/* Printable Templates */
+.printable-section{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.printable-header{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;border-bottom:1px solid var(--color-card-border)}
+.printable-header h3{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading)}
+.print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.4em .9em;font-family:var(--font-body);font-size:.78rem;font-weight:600;color:var(--color-accent);background:var(--color-accent-light);border:1px solid var(--color-accent);border-radius:6px;cursor:pointer;transition:all .15s ease}
+.print-btn:hover{background:var(--color-accent);color:white}
+
+/* Challenge table */
+.challenge-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.85rem}
+.challenge-table th{background:var(--color-sage-light);font-family:var(--font-display);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--color-heading);padding:.5rem .4rem;border:1px solid var(--color-card-border);text-align:left}
+.challenge-table td{padding:.4rem;border:1px solid var(--color-card-border);vertical-align:top;height:2rem}
+.challenge-table .coord-cell{font-weight:600;color:var(--color-accent);width:120px;font-size:.8rem}
+
+/* Writing section */
+.writing-section{margin-top:1.5rem;padding-top:1rem;border-top:2px dashed var(--color-sage-border)}
+.writing-section h4{font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--color-heading);margin-bottom:.75rem}
+.sentence-stem{font-style:italic;color:var(--color-text-muted);margin-bottom:.3rem;font-size:.88rem}
+.writing-lines{border-bottom:1px solid var(--color-card-border);height:1.8rem;margin-bottom:.15rem}
+
+/* Word bank */
+.word-bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.word-bank-category{padding:.6rem;border:1px solid var(--color-card-border);border-radius:var(--radius-sm)}
+.word-bank-category h4{font-family:var(--font-display);font-size:.78rem;font-weight:600;color:var(--color-accent);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.04em}
+.word-bank-category ul{list-style:none;padding:0;margin:0}
+.word-bank-category li{font-size:.82rem;margin-bottom:.2rem;padding-left:.8rem;position:relative}
+.word-bank-category li::before{content:'\2022';position:absolute;left:0;color:var(--color-sage)}
+
+/* Map note */
+.map-note{background:var(--color-accent-light);padding:.75rem 1rem;border-radius:var(--radius-sm);margin:.75rem 0;font-size:.88rem;border-left:3px solid var(--color-accent)}
+.map-note strong{color:var(--color-accent)}
+
+@media (max-width: 800px) {
+  .stage-card-content{flex-direction:column}
+  .stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}
+}
+@media print{
+  body{background:white;font-size:11pt}
+  .container{max-width:100%;padding:0}
+  .lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .stage-card,.collapsible,.printable-section{box-shadow:none;break-inside:avoid}
+  .collapsible-body{max-height:none!important}
+  .page-print-btn,.page-print-bar,.print-package{display:none}
+  .stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+body.printing-template-a4 .container>*:not(.print-target){display:none!important}
+body.printing-template-a4 .print-target{box-shadow:none!important;border:none!important;margin:0!important;width:100%!important}
+body.printing-template-a4 .print-target .printable-header{display:none!important}
+body.printing-template-a4 .print-target .printable-body{padding:.8cm 1cm}
+body.printing-template-a4 .challenge-table td{height:1.4rem;padding:.2rem .25rem}
+body.printing-template-a4 .challenge-table th{padding:.25rem .25rem;font-size:.65rem}
+body.printing-template-a4 .challenge-table .coord-cell{font-size:.65rem}
+body.printing-template-a4 .writing-lines{height:1.2rem;margin-bottom:.05rem}
+body.printing-template-a4 .writing-section{margin-top:.5rem;padding-top:.3rem}
+body.printing-template-a4 .writing-section h4{font-size:.7rem;margin-bottom:.3rem}
+body.printing-template-a4 .writing-section p{font-size:.65rem;margin-bottom:.3rem}
+body.printing-template-a4 .sentence-stem{font-size:.68rem;margin-bottom:.1rem}
+body.printing-template-a4 .map-note{padding:.5rem .75rem;margin:.5rem 0;font-size:.75rem}
+/* 2-up printing: show duplicate copy, separated by dashed cut line */
+.two-up-copy{display:none}
+body.printing-template-a4 .two-up-copy{display:block}
+body.printing-template-a4 .two-up-divider{border:none;border-top:1px dashed #999;margin:.6cm 0;page-break-inside:avoid}
+body.printing-template-a4 .print-target .printable-body{padding:.5cm .8cm}
+body.printing-template-a4 .print-target .printable-body p{font-size:.72rem;margin-bottom:.4rem}
+body.printing-template-a4 .print-target .printable-body .name-line{font-size:.75rem;margin-bottom:.4rem}
+@page{margin:1cm}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Print Bar -->
+<div class="page-print-bar">
+  <button class="page-print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print Lesson
+  </button>
+</div>
+
+<!-- Lesson Header -->
+<div class="lesson-header">
+  <div class="phase-tag">Phase 2 &middot; City</div>
+  <h1><span class="lesson-number">Lesson 9 &middot;</span> Coordinates: Locating Places on Earth</h1>
+  <div class="subtitle">Using latitude and longitude to find places on a world map</div>
+</div>
+
+<!-- Lesson Summary -->
+<div class="lesson-summary">
+  <div class="summary-label">Lesson at a Glance</div>
+  <ul>
+    <li>Explicit teaching of latitude and longitude using the globe analogy &ndash; equator as starting line, Prime Meridian as the second axis. Connect directly to grid references from L3: &ldquo;along the corridor, up the stairs&rdquo;</li>
+    <li>Students locate Sydney using coordinates on the world atlas map as a guided example</li>
+    <li>Teacher models locating a place by coordinates; students practise 2&ndash;3 examples as a class before working independently</li>
+    <li>Coordinate challenge: students receive five coordinate pairs and locate them in the atlas, recording the place name, continent, and one interesting observation</li>
+    <li>Verification as a class using Google Maps coordinate search. Mid-unit checkpoint: collect L5&ndash;8 work from all students</li>
+  </ul>
+</div>
+
+<!-- Print Package -->
+<div class="print-package" id="print-package">
+  <div class="print-package-header" onclick="toggleCollapsible('print-package')">
+    <h3>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print Package
+    </h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="print-package-body">
+    <div class="print-package-content">
+      <div class="class-size-input">
+        <label for="classSize">Students in class:</label>
+        <input type="number" id="classSize" value="28" min="1" max="40" onchange="updateQuantities()" oninput="updateQuantities()">
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Coordinate Challenge Sheet</div>
+          <div class="print-item-detail">A4, prints 2-up (two copies per page). Table with five coordinate pairs (Paris, Sydney, Singapore, Cairo, Wellington). Students locate each in the atlas and record the place name, continent, and one observation.</div>
+        </div>
+        <div class="print-item-qty" data-rule="half-class">14 sheets</div>
+        <div class="print-item-action">
+          <button class="print-btn" onclick="printTemplate('coordinate-challenge','a4')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Simplified World Map (Support)</div>
+          <div class="print-item-detail">A4. World outline with latitude lines every 30° and longitude lines every 30°, clearly labelled. For support students only. One per student.</div>
+        </div>
+        <div class="print-item-qty">8&ndash;10</div>
+        <div class="print-item-action">
+          <button class="print-btn" onclick="printTemplate('simplified-map','a4')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--color-card-border);">
+        <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);margin-bottom:.5rem;">Prepare Separately</div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Paper Atlas (World Map)</div>
+          <div class="print-item-detail">School atlas open to world map page with latitude/longitude grid. One per student. Ensure grid is clearly visible.</div>
+        </div>
+        <div class="print-item-qty" data-rule="class">28</div>
+        <div class="print-item-action"><span class="separate-tag">Source from school atlas set</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Physical Globe</div>
+          <div class="print-item-detail">For teacher demonstration in Stage 1. Optional but highly recommended for making the equator–as-belt analogy concrete.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Optional</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Google Maps Access</div>
+          <div class="print-item-detail">Computer/laptop and IWB or projector. For Stage 4 verification: projecting Google Maps coordinate search results.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Check</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Meta Grid -->
+<div class="meta-grid">
+  <div class="meta-item"><div class="meta-label">Teaching Mode</div><div class="meta-value">Explicit teaching with structured practice</div></div>
+  <div class="meta-item"><div class="meta-label">Grouping</div><div class="meta-value">Whole class, then individual</div></div>
+  <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">50 minutes</div></div>
+  <div class="meta-item"><div class="meta-label">Syllabus</div><div class="meta-value">HS3-GEO-01</div></div>
+  <div class="meta-item"><div class="meta-label">Prior Knowledge</div><div class="meta-value">Grid references (L3 &ndash; direct precursor, &ldquo;along the corridor, up the stairs&rdquo;); atlas navigation (L1&ndash;3); world map familiarity (L3); Sydney regional knowledge (L6&ndash;8)</div></div>
+  <div class="meta-item"><div class="meta-label">Enables</div><div class="meta-value">Coordinates used again in L15 (megacities &ndash; locating Mumbai and Sydney globally). Global-scale map reading assumed from L10 onward. Mid-unit checkpoint: collects L5&ndash;8 artefacts.</div></div>
+</div>
+
+<!-- LI/SC Card -->
+<div class="li-sc-card">
+  <h2>Learning Intention</h2>
+  <p class="li-text">Use latitude and longitude coordinates to locate places on Earth</p>
+  <h2>Success Criteria</h2>
+  <ul>
+    <li>Explain what latitude and longitude are and why they are useful</li>
+    <li>Use a coordinate pair to locate a place on a world map</li>
+    <li>Give the approximate coordinates of Sydney</li>
+  </ul>
+</div>
+
+<!-- Lesson Structure -->
+<h2 class="section-heading">Lesson Structure</h2>
+
+<!-- Stage 1: Latitude and Longitude -->
+<div class="stage-card stage-1">
+  <div class="stage-card-header">
+    <div class="stage-number">1</div>
+    <div><h3>Latitude and Longitude</h3><div class="stage-context">Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Begin with the globe analogy. Introduce latitude and longitude as two axes for locating places on Earth. If a physical globe is available, use it – the equator-as-belt, poles-as-top-and-bottom analogy is powerful when students can see and touch it.</p>
+      <p><strong>Latitude:</strong> Lines that run <em>horizontally</em> around the Earth, with the equator as the starting line (0°). Distances are measured north or south of the equator: 0° at the equator, 90°N at the North Pole, 90°S at the South Pole.</p>
+      <p><strong>Longitude:</strong> Lines that run <em>vertically</em> (north to south), with the Prime Meridian as the starting line (0°). Distances are measured east or west of the Prime Meridian: 0° on the Prime Meridian, 180°E and 180°W on the opposite side of Earth.</p>
+      <p>Connect explicitly to grid references from L3: <em>You already know how to read two axes on a map to find a location: along the corridor, up the stairs. Latitude and longitude do exactly the same thing, but for the whole Earth. Latitude is like the &ldquo;up the stairs&rdquo; – it measures distance north or south. Longitude is like the &ldquo;along the corridor&rdquo; – it measures distance east or west.</em></p>
+      <p>Demonstrate on a world atlas or globe: Find the equator. Find the Prime Meridian. Show the four latitude zones: polar (90°&ndash;60°), mid-latitude (60°&ndash;30°), and tropical (30°&ndash;0°) – both north and south. Explain that coordinates are always written as (latitude, longitude), with direction labels: 33°S, 151°E is Sydney&rsquo;s approximate position.</p>
+      <p>As a guided example, locate Sydney: <em>Sydney is about 33 degrees south of the equator (latitude 33°S) and about 151 degrees east of the Prime Meridian (longitude 151°E). On your atlas map, find the 30°S latitude line, then trace east until you find the 150°E longitude line. Their intersection is very close to Sydney. Let&rsquo;s check: can you see Sydney on your map near that spot?</em></p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Physical globe <span class="mat-note">if available, for equator/Prime Meridian analogy</span></li>
+        <li>Paper atlas <span class="mat-note">world map page, one per student</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 2: Guided Practice -->
+<div class="stage-card stage-2">
+  <div class="stage-card-header">
+    <div class="stage-number">2</div>
+    <div><h3>Guided Practice</h3><div class="stage-context">Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Teacher models locating a place by coordinates on the atlas. Work through three examples as a class, using familiar places to build confidence: London, Tokyo, and Cairo.</p>
+      <h4>Example 1: London</h4>
+      <p>Coordinates: 51°N, 0°W. Model the thinking aloud: <em>London is 51 degrees north of the equator, so I find the 50°N latitude line and trace slightly north to 51°N. London is on the Prime Meridian – that&rsquo;s 0° longitude – so I find where 51°N meets the Prime Meridian. There&rsquo;s London.</em> Have students find it on their own atlas at the same time.</p>
+      <h4>Example 2: Tokyo</h4>
+      <p>Coordinates: 35°N, 139°E. <em>Tokyo is 35 degrees north of the equator. I find the 35°N line. Tokyo is 139 degrees east of the Prime Meridian. I trace east from the Prime Meridian until I find 139°E (or estimate: it&rsquo;s between 130° and 140°). The intersection is Tokyo.</em> Emphasise the logic: read latitude first, then longitude, find the intersection.</p>
+      <h4>Example 3: Cairo</h4>
+      <p>Coordinates: 30°N, 31°E. Let students try this one with minimal scaffolding: <em>Where is 30°N? Where is 31°E? Find the intersection.</em> Verify as a class.</p>
+      <p>After each example, ask: <em>How does this feel different from grid references on a local map?</em> (It&rsquo;s the same principle, but the lines are global and measured in degrees rather than grid squares.) <em>Why do you think knowing coordinates is useful for geographers?</em> (They work everywhere on Earth; you can locate a place anywhere without a map name; they&rsquo;re the same worldwide.)</p>
+      <div class="diff-block support">
+        <div class="diff-label">Support</div>
+        <p>Provide a simplified world map with latitude lines every 30° and longitude lines every 30°, clearly labelled. Reduce the number of examples to two (London and Tokyo) and model more heavily – point, say the numbers aloud, and have students echo.</p>
+      </div>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Paper atlas <span class="mat-note">world map page, one per student</span></li>
+        <li>Simplified world map <span class="mat-note">support students only, printable template below</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 3: Coordinate Challenge -->
+<div class="stage-card stage-3">
+  <div class="stage-card-header">
+    <div class="stage-number">3</div>
+    <div><h3>Coordinate Challenge</h3><div class="stage-context">Individual</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Students receive a printed coordinate challenge sheet with five coordinate pairs. For each, they locate the place in the atlas and record: coordinate pair, place name, continent, and one interesting observation.</p>
+      <h4>The Five Coordinate Pairs</h4>
+      <ol>
+        <li><strong>48°N, 2°E</strong> &ndash; Paris, France (Europe) – familiar European capital</li>
+        <li><strong>34°S, 151°E</strong> &ndash; Sydney, NSW (Oceania) – familiar local anchor; southern hemisphere</li>
+        <li><strong>1°N, 104°E</strong> &ndash; Singapore (Asia) – equator region; different continent</li>
+        <li><strong>30°N, 31°E</strong> &ndash; Cairo, Egypt (Africa) – different continent; northern hemisphere</li>
+        <li><strong>41°S, 175°E</strong> &ndash; Wellington, New Zealand (Oceania) – close to Australia; southern hemisphere</li>
+      </ol>
+      <p>These five coordinates give a good geographic spread across continents, with at least one location near Australia and one on the equator, to reinforce the learning.</p>
+      <p>Circulate and observe: Can students read both axes? Are they confusing latitude with longitude? Can they find the intersection? Note any student who struggles with the two-axis reading – this may indicate a need to revisit L3 grid reference logic.</p>
+      <div class="diff-block extension">
+        <div class="diff-label">Extension</div>
+        <p>Once students have completed the five challenges, ask them to find coordinates for at least two capital cities they have studied or that interest them. They can use the atlas to estimate: find the city, estimate its distance north or south of the equator, and estimate its distance east or west of the Prime Meridian. Record the approximate coordinates and compare as a class.</p>
+      </div>
+      <div class="diff-block support">
+        <div class="diff-label">Support</div>
+        <p>Reduce the challenge to three coordinate pairs (Sydney, Cairo, Wellington – familiar anchors and straightforward locations). Provide the simplified world map with 30° gridlines. Work through one example together before students attempt the others independently.</p>
+      </div>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Coordinate challenge sheet <span class="mat-note">one per student, printable template below</span></li>
+        <li>Paper atlas <span class="mat-note">world map page, one per student</span></li>
+        <li>Simplified world map <span class="mat-note">support students only, printable template below</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 4: Verification and Collection -->
+<div class="stage-card stage-4">
+  <div class="stage-card-header">
+    <div class="stage-number">4</div>
+    <div><h3>Verification and Collection</h3><div class="stage-context">Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Bring the class together to verify answers. Use Google Maps coordinate search, projected on the IWB, to check each coordinate pair. Type the coordinates in the format (latitude, longitude) – Google Maps will jump to that location. This is engaging and reinforces the connection between atlas and digital maps.</p>
+      <p>Work through the five challenges, one by one:</p>
+      <ul>
+        <li>Call out the coordinate pair.</li>
+        <li>Ask a student or group to share their answer: <em>Where did you find it? What continent? What did you notice?</em></li>
+        <li>Type the coordinates into Google Maps to verify. Discuss: <em>Is that the right place? Does the atlas match?</em></li>
+        <li>Students self-check their recording sheet and correct any errors.</li>
+      </ul>
+      <p>This verification step provides immediate feedback and celebrates the learning – students see their atlas work confirmed by technology they use outside school.</p>
+      <h4>Mid-Unit Checkpoint Collection</h4>
+      <p>While the class discusses and verifies, or immediately after this stage, collect all L5–8 work from students. Designate a collection point (trays, folders, or a table) and have students bring:</p>
+      <ul>
+        <li><strong>L5:</strong> Written reflection: &ldquo;Why do people choose to live on the North Shore?&rdquo;</li>
+        <li><strong>L6:</strong> Labelled Sydney map (suburbs, landmarks, regions)</li>
+        <li><strong>L7:</strong> Annotated physical features map (rivers, coast, plateaus, plains)</li>
+        <li><strong>L8:</strong> Land use map with key (residential, commercial, industrial, parkland)</li>
+      </ul>
+      <p>This collection is not a formal assessment moment – students bring work forward while discussion continues. The L5–8 portfolio informs your understanding of whether Phase 2 concepts are secure before moving into Phase 3 (L10 onward).</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps <span class="mat-note">with coordinate search, projected on IWB</span></li>
+        <li>Collection trays/folders <span class="mat-note">for L5–8 work</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Reference -->
+<h2 class="section-heading">Reference</h2>
+
+<!-- Materials & Resources -->
+<div class="collapsible" id="materials">
+  <div class="collapsible-header" onclick="toggleCollapsible('materials')">
+    <h3>Materials &amp; Resources</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <ul>
+      <li>Physical globe (if available) – teacher demonstration in Stage 1</li>
+      <li>Paper atlas (world map page with latitude/longitude grid) – one per student</li>
+      <li>Coordinate challenge sheet (teacher-created, printable template below) – one per student</li>
+      <li>Simplified world map (for support students, teacher-sourced &ndash; see print package notes) &ndash; 8&ndash;10 copies</li>
+      <li>Google Maps (coordinate search function) – projected on IWB for Stage 4 verification</li>
+      <li>Collection trays or folders – for L5–8 checkpoint work</li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- Atlas Work -->
+<div class="collapsible" id="atlas-work">
+  <div class="collapsible-header" onclick="toggleCollapsible('atlas-work')">
+    <h3>Atlas Work</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <p>Students use the latitude/longitude grid on the world atlas map to locate places with given coordinates. This is the first time students navigate a world-scale atlas map with coordinates – building on the grid reference logic from L3 but at global scale. The practice moves from teacher-modelled (Stage 2) to guided whole-class examples (London, Tokyo, Cairo) to independent practice (Stage 3 challenge).</p>
+    <p>Key focus: reading two axes simultaneously and finding the intersection point. Encourage students to verbalise the process: &ldquo;I&rsquo;m finding 30°N latitude first, then 31°E longitude, then looking where they cross.&rdquo; This metacognitive narration reinforces the conceptual link to L3 grid references.</p>
+  </div></div>
+</div>
+
+<!-- Observational Assessment -->
+<div class="collapsible" id="assessment">
+  <div class="collapsible-header" onclick="toggleCollapsible('assessment')">
+    <h3>Observational Assessment</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <h4>What to look for</h4>
+    <ul>
+      <li>Can students read both axes (latitude and longitude) simultaneously, or do they confuse which is which?</li>
+      <li>Can students find the intersection of two latitude/longitude lines?</li>
+      <li>Do students understand why coordinates are useful – that they work globally and consistently?</li>
+      <li>Can students approximate the coordinates of a known place (e.g. Sydney, London) when given a map?</li>
+      <li>Do stronger students identify interesting geographic patterns from the coordinate pairs? (e.g. &ldquo;Singapore is on the equator, but Sydney and Wellington are in the southern hemisphere&rdquo;)</li>
+    </ul>
+    <h4>How to capture</h4>
+    <p>Circulate during Stage 3. Watch for students who struggle with axis identification or intersection-finding. Note: Do they point correctly at latitude first? Do they trace the correct direction? Can they estimate when gridlines are not marked? The self-check in Stage 4 (Google Maps verification) provides immediate feedback and shows you which students have secured the skill. Keep the completed coordinate challenge sheets as evidence of independent performance.</p>
+    <h4>What it tells you</h4>
+    <p>This assessment reveals whether students have bridged from local grid references (L3) to global coordinates. If students struggle with axis reading, the L3 logic may need reinforcing – the principle is identical, just at a different scale. If students confuse latitude and longitude despite clear teaching, this is a common difficulty; consider using the mnemonic &ldquo;latitude is horizontal lines&rdquo; as a memory aid in future lessons. The Google Maps verification in Stage 4 shows you which students can transfer the atlas skill to a digital tool – important for L15 when they locate megacities using online maps.</p>
+  </div></div>
+</div>
+
+<!-- Printable Templates -->
+<h2 class="section-heading">Printable Templates</h2>
+
+<!-- Coordinate Challenge Sheet -->
+<div class="printable-section" id="coordinate-challenge">
+  <div class="printable-header">
+    <h3>Coordinate Challenge Sheet</h3>
+    <button class="print-btn" onclick="printTemplate('coordinate-challenge','a4')">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print A4
+    </button>
+  </div>
+  <div class="printable-body">
+    <p style="font-size:.85rem;color:var(--color-text-muted);margin-bottom:.75rem;"><strong>Name:</strong> _________________________________</p>
+    <p style="font-size:.82rem;color:var(--color-text-muted);margin-bottom:1rem;">Use the world atlas map to find each coordinate pair. Record the place name, continent, and one interesting observation.</p>
+
+    <table class="challenge-table">
+      <thead>
+        <tr>
+          <th style="width:130px;">Coordinate Pair</th>
+          <th>Place Name</th>
+          <th style="width:100px;">Continent</th>
+          <th>One Interesting Observation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="coord-cell">48°N, 2°E</td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+        </tr>
+        <tr>
+          <td class="coord-cell">34°S, 151°E</td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+        </tr>
+        <tr>
+          <td class="coord-cell">1°N, 104°E</td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+        </tr>
+        <tr>
+          <td class="coord-cell">30°N, 31°E</td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+        </tr>
+        <tr>
+          <td class="coord-cell">41°S, 175°E</td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+          <td style="height:2rem;"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="writing-section">
+      <h4>Extension: Find Coordinates of Capital Cities</h4>
+      <p style="font-size:.82rem;color:var(--color-text-muted);margin-bottom:.5rem;">Use the atlas to estimate the coordinates of two capital cities. (Find the city, estimate its distance north or south of the equator for latitude, and east or west of the Prime Meridian for longitude.)</p>
+      <div class="sentence-stem">Capital city 1: _____________</div>
+      <div class="writing-lines"></div>
+      <div class="sentence-stem">Capital city 2: _____________</div>
+      <div class="writing-lines"></div>
+    </div>
+
+    <!-- Second copy for 2-up printing (hidden on screen) -->
+    <div class="two-up-copy">
+      <hr class="two-up-divider">
+      <p class="name-line" style="font-size:.85rem;color:var(--color-text-muted);margin-bottom:.4rem;"><strong>Name:</strong> _________________________________</p>
+      <p style="font-size:.82rem;color:var(--color-text-muted);margin-bottom:.6rem;">Use the world atlas map to find each coordinate pair. Record the place name, continent, and one interesting observation.</p>
+
+      <table class="challenge-table">
+        <thead>
+          <tr>
+            <th style="width:130px;">Coordinate Pair</th>
+            <th>Place Name</th>
+            <th style="width:100px;">Continent</th>
+            <th>One Interesting Observation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="coord-cell">48&deg;N, 2&deg;E</td><td style="height:2rem;"></td><td style="height:2rem;"></td><td style="height:2rem;"></td></tr>
+          <tr><td class="coord-cell">34&deg;S, 151&deg;E</td><td style="height:2rem;"></td><td style="height:2rem;"></td><td style="height:2rem;"></td></tr>
+          <tr><td class="coord-cell">1&deg;N, 104&deg;E</td><td style="height:2rem;"></td><td style="height:2rem;"></td><td style="height:2rem;"></td></tr>
+          <tr><td class="coord-cell">30&deg;N, 31&deg;E</td><td style="height:2rem;"></td><td style="height:2rem;"></td><td style="height:2rem;"></td></tr>
+          <tr><td class="coord-cell">41&deg;S, 175&deg;E</td><td style="height:2rem;"></td><td style="height:2rem;"></td><td style="height:2rem;"></td></tr>
+        </tbody>
+      </table>
+
+      <div class="writing-section">
+        <h4>Extension: Find Coordinates of Capital Cities</h4>
+        <p style="font-size:.82rem;color:var(--color-text-muted);margin-bottom:.5rem;">Use the atlas to estimate the coordinates of two capital cities. (Find the city, estimate its distance north or south of the equator for latitude, and east or west of the Prime Meridian for longitude.)</p>
+        <div class="sentence-stem">Capital city 1: _____________</div>
+        <div class="writing-lines"></div>
+        <div class="sentence-stem">Capital city 2: _____________</div>
+        <div class="writing-lines"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Simplified World Map - Teacher Sourced -->
+<div class="printable-section" id="simplified-map">
+  <div class="printable-header">
+    <h3>Simplified World Map (Support)</h3>
+  </div>
+  <div class="printable-body">
+    <div class="map-note" style="padding:1.25rem;margin:0;">
+      <p style="font-weight:600;margin-bottom:.75rem;">Teacher-sourced map required (8&ndash;10 copies, for support students only)</p>
+      <p style="margin-bottom:.75rem;">Source a simplified world map with latitude lines every 30&deg; and longitude lines every 30&deg;, clearly labelled. Continent outlines should be recognisable. The map should include the Equator, Prime Meridian, and degree labels on both axes.</p>
+      <p style="font-size:.82rem;color:var(--color-text-muted);"><strong>Suggested sources:</strong> School atlas world map page photocopied to A4, or search for &ldquo;blank world map with latitude longitude lines labelled&rdquo; for a printable version. The key requirement is clearly labelled gridlines at 30&deg; intervals so students can practise reading coordinates with a visual scaffold.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="page-footer">Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; Lesson 9 &middot; Draft</div>
+
+</div>
+
+<script>
+function toggleCollapsible(id){const el=document.getElementById(id);el.classList.toggle('open')}
+
+function updateQuantities() {
+  const n = parseInt(document.getElementById('classSize').value) || 28;
+  document.querySelectorAll('.print-item-qty').forEach(el => {
+    const rule = el.dataset.rule;
+    if (rule === 'class') el.textContent = n + ' sheets';
+    if (rule === 'half-class') el.textContent = Math.ceil(n / 2) + ' sheets (2-up)';
+  });
+}
+
+function printTemplate(id, size) {
+  const el = document.getElementById(id);
+  el.classList.add('print-target');
+  document.body.classList.add('printing-template-' + size);
+  window.print();
+  document.body.classList.remove('printing-template-' + size);
+  el.classList.remove('print-target');
+}
+
+document.addEventListener('DOMContentLoaded', updateQuantities);
+</script>
+</body>
+</html>

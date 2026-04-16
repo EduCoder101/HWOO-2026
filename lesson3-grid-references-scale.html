@@ -36,7 +36,7 @@
   --radius-sm: 8px;
   --shadow-card: 0 2px 8px rgba(40, 60, 40, 0.06), 0 1px 3px rgba(40, 60, 40, 0.04);
   --shadow-hover: 0 4px 16px rgba(40, 60, 40, 0.1);
-  --max-width: 860px;
+  --max-width: 1160px;
 }
 
 /* ─── Reset & Base ─── */
@@ -325,6 +325,70 @@ body {
 .stage-card-body li {
   margin-bottom: 0.35rem;
   font-size: 0.95rem;
+}
+
+.stage-card-content {
+  display: flex;
+}
+
+.stage-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Materials sidebar */
+.stage-materials {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--color-sage-light);
+  border-left: 1px solid var(--color-card-border);
+  padding: 1.25rem;
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-materials-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-sage);
+  margin-bottom: 0.75rem;
+}
+
+.stage-materials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stage-materials li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.stage-materials li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-sage);
+}
+
+.stage-materials .mat-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  display: block;
+  margin-top: 0.15rem;
 }
 
 /* ─── Differentiation Tags ─── */
@@ -783,6 +847,12 @@ body.printing-template-a4 .cue-sheet-pair .cue-sheet {
   white-space: nowrap;
 }
 
+/* Responsive: stack materials below on narrow screens */
+@media (max-width: 800px) {
+  .stage-card-content { flex-direction: column; }
+  .stage-materials { width: 100%; border-left: none; border-top: 1px solid var(--color-card-border); }
+}
+
 /* ─── Print Styles ─── */
 @media print {
   body { background: white; font-size: 11pt; }
@@ -799,6 +869,7 @@ body.printing-template-a4 .cue-sheet-pair .cue-sheet {
   .collapsible-body { max-height: none !important; }
   .print-btn, .page-print-btn, .page-print-bar, .print-package { display: none; }
   .place-card { break-inside: avoid; }
+  .stage-materials { background: #f5f8f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
 /* Print individual template - A4 */
@@ -1007,10 +1078,12 @@ body.printing-template-a4 .print-target .printable-body {
     <div class="stage-number">1</div>
     <div>
       <h3>Grid References</h3>
-      <div class="stage-context">Classroom · Whole class then guided practice</div>
+      <div class="stage-context">25 min &middot; Whole class then guided practice</div>
     </div>
   </div>
-  <div class="stage-card-body">
+  <div class="stage-card-content">
+
+    <div class="stage-card-body">
     <h4>Explicit teaching of grid references</h4>
     <p>Introduce the grid reference system using the atlas map of Sydney. Establish the convention: the horizontal axis (eastings) is read first, then the vertical axis (northings). Teach the mnemonic <strong>'along the corridor, up the stairs'</strong> and work through several examples as a class, moving from teacher-led to student-called answers. Students practise giving and finding four-figure grid references on the Sydney atlas map.</p>
 
@@ -1025,6 +1098,14 @@ body.printing-template-a4 .print-target .printable-body {
       Provide a grid reference cue sheet with the mnemonic and a worked example that stays on the desk throughout the lesson. This is the reference point students return to whenever they lose the axis order. <em>Printable cue sheet below.</em>
     </div>
   </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Paper atlas (Sydney page)<span class="mat-note">one per pair or projected</span></li>
+        <li>Blank A3 world and Australia maps<span class="mat-note">one per pair</span></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <!-- STAGE 2 -->
@@ -1033,10 +1114,12 @@ body.printing-template-a4 .print-target .printable-body {
     <div class="stage-number">2</div>
     <div>
       <h3>Place Matching Exercise</h3>
-      <div class="stage-context">Classroom · Individual or pairs · Two streams</div>
+      <div class="stage-context">25 min &middot; Individual or pairs &middot; Two streams</div>
     </div>
   </div>
-  <div class="stage-card-body">
+  <div class="stage-card-content">
+
+    <div class="stage-card-body">
     <p>The class splits into two streams. Half work with a world map (A3 printout, country borders and names only – no cities, landmarks or other features marked), half with a map of Australia (A3 printout, state borders and names only). Each stream receives a set of 8 place cards, each containing a photograph, a short description, and the place name.</p>
 
     <p>Students must <strong>use the atlas to find each place</strong>, then locate the corresponding position on their blank A3 map using the grid reference system. They record the grid reference, then arrange the card around the A3 map and draw a line connecting it to the correct location. The atlas is the navigation tool; the A3 map is the display.</p>
@@ -1151,6 +1234,16 @@ body.printing-template-a4 .print-target .printable-body {
 
     <p><strong>Close:</strong> Pin or display both annotated maps on the classroom wall. These become reference displays for the remainder of the unit. Brief whole-class share: each stream nominates one place that surprised them and one question from the post-it notes that they most want answered.</p>
   </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Place cards<span class="mat-note">2 sets of 8, printable template below</span></li>
+        <li>Paper atlas<span class="mat-note">continues from Stage 1</span></li>
+        <li>Blank maps<span class="mat-note">continues from Stage 1</span></li>
+        <li>Post-it notes and pens<span class="mat-note">for inquiry wall</span></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <!-- STAGE 3 -->
@@ -1159,10 +1252,12 @@ body.printing-template-a4 .print-target .printable-body {
     <div class="stage-number">3</div>
     <div>
       <h3>Scale</h3>
-      <div class="stage-context">Classroom · Whole class then individual</div>
+      <div class="stage-context">20 min &middot; Whole class then individual</div>
     </div>
   </div>
-  <div class="stage-card-body">
+  <div class="stage-card-content">
+
+    <div class="stage-card-body">
     <h4>Explicit teaching of scale bars</h4>
     <p>Introduce scale bars using the atlas. Establish the principle: a map is a scaled-down representation of the real world, and the scale bar tells you how to convert map distance to real distance. Demonstrate with one worked example on the atlas – measure a distance with a ruler, then use the scale bar to convert to kilometres.</p>
 
@@ -1175,6 +1270,16 @@ body.printing-template-a4 .print-target .printable-body {
     </ul>
     <p>After each round, discuss: how close were the estimates? What makes distance hard to estimate on a map? The estimation step is the most important part – it builds spatial intuition, not just procedural scale bar use.</p>
   </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps<span class="mat-note">teacher-operated, distance measurement tool</span></li>
+        <li>Paper atlas<span class="mat-note">continues</span></li>
+        <li>Scale bar proforma<span class="mat-note">printed, one per student; printable template below</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
 </div>
 
 <!-- STAGE 4 -->
@@ -1183,10 +1288,12 @@ body.printing-template-a4 .print-target .printable-body {
     <div class="stage-number">4</div>
     <div>
       <h3>Travel Plan</h3>
-      <div class="stage-context">Classroom · Individual</div>
+      <div class="stage-context">20 min &middot; Individual</div>
     </div>
   </div>
-  <div class="stage-card-body">
+  <div class="stage-card-content">
+
+    <div class="stage-card-body">
     <p>Students plan a round-the-world trip from Sydney. Each pair or individual receives one of five pre-made travel sets (see below), each containing five destinations drawn from the place cards used in Stage 2. Distributing different sets means pairs cannot simply copy each other's routes, and the closing discussion produces a wider range of comparisons. Students decide the order of their route, then for each stop they record: the grid reference, the estimated distance from the previous stop, and the scale-bar-calculated distance. The final entry returns to Sydney.</p>
 
     <p>The teacher may provide a proforma for this task or have students work in their books. <em>Printable proforma below.</em></p>
@@ -1259,6 +1366,18 @@ body.printing-template-a4 .print-target .printable-body {
 
     <p><strong>Close:</strong> 2–3 students share their route with the class. Brief discussion: which routes covered the greatest total distance? Did anyone find a more efficient order for the same five stops?</p>
   </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Destination place cards<span class="mat-note">pre-made sets, from Stage 2</span></li>
+        <li>Paper atlas<span class="mat-note">continues</span></li>
+        <li>Blank world map<span class="mat-note">from Stage 1</span></li>
+        <li>Google Maps<span class="mat-note">for distance verification</span></li>
+        <li>Travel plan proforma<span class="mat-note">one per student; printable template below</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
 </div>
 
 <!-- ═══ PRINTABLE TEMPLATES ═══ -->

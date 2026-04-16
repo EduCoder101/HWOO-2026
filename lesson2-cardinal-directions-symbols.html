@@ -11,7 +11,7 @@
   --color-bg: #F5F7F3; --color-card: #FFFFFF; --color-card-border: #D4DDCF;
   --color-text: #2D3A2D; --color-text-muted: #5E6E58; --color-heading: #1B3A2A;
   --color-accent: #3A7D5C; --color-accent-light: #E2F0E8; --color-accent-hover: #2D6148;
-  --color-sage: #6B8F71; --color-sage-light: #EAF2EB;
+  --color-sage: #6B8F71; --color-sage-light: #EAF2EB; --color-sage-border: #B8D4B8;
   --color-support: #4A7FA0; --color-support-light: #E4EEF5;
   --color-extension: #7B6B9E; --color-extension-light: #EEEAF5;
   --color-stage-1: #3A7D5C; --color-stage-2: #4A7FA0; --color-stage-3: #8A6B3D;
@@ -20,7 +20,7 @@
   --radius: 12px; --radius-sm: 8px;
   --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
   --shadow-hover: 0 4px 16px rgba(40,60,40,0.1);
-  --max-width: 860px;
+  --max-width: 1160px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
@@ -56,12 +56,22 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .stage-3 .stage-number{background:var(--color-stage-3)}
 .stage-card-header h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading)}
 .stage-card-header .stage-context{font-size:.8rem;color:var(--color-text-muted);font-weight:400}
-.stage-card-body{padding:1.5rem}
+
+.stage-card-content{display:flex}
+.stage-card-body{flex:1;padding:1.5rem;min-width:0}
 .stage-card-body h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading);margin:1.25rem 0 .5rem}
 .stage-card-body h4:first-child{margin-top:0}
 .stage-card-body p{margin-bottom:.85rem;font-size:.95rem}
 .stage-card-body ul,.stage-card-body ol{padding-left:1.25rem;margin-bottom:.85rem}
 .stage-card-body li{margin-bottom:.35rem;font-size:.95rem}
+
+/* Materials sidebar */
+.stage-materials{width:220px;flex-shrink:0;background:var(--color-sage-light);border-left:1px solid var(--color-card-border);padding:1.25rem;font-size:.82rem;display:flex;flex-direction:column}
+.stage-materials-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-sage);margin-bottom:.75rem}
+.stage-materials ul{list-style:none;padding:0;margin:0}
+.stage-materials li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;line-height:1.4;color:var(--color-text)}
+.stage-materials li::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--color-sage)}
+.stage-materials .mat-note{font-size:.75rem;color:var(--color-text-muted);font-style:italic;display:block;margin-top:.15rem}
 .diff-block{border-radius:var(--radius-sm);padding:.85rem 1rem;margin:.85rem 0;font-size:.9rem}
 .diff-block.extension{background:var(--color-extension-light);border-left:3px solid var(--color-extension)}
 .diff-block.support{background:var(--color-support-light);border-left:3px solid var(--color-support)}
@@ -142,8 +152,15 @@ body.printing-template-a4 .print-target .printable-header{display:none!important
 body.printing-template-a4 .print-target .printable-body{padding:1.5cm}
 body.printing-template-a4 .compass-rose-card{min-height:12cm}
 body.printing-template-a4 .phrase-slip{min-height:12cm}
+
+/* Responsive: stack materials below on narrow screens */
+@media (max-width: 800px) {
+  .stage-card-content{flex-direction:column}
+  .stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}
+}
+
 @page{margin:1.5cm}
-@media print{body{background:white;font-size:11pt}.container{max-width:100%;padding:0}.lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-card,.collapsible,.printable-section{box-shadow:none;break-inside:avoid}.collapsible-body{max-height:none!important}.page-print-btn,.page-print-bar,.print-package{display:none}}
+@media print{body{background:white;font-size:11pt}.container{max-width:100%;padding:0}.lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-card,.collapsible{box-shadow:none;break-inside:avoid}.collapsible-body{max-height:none!important}.page-print-btn,.page-print-bar,.print-package{display:none}.stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -285,9 +302,10 @@ body.printing-template-a4 .phrase-slip{min-height:12cm}
 <div class="stage-card stage-1">
   <div class="stage-card-header">
     <div class="stage-number">1</div>
-    <div><h3>Compass and Symbols</h3><div class="stage-context">Classroom · Whole class then individual/pairs</div></div>
+    <div><h3>Compass and Symbols</h3><div class="stage-context">30 min &middot; Whole class then individual/pairs</div></div>
   </div>
-  <div class="stage-card-body">
+  <div class="stage-card-content">
+    <div class="stage-card-body">
     <h4>Compass rose labelling</h4>
     <p>Students draw their own compass rose following the <a href="https://www.youtube.com/watch?v=swXwvbN_TC8" target="_blank">compass rose drawing video</a> (project on the interactive whiteboard). Work through cardinal points first (N, S, E, W), then intercardinal (NE, SE, SW, NW). Students draw and label in their books as the video progresses. This produces a better result than a printed template and gives students ownership of the tool they'll use throughout the unit.</p>
 
@@ -309,6 +327,17 @@ body.printing-template-a4 .phrase-slip{min-height:12cm}
 
     <h4>Map symbols and key</h4>
     <p>Quick consolidation – students have encountered the atlas key in Lesson 1. Using the local street map and atlas, identify a set of symbols together. Establish the principle: every map has a key; a symbol means nothing without it. Move at pace – prior knowledge means this does not need extended treatment.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Paper atlas <span class="mat-note">one per student</span></li>
+        <li>Compass rose diagram <span class="mat-note">projected or printed A3</span></li>
+        <li>Phrase slips <span class="mat-note">printable template below</span></li>
+        <li>Real compasses <span class="mat-note">one per pair</span></li>
+        <li>Local street map <span class="mat-note">printed A4 or A3</span></li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -316,11 +345,21 @@ body.printing-template-a4 .phrase-slip{min-height:12cm}
 <div class="stage-card stage-2">
   <div class="stage-card-header">
     <div class="stage-number">2</div>
-    <div><h3>HTML Symbol Challenge</h3><div class="stage-context">Classroom · Pairs on one device</div></div>
+    <div><h3>HTML Symbol Challenge</h3><div class="stage-context">20 min &middot; Pairs on one device</div></div>
   </div>
-  <div class="stage-card-body">
+  <div class="stage-card-content">
+    <div class="stage-card-body">
     <p>Pairs on one device. Students work through the HTML symbol challenge – each correct identification unlocks the next clue. Wrong answers require a retry; there is no penalty and no teacher intervention needed for resets. The self-checking mechanism allows the teacher to circulate and observe pair reasoning rather than manage answers.</p>
     <p><strong>Transition:</strong> before moving outside, pairs check compasses are working and collect their orienteering card for their starting route. Teacher confirms the outdoor space is ready.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Paper atlas <span class="mat-note">continues from Stage 1</span></li>
+        <li>Map symbol matching cards <span class="mat-note">or reference sheet</span></li>
+        <li>Device <span class="mat-note">one per pair; WiFi required</span></li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -328,9 +367,10 @@ body.printing-template-a4 .phrase-slip{min-height:12cm}
 <div class="stage-card stage-3">
   <div class="stage-card-header">
     <div class="stage-number">3</div>
-    <div><h3>Orienteering Race</h3><div class="stage-context">Outdoor · Pairs</div></div>
+    <div><h3>Orienteering Race</h3><div class="stage-context">40 min &middot; Outdoor &middot; Pairs</div></div>
   </div>
-  <div class="stage-card-body">
+  <div class="stage-card-content">
+    <div class="stage-card-body">
     <h4>Stride calibration – balcony (whole class)</h4>
     <p>Before splitting onto routes, the whole class moves to the balcony. Each student walks the marked 10m distance at a natural pace, counting strides. Students record their stride count on the phrase slip and calculate their personal stride length (10 ÷ number of strides). Pairs discuss: if a card says '15 metres north-east,' how many of your strides is that? Confirm everyone has a usable stride length before moving to the courts.</p>
 
@@ -349,6 +389,17 @@ body.printing-template-a4 .phrase-slip{min-height:12cm}
     </div>
 
     <p><strong>Close:</strong> Pairs record revealed word(s) on the phrase slip. Return to class. Fast-finishing pairs share the phrase MAPS SHOW OUR WORLD – brief class discussion on what it means as a geography principle.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Orienteering cards <span class="mat-note">printable template below</span></li>
+        <li>Paper atlas <span class="mat-note">continues from earlier stages</span></li>
+        <li>School grounds map <span class="mat-note">printed A4, for support</span></li>
+        <li>Real compasses <span class="mat-note">one per pair</span></li>
+        <li>Phrase slip <span class="mat-note">for recording strides and revealed words</span></li>
+      </ul>
+    </div>
   </div>
 </div>
 

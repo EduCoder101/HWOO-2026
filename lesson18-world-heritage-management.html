@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 18 · World Heritage: Management and Threats | Place &amp; Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Root Variables */
+    :root {
+      --color-bg: #F5F7F3;
+      --color-card: #FFFFFF;
+      --color-card-border: #D4DDCF;
+      --color-text: #2D3A2D;
+      --color-text-muted: #5E6E58;
+      --color-heading: #1B3A2A;
+      --color-accent: #3A7D5C;
+      --color-accent-light: #E2F0E8;
+      --color-accent-hover: #2D6148;
+      --color-sage: #6B8F71;
+      --color-sage-light: #EAF2EB;
+      --color-support: #4A7FA0;
+      --color-support-light: #E4EEF5;
+      --color-extension: #7B6B9E;
+      --color-extension-light: #EEEAF5;
+      --color-stage-1: #3A7D5C;
+      --color-stage-2: #4A7FA0;
+      --color-stage-3: #8A6B3D;
+      --color-divider: #C8D4C2;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
+      --shadow-hover: 0 4px 16px rgba(40,60,40,0.1);
+      --max-width: 1160px;
+    }
+
+    /* Base CSS */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--max-width);margin:0 auto;padding:2rem 1.5rem 4rem}
+    .lesson-header{background:linear-gradient(135deg,#1B3A2A 0%,#2D5E40 100%);color:white;padding:2.5rem 2rem 2rem;border-radius:var(--radius);margin-bottom:1.5rem;position:relative;overflow:hidden}
+    .lesson-header::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
+    .lesson-header .phase-tag{display:inline-block;font-family:var(--font-body);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;background:rgba(255,255,255,.15);padding:.3em .8em;border-radius:20px;margin-bottom:1rem}
+    .lesson-header h1{font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}
+    .lesson-header .lesson-number{font-weight:400;opacity:.7}
+    .lesson-header .subtitle{font-size:1.05rem;opacity:.85;font-weight:400}
+    .lesson-summary{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-card)}
+    .lesson-summary .summary-label{font-family:var(--font-display);font-size:.85rem;font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+    .lesson-summary ul{list-style:none;padding:0;margin:0}
+    .lesson-summary li{position:relative;padding-left:1.25rem;margin-bottom:.35rem;font-size:.9rem;line-height:1.5}
+    .lesson-summary li::before{content:'\203A';position:absolute;left:0;color:var(--color-accent);font-weight:700;font-size:1.1rem;line-height:1.35}
+    .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-bottom:2rem}
+    .meta-item{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);padding:.85rem 1rem}
+    .meta-item .meta-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:.25rem}
+    .meta-item .meta-value{font-size:.9rem;line-height:1.45;color:var(--color-text)}
+    .li-sc-card{background:var(--color-accent-light);border-left:4px solid var(--color-accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.5rem;margin-bottom:2.5rem}
+    .li-sc-card h2{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--color-heading);margin-bottom:.5rem}
+    .li-sc-card .li-text{font-size:1rem;margin-bottom:1rem;font-weight:500}
+    .li-sc-card ul{list-style:none;padding:0}
+    .li-sc-card li{position:relative;padding-left:1.5rem;margin-bottom:.4rem;font-size:.95rem}
+    .li-sc-card li::before{content:'\2713';position:absolute;left:0;color:var(--color-accent);font-weight:700}
+    .section-heading{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--color-heading);margin:2.5rem 0 1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--color-divider)}
+    .stage-card{background:var(--color-card);border-radius:var(--radius);border:1px solid var(--color-card-border);box-shadow:var(--shadow-card);margin-bottom:1.5rem;overflow:hidden;transition:box-shadow .2s ease}
+    .stage-card:hover{box-shadow:var(--shadow-hover)}
+    .stage-card-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--color-card-border)}
+    .stage-number{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:white;flex-shrink:0}
+    .stage-1 .stage-number{background:var(--color-stage-1)}
+    .stage-2 .stage-number{background:var(--color-stage-2)}
+    .stage-3 .stage-number{background:var(--color-stage-3)}
+    .stage-card-header h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading)}
+    .stage-card-header .stage-context{font-size:.8rem;color:var(--color-text-muted);font-weight:400}
+    .stage-card-content{display:flex}
+    .stage-card-body{flex:1;padding:1.5rem;min-width:0}
+    .stage-card-body h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading);margin:1.25rem 0 .5rem}
+    .stage-card-body h4:first-child{margin-top:0}
+    .stage-card-body p{margin-bottom:.85rem;font-size:.95rem}
+    .stage-card-body ul,.stage-card-body ol{padding-left:1.25rem;margin-bottom:.85rem}
+    .stage-card-body li{margin-bottom:.35rem;font-size:.95rem}
+    .stage-card-body em{font-style:italic;color:var(--color-text-muted)}
+    .stage-card-body strong{font-weight:600;color:var(--color-heading)}
+    .diff-block{border-radius:var(--radius-sm);padding:.85rem 1rem;margin:.85rem 0;font-size:.9rem}
+    .diff-block.extension{background:var(--color-extension-light);border-left:3px solid var(--color-extension)}
+    .diff-block.support{background:var(--color-support-light);border-left:3px solid var(--color-support)}
+    .diff-label{font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+    .diff-block.extension .diff-label{color:var(--color-extension)}
+    .diff-block.support .diff-label{color:var(--color-support)}
+    .stage-materials{width:220px;flex-shrink:0;background:var(--color-sage-light);border-left:1px solid var(--color-card-border);padding:1.25rem;font-size:.82rem;display:flex;flex-direction:column}
+    .stage-materials-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-sage);margin-bottom:.75rem}
+    .stage-materials ul{list-style:none;padding:0;margin:0}
+    .stage-materials li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;line-height:1.4;color:var(--color-text)}
+    .stage-materials li::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--color-sage)}
+    .stage-materials .mat-note{font-size:.75rem;color:var(--color-text-muted);font-style:italic;display:block;margin-top:.15rem}
+    .collapsible{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+    .collapsible-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;transition:background .15s ease}
+    .collapsible-header:hover{background:var(--color-sage-light)}
+    .collapsible-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-sage);margin:0}
+    .collapsible-icon{width:24px;height:24px;border-radius:50%;background:var(--color-sage-light);display:flex;align-items:center;justify-content:center;color:var(--color-sage);font-size:.85rem;transition:transform .25s ease;flex-shrink:0}
+    .collapsible.open .collapsible-icon{transform:rotate(180deg)}
+    .collapsible-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .collapsible.open .collapsible-body{max-height:5000px}
+    .collapsible-content{padding:0 1.25rem 1.25rem;font-size:.92rem}
+    .collapsible-content h4{font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--color-heading);margin:1rem 0 .4rem}
+    .collapsible-content h4:first-child{margin-top:0}
+    .collapsible-content p{margin-bottom:.75rem}
+    .collapsible-content ul{padding-left:1.25rem;margin-bottom:.75rem}
+    .collapsible-content li{margin-bottom:.3rem}
+    .page-print-bar{display:flex;justify-content:flex-end;margin-bottom:1.5rem}
+    .page-print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5em 1.1em;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--color-text-muted);background:var(--color-card);border:1px solid var(--color-card-border);border-radius:6px;cursor:pointer;transition:all .15s ease}
+    .page-print-btn:hover{background:var(--color-text);color:white;border-color:var(--color-text)}
+    .page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
+
+    /* Print Package CSS */
+    .print-package{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden;box-shadow:var(--shadow-card)}
+    .print-package-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;background:var(--color-accent-light);border-bottom:1px solid var(--color-card-border);transition:background .15s ease}
+    .print-package-header:hover{background:#D0E8D8}
+    .print-package-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-accent);margin:0;display:flex;align-items:center;gap:.5rem}
+    .print-package-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .print-package.open .print-package-body{max-height:3000px}
+    .print-package.open .collapsible-icon{transform:rotate(180deg)}
+    .print-package-content{padding:1.25rem}
+    .class-size-input{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-card-border)}
+    .class-size-input label{font-weight:600;font-size:.9rem;color:var(--color-heading)}
+    .class-size-input input{width:70px;padding:.4rem .6rem;border:2px solid var(--color-card-border);border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--color-heading);text-align:center;transition:border-color .15s ease}
+    .class-size-input input:focus{outline:none;border-color:var(--color-accent)}
+    .print-item{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #EEF1EC;font-size:.88rem;gap:.75rem}
+    .print-item:last-child{border-bottom:none}
+    .print-item-info{flex:1}
+    .print-item-name{font-weight:600;color:var(--color-heading);margin-bottom:.15rem}
+    .print-item-detail{font-size:.78rem;color:var(--color-text-muted)}
+    .print-item-qty{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--color-accent);min-width:50px;text-align:center}
+    .print-item-action .separate-tag{font-size:.72rem;color:var(--color-text-muted);font-style:italic;white-space:nowrap}
+
+    /* Printable Template CSS */
+    .printable-section{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+    .printable-header{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;border-bottom:1px solid var(--color-card-border)}
+    .printable-header h3{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading)}
+    .print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.4em .9em;font-family:var(--font-body);font-size:.78rem;font-weight:600;color:var(--color-accent);background:var(--color-accent-light);border:1px solid var(--color-accent);border-radius:6px;cursor:pointer;transition:all .15s ease}
+    .print-btn:hover{background:var(--color-accent);color:white}
+    .printable-body{padding:1.5rem}
+
+    /* Printable template-specific styles */
+    .glossary-term{margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-divider)}
+    .glossary-term:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .glossary-term-name{font-weight:600;font-size:.95rem;color:var(--color-heading);margin-bottom:.35rem}
+    .glossary-term-def{font-size:.9rem;color:var(--color-text);line-height:1.5}
+
+    .worked-section{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--color-divider)}
+    .worked-section:last-child{border-bottom:none}
+    .worked-heading{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--color-heading);margin-bottom:.75rem}
+    .worked-bullet{position:relative;padding-left:1.25rem;margin-bottom:.5rem;font-size:.9rem;line-height:1.5}
+    .worked-bullet::before{content:'\2022';position:absolute;left:0;color:var(--color-accent);font-weight:700}
+
+    .research-sheet-field{margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-divider)}
+    .research-sheet-field:last-child{border-bottom:none}
+    .research-field-label{font-weight:600;font-size:.9rem;color:var(--color-heading);margin-bottom:.35rem}
+    .research-field-input{width:100%;border:none;border-bottom:2px solid var(--color-card-border);padding:.35rem 0;font-family:var(--font-body);font-size:.9rem;color:var(--color-text)}
+    .research-field-input:focus{outline:none;border-bottom-color:var(--color-accent)}
+    .ruled-lines{display:flex;flex-direction:column;gap:.6rem}
+    .ruled-line{border-bottom:1px solid var(--color-divider);padding-bottom:.35rem;min-height:1.5rem}
+    .field-note{font-size:.8rem;color:var(--color-text-muted);font-style:italic;margin-top:.25rem}
+
+    @media (max-width: 800px) {
+      .stage-card-content{flex-direction:column}
+      .stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}
+    }
+
+    @media print{
+      body{background:white;font-size:11pt}
+      .container{max-width:100%;padding:0}
+      .lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .stage-card,.collapsible,.printable-section{box-shadow:none;break-inside:avoid}
+      .collapsible-body{max-height:none!important}
+      .page-print-btn,.page-print-bar,.print-package{display:none}
+      .stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
+
+    body.printing-template-a4 .container>*:not(.print-target){display:none!important}
+    body.printing-template-a4 .print-target{box-shadow:none!important;border:none!important;margin:0!important;width:100%!important}
+    body.printing-template-a4 .print-target .printable-header{display:none!important}
+    body.printing-template-a4 .print-target .printable-body{padding:1.5cm}
+    @page{margin:1.5cm}
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="page-print-bar">
+    <button class="page-print-btn" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print Lesson
+    </button>
+  </div>
+
+  <div class="lesson-header">
+    <div class="phase-tag">Phase 5 &middot; World Heritage</div>
+    <h1><span class="lesson-number">Lesson 18 &middot;</span> World Heritage: Management and Threats</h1>
+    <div class="subtitle">How is your site protected, and what threatens it?</div>
+  </div>
+
+  <div class="lesson-summary">
+    <div class="summary-label">Lesson at a Glance</div>
+    <ul>
+      <li>Whole-class introduction: worked example of management and threats analysis using Stonehenge, plus glossary of key terms</li>
+      <li>Small-group scaffolded discussion: groups investigate how their sites are managed and what threatens them, using resource packs and the glossary</li>
+      <li>Individual recording: students complete the management and threats sections of their research framework</li>
+      <li>Brief consolidation discussion: students share one threat and one management response, connecting management to threats</li>
+    </ul>
+  </div>
+
+  <div class="print-package" id="print-package">
+    <div class="print-package-header" onclick="toggleCollapsible('print-package')">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print Package
+      </h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="print-package-body">
+      <div class="print-package-content">
+        <div class="class-size-input">
+          <label for="classSize">Students in class:</label>
+          <input type="number" id="classSize" value="28" min="1" max="40" onchange="updateQuantities()" oninput="updateQuantities()">
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Stonehenge Worked Example</div>
+            <div class="print-item-detail">A4, worked analysis of management and threats</div>
+          </div>
+          <div class="print-item-qty" data-rule="each">28</div>
+          <div class="print-item-action">
+            <button class="print-btn" onclick="printTemplate('stonehenge-example','a4')">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+          </div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Management and Threats Glossary</div>
+            <div class="print-item-detail">A4, key terms with definitions</div>
+          </div>
+          <div class="print-item-qty" data-rule="each">28</div>
+          <div class="print-item-action">
+            <button class="print-btn" onclick="printTemplate('glossary-18','a4')">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+          </div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">L18 Research Template (Management and Threats)</div>
+            <div class="print-item-detail">A4, structured research framework</div>
+          </div>
+          <div class="print-item-qty" data-rule="each">28</div>
+          <div class="print-item-action">
+            <button class="print-btn" onclick="printTemplate('research-template-18','a4')">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--color-card-border);">
+          <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);margin-bottom:.5rem;">Prepare Separately</div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Curated resource packs or library books</div>
+            <div class="print-item-detail">Continuing from L16&ndash;17, World Heritage sites information</div>
+          </div>
+          <div class="print-item-qty">Class set</div>
+          <div class="print-item-action"><span class="separate-tag">Source</span></div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Paper atlas</div>
+            <div class="print-item-detail">World map and relevant regional maps</div>
+          </div>
+          <div class="print-item-qty">Class set</div>
+          <div class="print-item-action"><span class="separate-tag">Prepare</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-item"><div class="meta-label">Teaching Mode</div><div class="meta-value">Guided research with collaborative scaffolding</div></div>
+    <div class="meta-item"><div class="meta-label">Grouping</div><div class="meta-value">Whole class (Stage 1), small groups + individual (Stage 2), whole class (Stage 3)</div></div>
+    <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">50 minutes</div></div>
+    <div class="meta-item"><div class="meta-label">Syllabus</div><div class="meta-value">GE3-1, GE3-2, GE3-4</div></div>
+    <div class="meta-item"><div class="meta-label">Prior Knowledge</div><div class="meta-value">Site context and significance research (L17); environmental impact reasoning (L13&ndash;14); atlas investigation (L10&ndash;11)</div></div>
+    <div class="meta-item"><div class="meta-label">Enables</div><div class="meta-value">L19 (drafting information report). Research notes from L17&ndash;18 together provide the content base for the report.</div></div>
+  </div>
+
+  <div class="li-sc-card">
+    <h2>Learning Intention</h2>
+    <p class="li-text">Investigate a World Heritage Site and produce an information report on its location, significance, management and threats</p>
+    <h2>Success Criteria</h2>
+    <ul>
+      <li>Locate the chosen World Heritage Site on a map and describe its geographical context</li>
+      <li>Explain the cultural and/or natural significance of the site</li>
+      <li>Describe the management practices that protect the site</li>
+      <li>Identify and explain the threats the site faces</li>
+      <li>Produce a clearly structured information report using geographical vocabulary</li>
+    </ul>
+  </div>
+
+  <h2 class="section-heading">Lesson Structure</h2>
+
+  <div class="stage-card stage-1">
+    <div class="stage-card-header">
+      <div class="stage-number">1</div>
+      <div><h3>Worked Example and Glossary</h3><div class="stage-context">Whole class</div></div>
+    </div>
+    <div class="stage-card-content">
+      <div class="stage-card-body">
+        <p>Today&rsquo;s focus: how is your site protected, and what threatens it? Before students begin their own research, the class works through a management and threats analysis together using a site that is not on the investigation list.</p>
+        <h4>Worked example: Stonehenge</h4>
+        <p>Display the Stonehenge worked example on the board or distribute copies. Walk through the analysis together:</p>
+        <ul>
+          <li><strong>Management:</strong> Who manages it? (English Heritage, with UNESCO oversight.) What systems are in place? (Visitor management &ndash; timed entry, walkways to prevent foot traffic on the stones. Funding &ndash; ticket sales and government grants. Conservation &ndash; ongoing archaeological research and stone preservation. Laws &ndash; it is a Scheduled Ancient Monument, protected by UK law.) What is the management trying to achieve? (Balance public access with preservation.)</li>
+          <li><strong>Threats:</strong> What threatens it? (Road traffic &ndash; a major road used to run very close to the site. Tourism pressure &ndash; millions of visitors each year. Environmental erosion &ndash; weathering of the stones over time. Development &ndash; pressure from nearby housing and infrastructure projects.)</li>
+        </ul>
+        <h4>Key insight</h4>
+        <p><em>Management exists because of threats. The same activity that threatens a site (tourism, development) is often the reason people care about it and fund its management.</em></p>
+        <p>Introduce the management and threats glossary. Students keep the glossary for reference during their own research.</p>
+      </div>
+      <div class="stage-materials">
+        <div class="stage-materials-label">Materials</div>
+        <ul>
+          <li>Stonehenge Worked Example <span class="mat-note">printable template below, projected or one per student</span></li>
+          <li>Management and Threats Glossary <span class="mat-note">printable template below, one per student</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card stage-2">
+    <div class="stage-card-header">
+      <div class="stage-number">2</div>
+      <div><h3>Group Research: Management and Threats</h3><div class="stage-context">Small groups (3&ndash;4), then individual</div></div>
+    </div>
+    <div class="stage-card-content">
+      <div class="stage-card-body">
+        <p>Students form small groups (3&ndash;4) based on similar sites or site types (e.g. natural sites together, cultural sites together). This grouping is deliberate: management and threats concepts are complex, and discussing them with peers helps students process source material that may be above their independent reading level.</p>
+        <p>Groups work through their curated resource packs and library books, focusing on management and threats. The group discussion is scaffolded by the glossary: when students encounter an unfamiliar concept, they check the glossary first. The teacher circulates and facilitates group discussions, asking probing questions: <em>&ldquo;Who pays for the protection of this site?&rdquo; &ldquo;What would happen if the management stopped?&rdquo;</em></p>
+        <p>After the group discussion phase (approximately 15&ndash;20 minutes), students transition to individual recording. Each student completes the management and threats sections of their own L18 research template. The group discussion has prepared them to write, but the recording is individual.</p>
+        <div class="diff-block extension">
+          <div class="diff-label">Extension</div>
+          <p>Students investigating two sites note comparison points in their research template. They consider whether the same management approach could work for both sites, and why or why not.</p>
+        </div>
+        <div class="diff-block support">
+          <div class="diff-label">Support</div>
+          <p>Groups including support students are given the research template with sentence starters. The glossary is their primary support tool. Teacher prioritises these groups for conferencing.</p>
+        </div>
+      </div>
+      <div class="stage-materials">
+        <div class="stage-materials-label">Materials</div>
+        <ul>
+          <li>L18 Research Template <span class="mat-note">printable template below, one per student</span></li>
+          <li>Curated resource packs or library books <span class="mat-note">continues from L16&ndash;17</span></li>
+          <li>Management and Threats Glossary <span class="mat-note">continues from Stage 1</span></li>
+          <li>Paper atlas <span class="mat-note">for reference as needed</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card stage-3">
+    <div class="stage-card-header">
+      <div class="stage-number">3</div>
+      <div><h3>Consolidation Discussion</h3><div class="stage-context">Whole class</div></div>
+    </div>
+    <div class="stage-card-content">
+      <div class="stage-card-body">
+        <p>Brief whole-class discussion. Two or three students share one threat their site faces and one management response. The teacher draws out the key conceptual point: management exists because of threats. Protection and damage are connected &ndash; the same activity that threatens a site (tourism, development, resource use) is often the reason people care about it and fund its management.</p>
+        <h4>Key question</h4>
+        <p><em>If no one visited your site, would it still need protection? Why?</em></p>
+        <p>This connects to the cause-and-consequence reasoning students practised in L13 (Murray-Darling Basin) and L14 (Borneo Palm Oil). The analytical skill is the same; the context is different.</p>
+        <p>Remind students that by the end of L18, they should have complete research notes covering all four report sections: context (L17), significance (L17), management (L18), threats (L18). These notes are the raw material for drafting in L19.</p>
+      </div>
+      <div class="stage-materials">
+        <div class="stage-materials-label">Materials</div>
+        <ul>
+          <li><em>No additional materials</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-heading">Reference</h2>
+
+  <div class="collapsible" id="teaching-notes">
+    <div class="collapsible-header" onclick="toggleCollapsible('teaching-notes')">
+      <h3>Teaching Notes</h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="collapsible-body"><div class="collapsible-content">
+      <h4>Why the worked example matters</h4>
+      <p>Management concepts are abstract for Year 5. The worked example exists to make these concrete before students encounter them in their own research. Do not skip the worked example. Students see the thinking process modelled with Stonehenge before they apply it to their own sites.</p>
+      <h4>Why small groups work here</h4>
+      <p>Sources about World Heritage management are rarely written for primary-aged readers. Group discussion helps students process complex text collaboratively. Monitor groups to ensure all students are contributing, not just one strong reader. Ask follow-up questions to each group member, not just the group as a whole.</p>
+      <h4>The glossary as a working tool</h4>
+      <p>The glossary bridges the vocabulary gap. Encourage students to use it actively during research, not just read it once. When conferencing, ask students to point to glossary terms they have used in their notes. A student who can define &ldquo;conservation&rdquo; or &ldquo;development pressure&rdquo; in their own context is deepening their understanding.</p>
+      <h4>Connection to prior learning</h4>
+      <p>The connection to L13&ndash;14 (environmental impact reasoning) is important. Students have already practised cause-and-consequence thinking about human impact on the Murray-Darling Basin and Borneo. L18 extends this to a new context. Reference these prior lessons explicitly when modelling the Stonehenge example.</p>
+    </div></div>
+  </div>
+
+  <div class="collapsible" id="materials">
+    <div class="collapsible-header" onclick="toggleCollapsible('materials')">
+      <h3>Materials &amp; Resources</h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="collapsible-body"><div class="collapsible-content">
+      <ul>
+        <li><strong>Paper atlas:</strong> World map and relevant regional maps for reference as needed (class set)</li>
+        <li><strong>Curated resource packs or library books:</strong> Continuing from L16&ndash;17. Students should have their resource packs or library books available with age-appropriate information about their chosen sites.</li>
+        <li><strong>Stonehenge Worked Example:</strong> A4 printable showing a completed management and threats analysis. Can be projected on the board or printed one per student. See printable template below.</li>
+        <li><strong>Management and Threats Glossary:</strong> A4 printable with definitions of key terms. One per student. See printable template below.</li>
+        <li><strong>L18 Research Template:</strong> A4 structured sheet with two sections (management and threats) plus comparison notes for extension students. See printable template below.</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="collapsible" id="atlas-work">
+    <div class="collapsible-header" onclick="toggleCollapsible('atlas-work')">
+      <h3>Atlas Work</h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="collapsible-body"><div class="collapsible-content">
+      <p>Atlas use in L18 is reference-based rather than investigative. Students may check the atlas to clarify physical geography relevant to threats (e.g. a coastal site and sea level rise, a site near agricultural land and development pressure). Atlas navigation is incidental rather than the focus. The primary work in L18 is reading and discussing sources about management and threats.</p>
+    </div></div>
+  </div>
+
+  <div class="collapsible" id="assessment">
+    <div class="collapsible-header" onclick="toggleCollapsible('assessment')">
+      <h3>Observational Assessment</h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="collapsible-body"><div class="collapsible-content">
+      <h4>What to look for</h4>
+      <ul>
+        <li>Can students name specific management practices (not just &ldquo;it is protected&rdquo;)?</li>
+        <li>Are students explaining why something is a threat, using cause-and-effect reasoning?</li>
+        <li>Are small-group discussions productive, with all students contributing?</li>
+        <li>Are extension students noting meaningful comparison points?</li>
+      </ul>
+      <h4>How to capture</h4>
+      <p>Research templates are the primary artefact. Teacher notes which groups needed significant facilitation and which students could not transition effectively from group discussion to individual recording. These notes inform conferencing priorities in L19 (students who struggled to record independently will need support transitioning to report drafting).</p>
+      <h4>What it tells you</h4>
+      <p>Students who produce detailed management and threats notes with cause-and-effect reasoning are ready to draft. Students whose notes list threats without explanation will need conferencing at the start of L19 to deepen their reasoning before writing. The group discussion quality is diagnostic: groups that could not discuss management independently suggest the conceptual scaffolding needs more time in L19.</p>
+    </div></div>
+  </div>
+
+  <h2 class="section-heading">Printable Templates</h2>
+
+  <div class="printable-section" id="stonehenge-example">
+    <div class="printable-header">
+      <h3>Worked Example &ndash; Stonehenge (United Kingdom)</h3>
+      <button class="print-btn" onclick="printTemplate('stonehenge-example','a4')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print A4
+      </button>
+    </div>
+    <div class="printable-body">
+      <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-divider);">
+        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;"><em>Cultural Heritage, listed 1986</em></p>
+      </div>
+
+      <div class="worked-section">
+        <div class="worked-heading">Management</div>
+        <div class="worked-bullet"><strong>Governance:</strong> Managed by English Heritage, with UNESCO oversight</div>
+        <div class="worked-bullet"><strong>Conservation:</strong> Ongoing archaeological research and stone preservation programme</div>
+        <div class="worked-bullet"><strong>Tourism management:</strong> Timed entry system, walking paths to protect the stones, visitor centre set back from the monument</div>
+        <div class="worked-bullet"><strong>Funding:</strong> Ticket sales, government grants, and charitable donations</div>
+      </div>
+
+      <div class="worked-section">
+        <div class="worked-heading">Threats</div>
+        <div class="worked-bullet"><strong>Road traffic:</strong> A major road (A303) runs very close to the site, causing noise and visual intrusion. A tunnel project is underway.</div>
+        <div class="worked-bullet"><strong>Tourism pressure:</strong> Over 1.5 million visitors each year. Foot traffic and vibrations affect the stones.</div>
+        <div class="worked-bullet"><strong>Environmental erosion:</strong> Natural weathering of the stones over centuries</div>
+        <div class="worked-bullet"><strong>Development pressure:</strong> Nearby housing and infrastructure proposals</div>
+      </div>
+
+      <div class="worked-section" style="border-bottom: none; padding-bottom: 0;">
+        <div class="worked-heading">The Connection</div>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: var(--color-text);">Management exists because of threats. Without the road, the traffic management would not be needed. Without the tourists, the timed entry system would not exist.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="printable-section" id="glossary-18">
+    <div class="printable-header">
+      <h3>World Heritage Investigation &ndash; Key Terms</h3>
+      <button class="print-btn" onclick="printTemplate('glossary-18','a4')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print A4
+      </button>
+    </div>
+    <div class="printable-body">
+      <div class="glossary-term">
+        <div class="glossary-term-name">Governance</div>
+        <div class="glossary-term-def">Who is in charge of managing and making decisions about the site</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Conservation</div>
+        <div class="glossary-term-def">The work done to protect and look after the site so it survives for the future</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Funding</div>
+        <div class="glossary-term-def">Where the money comes from to pay for management and conservation</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Tourism management</div>
+        <div class="glossary-term-def">Controlling how many people visit and what they can do at the site</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Legislation</div>
+        <div class="glossary-term-def">Laws that protect the site from damage or development</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Erosion</div>
+        <div class="glossary-term-def">The gradual wearing away of rock, soil, or structures by wind, water, or human activity</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Invasive species</div>
+        <div class="glossary-term-def">Plants or animals that do not naturally belong in an area and cause damage to local ecosystems</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Climate change</div>
+        <div class="glossary-term-def">Long-term changes in weather patterns that affect the environment (e.g. rising sea levels, coral bleaching, more extreme weather)</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Development pressure</div>
+        <div class="glossary-term-def">The expansion of buildings, roads, farms, or industry near a protected site</div>
+      </div>
+
+      <div class="glossary-term" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+        <div class="glossary-term-name">Resource extraction</div>
+        <div class="glossary-term-def">Taking natural resources (minerals, water, timber) from an area, often causing environmental damage</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="printable-section" id="research-template-18">
+    <div class="printable-header">
+      <h3>World Heritage Investigation &ndash; Management and Threats</h3>
+      <button class="print-btn" onclick="printTemplate('research-template-18','a4')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print A4
+      </button>
+    </div>
+    <div class="printable-body">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <p style="font-size: 0.9rem; font-weight: 600; color: var(--color-heading); margin-bottom: 0.35rem;">Student name:</p>
+          <div class="research-field-input" style="min-height: 1.5rem;"></div>
+        </div>
+        <div>
+          <p style="font-size: 0.9rem; font-weight: 600; color: var(--color-heading); margin-bottom: 0.35rem;">Date:</p>
+          <div class="research-field-input" style="min-height: 1.5rem;"></div>
+        </div>
+      </div>
+
+      <div class="research-sheet-field">
+        <p class="research-field-label">Site name:</p>
+        <div class="research-field-input" style="min-height: 1.5rem;"></div>
+      </div>
+
+      <div class="research-sheet-field">
+        <div style="margin-bottom: 1rem;">
+          <p class="research-field-label">Management</p>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <p class="research-field-label" style="font-weight: 400; font-size: 0.85rem;">Who manages this site? (governance):</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <p class="research-field-label" style="font-weight: 400; font-size: 0.85rem;">What conservation work is done?:</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <p class="research-field-label" style="font-weight: 400; font-size: 0.85rem;">How are visitors managed?:</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+        </div>
+        <div>
+          <p class="research-field-label" style="font-weight: 400; font-size: 0.85rem;">Where does the funding come from?:</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-sheet-field">
+        <div style="margin-bottom: 1rem;">
+          <p class="research-field-label">Threats</p>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <p class="research-field-label" style="font-weight: 400; font-size: 0.85rem;">What threatens this site? (list at least 2 threats):</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <p class="research-field-label" style="font-weight: 400; font-size: 0.85rem;">For each threat, explain WHY it is damaging:</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+          <p class="field-note">Hint: use &ldquo;because&rdquo; or &ldquo;this causes&rdquo; to show the connection between threat and damage.</p>
+        </div>
+        <div>
+          <p class="research-field-label" style="font-weight: 400; font-size: 0.85rem;">What is being done about these threats?:</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-sheet-field" style="border-bottom: none;">
+        <div style="background: var(--color-extension-light); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--color-extension);">
+          <p class="research-field-label" style="color: var(--color-extension); margin-bottom: 0.5rem;">Comparison notes (if investigating two sites):</p>
+          <p style="font-size: 0.9rem; color: var(--color-text); margin-bottom: 0.75rem;">Do both sites face similar threats? Are they managed in similar ways?</p>
+          <div class="ruled-lines">
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+            <div class="ruled-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; Lesson 18 &middot; Draft</div>
+
+</div>
+
+<script>
+function toggleCollapsible(id){const el=document.getElementById(id);el.classList.toggle('open')}
+
+function updateQuantities() {
+  const n = parseInt(document.getElementById('classSize').value) || 28;
+
+  document.querySelectorAll('.print-item-qty').forEach(el => {
+    const rule = el.dataset.rule;
+    if (rule === 'each') el.textContent = n;
+  });
+}
+
+function printTemplate(id, size) {
+  const el = document.getElementById(id);
+  el.classList.add('print-target');
+  document.body.classList.add('printing-template-' + size);
+  window.print();
+  document.body.classList.remove('printing-template-' + size);
+  el.classList.remove('print-target');
+}
+
+document.addEventListener('DOMContentLoaded', updateQuantities);
+</script>
+
+</body>
+</html>

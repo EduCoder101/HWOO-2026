@@ -44,6 +44,12 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .site-header .subtitle{font-size:1.1rem;opacity:.8;font-weight:400;margin-bottom:.25rem}
 .site-header .school{font-size:.88rem;opacity:.6}
 
+/* Utility links */
+.utility-bar{display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.utility-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:600;color:var(--color-accent);background:var(--color-accent-light);padding:.45em 1em;border-radius:20px;text-decoration:none;transition:all .2s ease}
+.utility-link:hover{background:var(--color-accent);color:white}
+.utility-link svg{width:14px;height:14px}
+
 /* Phase sections */
 .phase-section{margin-bottom:2rem}
 .phase-heading{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading);margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:2px solid var(--color-divider);display:flex;align-items:center;gap:.6rem}
@@ -58,11 +64,6 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .lesson-card .lesson-mode{font-size:.78rem;color:var(--color-text-muted)}
 .lesson-card .status-badge{position:absolute;top:.75rem;right:.75rem;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:.2em .5em;border-radius:4px}
 .lesson-card .status-badge.ready{background:var(--color-accent-light);color:var(--color-accent)}
-.lesson-card .status-badge.coming{background:#F0F0EC;color:#999}
-
-/* Disabled cards */
-.lesson-card.disabled{opacity:.5;pointer-events:none}
-.lesson-card.disabled:hover{box-shadow:none;transform:none;border-color:var(--color-card-border)}
 
 /* Footer */
 .site-footer{text-align:center;padding:2rem 0;margin-top:1rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
@@ -72,77 +73,89 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="container">
 
 <div class="site-header">
-  <div class="tag">Year 5 Geography · NSW HSIE</div>
+  <div class="tag">Year 5 Geography &middot; NSW HSIE</div>
   <h1>Place &amp; Space</h1>
   <div class="subtitle">From Our Neighbourhood to the World</div>
-  <div class="school">Roseville College · 24 Lessons</div>
+  <div class="school">Roseville College &middot; 24 Lessons</div>
+</div>
+
+<!-- Utility links -->
+<div class="utility-bar">
+  <a href="FIND-ME-resources.html" class="utility-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    Find-Me Resources
+  </a>
+  <a href="librarian-resource-request.html" class="utility-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+    Library Resource Request
+  </a>
 </div>
 
 <!-- Phase 1: Local -->
 <div class="phase-section">
-  <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-local)"></div> Phase 1: Local – Roseville &amp; the North Shore</div>
+  <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-local)"></div> Phase 1: Local &ndash; Roseville &amp; the North Shore</div>
   <div class="lesson-grid">
     <a href="lesson1-what-is-geography.html" class="lesson-card">
       <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 1</div>
       <div class="lesson-title">What is Geography?</div>
-      <div class="lesson-mode">Explicit teaching · 50 min</div>
+      <div class="lesson-mode">Explicit teaching</div>
     </a>
     <a href="lesson2-cardinal-directions-symbols.html" class="lesson-card">
       <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 2</div>
       <div class="lesson-title">Cardinal Directions &amp; Symbols</div>
-      <div class="lesson-mode">Explicit teaching · 90 min</div>
+      <div class="lesson-mode">Explicit teaching</div>
     </a>
     <a href="lesson3-grid-references-scale.html" class="lesson-card">
       <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 3</div>
       <div class="lesson-title">Grid References &amp; Scale</div>
-      <div class="lesson-mode">Explicit teaching · 90 min</div>
+      <div class="lesson-mode">Explicit teaching</div>
     </a>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    <a href="lesson4-our-local-place-v2.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 4</div>
-      <div class="lesson-title">Our Local Place – Roseville &amp; the North Shore</div>
+      <div class="lesson-title">Our Local Place &ndash; Roseville &amp; the North Shore</div>
       <div class="lesson-mode">Guided inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson5-why-do-people-live-here.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 5</div>
       <div class="lesson-title">Why Do People Live Here?</div>
       <div class="lesson-mode">Structured inquiry</div>
-    </div>
+    </a>
   </div>
 </div>
 
 <!-- Phase 2: City -->
 <div class="phase-section">
-  <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-city)"></div> Phase 2: City – Sydney</div>
+  <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-city)"></div> Phase 2: City &ndash; Sydney</div>
   <div class="lesson-grid">
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    <a href="lesson6-sydney-a-city-of-places.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 6</div>
-      <div class="lesson-title">Sydney – A City of Places</div>
+      <div class="lesson-title">Sydney &ndash; A City of Places</div>
       <div class="lesson-mode">Explicit + guided inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson7-physical-features-of-sydney.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 7</div>
       <div class="lesson-title">Physical Features of Sydney</div>
       <div class="lesson-mode">Explicit + guided inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson8-human-features-land-use.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 8</div>
       <div class="lesson-title">Human Features &amp; Land Use</div>
       <div class="lesson-mode">Explicit + independent inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson9-coordinates-locating-places.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 9</div>
       <div class="lesson-title">Coordinates: Locating Places on Earth</div>
       <div class="lesson-mode">Explicit teaching</div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -150,36 +163,36 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="phase-section">
   <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-state)"></div> Phase 3: State, Country &amp; Human Impact</div>
   <div class="lesson-grid">
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    <a href="lesson10-nsw-regions-diversity.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 10</div>
-      <div class="lesson-title">NSW – Regions &amp; Diversity</div>
+      <div class="lesson-title">NSW &ndash; Regions &amp; Diversity</div>
       <div class="lesson-mode">Guided inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson11-australia-physical-geography.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 11</div>
-      <div class="lesson-title">Australia – Physical Geography</div>
+      <div class="lesson-title">Australia &ndash; Physical Geography</div>
       <div class="lesson-mode">Station rotation</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson12-australia-human-geography.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 12</div>
-      <div class="lesson-title">Australia – Human Geography &amp; Services</div>
+      <div class="lesson-title">Australia &ndash; Human Geography &amp; Services</div>
       <div class="lesson-mode">Structured inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson13-murray-darling.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 13</div>
       <div class="lesson-title">Human Impact: Murray-Darling Basin</div>
       <div class="lesson-mode">Structured inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    </a>
+    <a href="lesson14-borneo-palm-oil.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 14</div>
       <div class="lesson-title">Human Impact: Borneo Palm Oil</div>
       <div class="lesson-mode">Structured inquiry</div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -187,49 +200,73 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="phase-section">
   <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-global)"></div> Phase 4: Global</div>
   <div class="lesson-grid">
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
+    <a href="lesson15-megacities.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
       <div class="lesson-num">Lesson 15</div>
       <div class="lesson-title">Megacities: Mumbai &amp; Sydney</div>
       <div class="lesson-mode">Structured inquiry</div>
-    </div>
+    </a>
   </div>
 </div>
 
-<!-- Phase 5: Heritage -->
+<!-- Phase 5: World Heritage Investigation -->
 <div class="phase-section">
   <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-heritage)"></div> Phase 5: World Heritage Investigation</div>
   <div class="lesson-grid">
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
-      <div class="lesson-num">Lessons 16–20</div>
-      <div class="lesson-title">World Heritage Site Investigation</div>
-      <div class="lesson-mode">Independent inquiry · 5 lessons</div>
-    </div>
+    <a href="lesson16-world-heritage-intro.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
+      <div class="lesson-num">Lesson 16</div>
+      <div class="lesson-title">Introduction &amp; Site Selection</div>
+      <div class="lesson-mode">Guided inquiry</div>
+    </a>
+    <a href="lesson17-world-heritage-significance.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
+      <div class="lesson-num">Lesson 17</div>
+      <div class="lesson-title">Location, Context &amp; Significance</div>
+      <div class="lesson-mode">Guided research</div>
+    </a>
+    <a href="lesson18-world-heritage-management.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
+      <div class="lesson-num">Lesson 18</div>
+      <div class="lesson-title">Management &amp; Threats</div>
+      <div class="lesson-mode">Guided research</div>
+    </a>
+    <a href="lesson19-world-heritage-drafting.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
+      <div class="lesson-num">Lesson 19</div>
+      <div class="lesson-title">Drafting &amp; Peer Feedback</div>
+      <div class="lesson-mode">Independent inquiry</div>
+    </a>
+    <a href="lesson20-world-heritage-completion.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
+      <div class="lesson-num">Lesson 20</div>
+      <div class="lesson-title">Revision &amp; Completion</div>
+      <div class="lesson-mode">Independent inquiry</div>
+    </a>
   </div>
 </div>
 
-<!-- Phase 6: Summative -->
+<!-- Phase 6: Summative Assessment -->
 <div class="phase-section">
   <div class="phase-heading"><div class="phase-dot" style="background:var(--phase-summative)"></div> Phase 6: Summative Assessment</div>
   <div class="lesson-grid">
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
-      <div class="lesson-num">Lessons 21–22</div>
-      <div class="lesson-title">Design a Place – Research &amp; Planning</div>
+    <a href="lesson21-22-design-planning.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
+      <div class="lesson-num">Lessons 21&ndash;22</div>
+      <div class="lesson-title">Design a Place &ndash; Research &amp; Planning</div>
       <div class="lesson-mode">Independent inquiry</div>
-    </div>
-    <div class="lesson-card disabled">
-      <span class="status-badge coming">Coming</span>
-      <div class="lesson-num">Lessons 23–24</div>
-      <div class="lesson-title">Design a Place – Create &amp; Present</div>
+    </a>
+    <a href="lesson23-24-design-create.html" class="lesson-card">
+      <span class="status-badge ready">Ready</span>
+      <div class="lesson-num">Lessons 23&ndash;24</div>
+      <div class="lesson-title">Design a Place &ndash; Create &amp; Present</div>
       <div class="lesson-mode">Independent creation</div>
-    </div>
+    </a>
   </div>
 </div>
 
 <div class="site-footer">
-  Year 5 Geography: Place &amp; Space · Roseville College · 2027
+  Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; 2026
 </div>
 
 </div>

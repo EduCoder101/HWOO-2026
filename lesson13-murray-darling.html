@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 13 · Human Impact: Murray-Darling Basin | Place &amp; Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #F5F7F3;
+      --color-card: #FFFFFF;
+      --color-card-border: #D4DDCF;
+      --color-text: #2D3A2D;
+      --color-text-muted: #5E6E58;
+      --color-heading: #1B3A2A;
+      --color-accent: #3A7D5C;
+      --color-accent-light: #E2F0E8;
+      --color-accent-hover: #2D6148;
+      --color-sage: #6B8F71;
+      --color-sage-light: #EAF2EB;
+      --color-sage-border: #B8D4B8;
+      --color-support: #4A7FA0;
+      --color-support-light: #E4EEF5;
+      --color-extension: #7B6B9E;
+      --color-extension-light: #EEEAF5;
+      --color-stage-1: #3A7D5C;
+      --color-stage-2: #4A7FA0;
+      --color-stage-3: #8A6B3D;
+      --color-divider: #C8D4C2;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
+      --shadow-hover: 0 4px 16px rgba(40,60,40,0.1);
+      --max-width: 1160px;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased;padding:1.5rem}
+    .container{max-width:var(--max-width);margin:0 auto;padding:2rem 1.5rem 4rem}
+    .lesson-header{background:linear-gradient(135deg,#1B3A2A 0%,#2D5E40 100%);color:white;padding:2.5rem 2rem 2rem;border-radius:var(--radius);margin-bottom:1.5rem;position:relative;overflow:hidden}
+    .lesson-header::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
+    .lesson-header .phase-tag{display:inline-block;font-family:var(--font-body);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;background:rgba(255,255,255,.15);padding:.3em .8em;border-radius:20px;margin-bottom:1rem}
+    .lesson-header h1{font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}
+    .lesson-header .lesson-number{font-weight:400;opacity:.7}
+    .lesson-header .subtitle{font-size:1.05rem;opacity:.85;font-weight:400}
+    .lesson-summary{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-card)}
+    .lesson-summary .summary-label{font-family:var(--font-display);font-size:.85rem;font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+    .lesson-summary ul{list-style:none;padding:0;margin:0}
+    .lesson-summary li{position:relative;padding-left:1.25rem;margin-bottom:.35rem;font-size:.9rem;line-height:1.5}
+    .lesson-summary li::before{content:'\203A';position:absolute;left:0;color:var(--color-accent);font-weight:700;font-size:1.1rem;line-height:1.35}
+    .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-bottom:2rem}
+    .meta-item{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);padding:.85rem 1rem}
+    .meta-item .meta-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:.25rem}
+    .meta-item .meta-value{font-size:.9rem;line-height:1.45;color:var(--color-text)}
+    .li-sc-card{background:var(--color-accent-light);border-left:4px solid var(--color-accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.5rem;margin-bottom:2.5rem}
+    .li-sc-card h2{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--color-heading);margin-bottom:.5rem}
+    .li-sc-card .li-text{font-size:1rem;margin-bottom:1rem;font-weight:500}
+    .li-sc-card ul{list-style:none;padding:0}
+    .li-sc-card li{position:relative;padding-left:1.5rem;margin-bottom:.4rem;font-size:.95rem}
+    .li-sc-card li::before{content:'\2713';position:absolute;left:0;color:var(--color-accent);font-weight:700}
+    .section-heading{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--color-heading);margin:2.5rem 0 1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--color-divider)}
+    .stage-card{background:var(--color-card);border-radius:var(--radius);border:1px solid var(--color-card-border);box-shadow:var(--shadow-card);margin-bottom:1.5rem;overflow:hidden;transition:box-shadow .2s ease}
+    .stage-card:hover{box-shadow:var(--shadow-hover)}
+    .stage-card-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--color-card-border)}
+    .stage-number{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:white;flex-shrink:0}
+    .stage-1 .stage-number{background:var(--color-stage-1)}
+    .stage-2 .stage-number{background:var(--color-stage-2)}
+    .stage-3 .stage-number{background:var(--color-stage-3)}
+    .stage-card-header h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading)}
+    .stage-card-header .stage-context{font-size:.8rem;color:var(--color-text-muted);font-weight:400}
+    .stage-card-content{display:flex}
+    .stage-card-body{flex:1;padding:1.5rem;min-width:0}
+    .stage-card-body h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading);margin:1.25rem 0 .5rem}
+    .stage-card-body h4:first-child{margin-top:0}
+    .stage-card-body p{margin-bottom:.85rem;font-size:.95rem}
+    .stage-card-body ul,.stage-card-body ol{padding-left:1.25rem;margin-bottom:.85rem}
+    .stage-card-body li{margin-bottom:.35rem;font-size:.95rem}
+    .stage-card-body em{font-style:italic}
+    .diff-block{border-radius:var(--radius-sm);padding:.85rem 1rem;margin:.85rem 0;font-size:.9rem}
+    .diff-block.extension{background:var(--color-extension-light);border-left:3px solid var(--color-extension)}
+    .diff-block.support{background:var(--color-support-light);border-left:3px solid var(--color-support)}
+    .diff-label{font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+    .diff-block.extension .diff-label{color:var(--color-extension)}
+    .diff-block.support .diff-label{color:var(--color-support)}
+    .stage-materials{width:220px;flex-shrink:0;background:var(--color-sage-light);border-left:1px solid var(--color-card-border);padding:1.25rem;font-size:.82rem;display:flex;flex-direction:column}
+    .stage-materials-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-sage);margin-bottom:.75rem}
+    .stage-materials ul{list-style:none;padding:0;margin:0}
+    .stage-materials li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;line-height:1.4;color:var(--color-text)}
+    .stage-materials li::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--color-sage)}
+    .stage-materials .mat-note{font-size:.75rem;color:var(--color-text-muted);font-style:italic;display:block;margin-top:.15rem}
+    .collapsible{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+    .collapsible-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;transition:background .15s ease}
+    .collapsible-header:hover{background:var(--color-sage-light)}
+    .collapsible-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-sage);margin:0}
+    .collapsible-icon{width:24px;height:24px;border-radius:50%;background:var(--color-sage-light);display:flex;align-items:center;justify-content:center;color:var(--color-sage);font-size:.85rem;transition:transform .25s ease;flex-shrink:0}
+    .collapsible.open .collapsible-icon{transform:rotate(180deg)}
+    .collapsible-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .collapsible.open .collapsible-body{max-height:5000px}
+    .collapsible-content{padding:0 1.25rem 1.25rem;font-size:.92rem}
+    .collapsible-content h4{font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--color-heading);margin:1rem 0 .4rem}
+    .collapsible-content h4:first-child{margin-top:0}
+    .collapsible-content p{margin-bottom:.75rem}
+    .collapsible-content ul{padding-left:1.25rem;margin-bottom:.75rem}
+    .collapsible-content li{margin-bottom:.3rem}
+    .page-print-bar{display:flex;justify-content:flex-end;margin-bottom:1.5rem}
+    .page-print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5em 1.1em;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--color-text-muted);background:var(--color-card);border:1px solid var(--color-card-border);border-radius:6px;cursor:pointer;transition:all .15s ease}
+    .page-print-btn:hover{background:var(--color-text);color:white;border-color:var(--color-text)}
+    .page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
+    .print-package{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden;box-shadow:var(--shadow-card)}
+    .print-package-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;background:var(--color-accent-light);border-bottom:1px solid var(--color-card-border);transition:background .15s ease}
+    .print-package-header:hover{background:#D0E8D8}
+    .print-package-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-accent);margin:0;display:flex;align-items:center;gap:.5rem}
+    .print-package-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .print-package.open .print-package-body{max-height:3000px}
+    .print-package.open .collapsible-icon{transform:rotate(180deg)}
+    .print-package-content{padding:1.25rem}
+    .class-size-input{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-card-border)}
+    .class-size-input label{font-weight:600;font-size:.9rem;color:var(--color-heading)}
+    .class-size-input input{width:70px;padding:.4rem .6rem;border:2px solid var(--color-card-border);border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--color-heading);text-align:center;transition:border-color .15s ease}
+    .class-size-input input:focus{outline:none;border-color:var(--color-accent)}
+    .print-item{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #EEF1EC;font-size:.88rem;gap:.75rem}
+    .print-item:last-child{border-bottom:none}
+    .print-item-info{flex:1}
+    .print-item-name{font-weight:600;color:var(--color-heading);margin-bottom:.15rem}
+    .print-item-detail{font-size:.78rem;color:var(--color-text-muted)}
+    .print-item-qty{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--color-accent);min-width:50px;text-align:center}
+    .print-item-action .separate-tag{font-size:.72rem;color:var(--color-text-muted);font-style:italic;white-space:nowrap}
+    .printable-section{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+    .printable-header{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;border-bottom:1px solid var(--color-card-border)}
+    .printable-header h3{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading)}
+    .print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.4em .9em;font-family:var(--font-body);font-size:.78rem;font-weight:600;color:var(--color-accent);background:var(--color-accent-light);border:1px solid var(--color-accent);border-radius:6px;cursor:pointer;transition:all .15s ease}
+    .print-btn:hover{background:var(--color-accent);color:white}
+    .printable-body{padding:1.5rem}
+    .fact-card{border:1px dashed var(--color-sage-border);border-radius:var(--radius-sm);padding:1.25rem;margin-bottom:1.5rem;page-break-inside:avoid;background:white}
+    .fact-card-title{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--color-heading);margin-bottom:.75rem;text-align:center}
+    .fact-card ul{list-style:none;padding:0;margin-bottom:1rem}
+    .fact-card li{position:relative;padding-left:1rem;margin-bottom:.5rem;font-size:.9rem;line-height:1.4}
+    .fact-card li::before{content:'•';position:absolute;left:0;color:var(--color-accent);font-weight:700}
+    .fact-card-image{background:var(--color-sage-light);border:1px solid var(--color-sage-border);border-radius:var(--radius-sm);height:80px;display:flex;align-items:center;justify-content:center;margin:1rem 0;font-size:.8rem;color:var(--color-text-muted);text-align:center;padding:.5rem}
+    .fact-card-provocation{font-style:italic;color:var(--color-heading);font-size:.9rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--color-sage-border)}
+    .recording-sheet{background:white;padding:2cm;page-break-inside:avoid}
+    .recording-sheet-title{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--color-heading);margin-bottom:.5rem;text-align:center}
+    .recording-sheet-meta{display:flex;gap:2rem;margin-bottom:1.5rem;font-size:.9rem}
+    .recording-sheet-meta div{flex:1}
+    .recording-sheet-meta label{font-weight:600;color:var(--color-heading);display:block;margin-bottom:.25rem}
+    .recording-sheet-meta input{border:none;border-bottom:1px solid var(--color-text);width:100%;padding:.25rem;font-size:.9rem}
+    .sheet-section{margin-bottom:1.5rem}
+    .sheet-section h4{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--color-heading);margin-bottom:.5rem}
+    .sheet-section .lines{display:flex;flex-direction:column;gap:.75rem}
+    .sheet-line{border-bottom:1px solid var(--color-text-muted);height:1.8rem}
+    .sentence-starters-slip{border:1px dashed var(--color-sage-border);padding:1.5rem;margin-bottom:0;page-break-inside:avoid;background:white}
+    .slip-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--color-heading);margin-bottom:1rem;text-align:center}
+    .slip-frame{margin-bottom:1rem;font-size:.92rem}
+    .slip-frame strong{color:var(--color-heading);font-weight:600}
+    .slip-note{font-size:.8rem;color:var(--color-text-muted);margin-top:1rem;text-align:center;font-style:italic}
+    @media (max-width: 800px) {
+      .stage-card-content{flex-direction:column}
+      .stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}
+    }
+    @media print{
+      body{background:white;font-size:11pt;padding:0}
+      .container{max-width:100%;padding:0}
+      .lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .stage-card,.collapsible,.printable-section{box-shadow:none;break-inside:avoid}
+      .collapsible-body{max-height:none!important}
+      .page-print-btn,.page-print-bar,.print-package{display:none}
+      .stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
+    body.printing-template-a4 .container>*:not(.print-target){display:none!important}
+    body.printing-template-a4 .print-target{box-shadow:none!important;border:none!important;margin:0!important;width:100%!important}
+    body.printing-template-a4 .print-target .printable-header{display:none!important}
+    body.printing-template-a4 .print-target .printable-body{padding:1.5cm}
+    @page{margin:1.5cm}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="page-print-bar">
+    <button class="page-print-btn" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print Lesson
+    </button>
+  </div>
+
+  <div class="lesson-header">
+    <div class="phase-tag">Phase 3 &middot; State &amp; Country</div>
+    <h1><span class="lesson-number">Lesson 13 &middot;</span> Human Impact: Murray-Darling Basin</h1>
+    <div class="subtitle">How farming and water management decisions have reshaped Australia&rsquo;s largest river system</div>
+  </div>
+
+  <div class="lesson-summary">
+    <div class="summary-label">Lesson at a Glance</div>
+    <ul>
+      <li>Students locate the Murray-Darling Basin in the atlas and examine satellite imagery showing the effects of irrigation and land degradation</li>
+      <li>Pairs investigate using four teacher-curated fact cards covering agriculture, water extraction, environmental consequences, and Indigenous connection</li>
+      <li>Class discussion explores responsibility: who made these decisions, who has been affected, and who should act</li>
+      <li>Individual written response: 3&ndash;5 sentences explaining how farming decisions have changed the Basin</li>
+    </ul>
+  </div>
+
+  <div class="print-package" id="print-package">
+    <div class="print-package-header" onclick="toggleCollapsible('print-package')">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print Package
+      </h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="print-package-body">
+      <div class="print-package-content">
+        <div class="class-size-input">
+          <label for="classSize">Students in class:</label>
+          <input type="number" id="classSize" value="28" min="1" max="40" onchange="updateQuantities()" oninput="updateQuantities()">
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Fact Card Sets</div>
+            <div class="print-item-detail">4 &times; A5 laminated cards per pair; printable template below</div>
+          </div>
+          <div class="print-item-qty" data-rule="pair">14 sets</div>
+          <div class="print-item-action">
+            <button class="print-btn" onclick="printTemplate('fact-cards-13','a4')">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+          </div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Recording Sheet</div>
+            <div class="print-item-detail">A4, one per student; printable template below</div>
+          </div>
+          <div class="print-item-qty" data-rule="each">28</div>
+          <div class="print-item-action">
+            <button class="print-btn" onclick="printTemplate('recording-sheet-13','a4')">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+          </div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Sentence Starters</div>
+            <div class="print-item-detail">A4 2-up, support students; printable template below</div>
+          </div>
+          <div class="print-item-qty" data-rule="support-2up">4 pgs</div>
+          <div class="print-item-action">
+            <button class="print-btn" onclick="printTemplate('sentence-starters-13','a4')">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--color-card-border);">
+          <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);margin-bottom:.5rem;">Prepare Separately</div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Paper Atlas</div>
+            <div class="print-item-detail">Australia physical &amp; river systems maps</div>
+          </div>
+          <div class="print-item-qty">Class set</div>
+          <div class="print-item-action"><span class="separate-tag">Source</span></div>
+        </div>
+
+        <div class="print-item">
+          <div class="print-item-info">
+            <div class="print-item-name">Google Maps Satellite View</div>
+            <div class="print-item-detail">Murray-Darling Basin, pre-loaded zoom locations</div>
+          </div>
+          <div class="print-item-qty">1</div>
+          <div class="print-item-action"><span class="separate-tag">Prepare</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-item">
+      <div class="meta-label">Teaching Mode</div>
+      <div class="meta-value">Structured inquiry with teacher-curated resources</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Grouping</div>
+      <div class="meta-value">Whole class, pairs, individual</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Duration</div>
+      <div class="meta-value">50 minutes</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Syllabus</div>
+      <div class="meta-value">GE3-1, GE3-2</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Prior Knowledge</div>
+      <div class="meta-value">Australia&rsquo;s physical geography (L11); population distribution (L11&ndash;12); atlas navigation (L1&ndash;3); written geographical explanation (L5, L12)</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Enables</div>
+      <div class="meta-value">L14 (Borneo palm oil case study and cross-case comparison). Environmental impact reasoning is foundation for remaining lessons.</div>
+    </div>
+  </div>
+
+  <div class="li-sc-card">
+    <h2>Learning Intention</h2>
+    <p class="li-text">Explain how farming and water management decisions have changed the Murray-Darling Basin</p>
+    <h2>Success Criteria</h2>
+    <ul>
+      <li>Locate the Murray-Darling Basin on a map and describe its physical geography</li>
+      <li>Explain how irrigation and farming have changed the Basin&rsquo;s environment</li>
+      <li>Describe at least two consequences of these changes for communities and ecosystems</li>
+      <li>Begin to articulate who bears responsibility when a shared natural resource is damaged</li>
+    </ul>
+  </div>
+
+  <h2 class="section-heading">Lesson Structure</h2>
+
+  <div class="stage-card stage-1">
+    <div class="stage-card-header">
+      <div class="stage-number">1</div>
+      <div><h3>The Basin</h3><div class="stage-context">Whole class</div></div>
+    </div>
+    <div class="stage-card-content">
+      <div class="stage-card-body">
+        <p>Students locate the Murray-Darling Basin in their atlas using the Australia physical map and river systems map. They trace the river network from source to mouth, noting the Basin spans four states and covers over one million square kilometres.</p>
+        <p>Google Maps satellite view is projected on the IWB. The teacher zooms into three contrasting areas: a healthy river section with intact vegetation, an area of irrigated farmland (cotton or rice), and a visibly degraded area showing dry riverbeds or salt-affected soil. Students observe and describe what they see before any explanation is given.</p>
+        <p>Brief orientation: the Murray-Darling produces about one-third of Australia&rsquo;s food supply. This fact establishes the stakes before the investigation begins.</p>
+        <p><strong>Key question:</strong> <em>What has happened to this river system, and why?</em></p>
+      </div>
+      <div class="stage-materials">
+        <div class="stage-materials-label">Materials</div>
+        <ul>
+          <li>Paper atlas <span class="mat-note">Australia physical &amp; river systems maps</span></li>
+          <li>Google Maps satellite view <span class="mat-note">IWB projection, pre-loaded</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card stage-2">
+    <div class="stage-card-header">
+      <div class="stage-number">2</div>
+      <div><h3>Fact Card Investigation</h3><div class="stage-context">Pairs</div></div>
+    </div>
+    <div class="stage-card-content">
+      <div class="stage-card-body">
+        <p>Pairs investigate using teacher-curated fact cards. Each set contains four A5 laminated cards covering distinct topics.</p>
+        <h4>Card topics:</h4>
+        <ul>
+          <li><strong>&ldquo;Australia&rsquo;s Food Bowl&rdquo;</strong> &ndash; The Basin&rsquo;s role in Australian agriculture, scale of irrigation, production figures.</li>
+          <li><strong>&ldquo;Turning on the Taps&rdquo;</strong> &ndash; History of water extraction from early 1900s, dams and weirs, Snowy Mountains Scheme, rise beyond sustainable levels.</li>
+          <li><strong>&ldquo;What Went Wrong&rdquo;</strong> &ndash; Environmental consequences: reduced flows, rising salinity, wetland loss, algal blooms, fish kills, before-and-after evidence.</li>
+          <li><strong>&ldquo;River as Country&rdquo;</strong> &ndash; Indigenous peoples&rsquo; deep connection, impact of water extraction on communities, cultural water allocations advocacy.</li>
+        </ul>
+        <p>Each pair reads all four cards but records detailed findings on two cards (assigned by teacher). This creates genuine information-sharing in the discussion that follows. Students record findings on a structured recording sheet with headings matching the four card topics.</p>
+        <div class="diff-block extension">
+          <div class="diff-label">Extension</div>
+          <p>Students add a paragraph addressing the responsibility question &ndash; who should be responsible for restoring the Basin, and why?</p>
+        </div>
+        <div class="diff-block support">
+          <div class="diff-label">Support</div>
+          <p>The recording sheet includes sentence starters under each heading. Students may focus on two cards rather than skimming all four.</p>
+        </div>
+      </div>
+      <div class="stage-materials">
+        <div class="stage-materials-label">Materials</div>
+        <ul>
+          <li>Fact card sets <span class="mat-note">4 &times; A5 per pair, laminated; printable template below</span></li>
+          <li>Recording sheet <span class="mat-note">A4, one per student; printable template below</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card stage-3">
+    <div class="stage-card-header">
+      <div class="stage-number">3</div>
+      <div><h3>Discussion and Written Response</h3><div class="stage-context">Whole class then individual</div></div>
+    </div>
+    <div class="stage-card-content">
+      <div class="stage-card-body">
+        <p>Each pair shares one key finding from their investigation. This ensures all fact card content is surfaced before the discussion questions open.</p>
+        <h4>Class discussion structured around three questions:</h4>
+        <ul>
+          <li><em>Who made these decisions?</em></li>
+          <li><em>Who has been affected?</em></li>
+          <li><em>Who is responsible for fixing it?</em></li>
+        </ul>
+        <p>Individual written response: students write 3&ndash;5 sentences explaining how farming decisions have changed the Murray-Darling Basin and who has been affected. This is collected as the lesson assessment.</p>
+        <p>Sentence starters available as support: &ldquo;The Murray-Darling Basin has been changed by&hellip;&rdquo; / &ldquo;One consequence of this is&hellip;&rdquo; / &ldquo;The people most affected include&hellip;&rdquo;</p>
+        <div class="diff-block support">
+          <div class="diff-label">Support</div>
+          <p>Sentence starters sheet (A4 2-up) provided to all students who need it. Printable template below.</p>
+        </div>
+      </div>
+      <div class="stage-materials">
+        <div class="stage-materials-label">Materials</div>
+        <ul>
+          <li>Sentence starters <span class="mat-note">A4 2-up sheet; printable template below</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-heading">Reference</h2>
+
+  <div class="collapsible" id="materials">
+    <div class="collapsible-header" onclick="toggleCollapsible('materials')">
+      <h3>Materials &amp; Resources</h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="collapsible-body"><div class="collapsible-content">
+      <h4>Paper atlas</h4>
+      <p>Use the Australia physical map and river systems map. Students locate and trace the Murray-Darling Basin, noting the extent across Queensland, New South Wales, Victoria, and South Australia.</p>
+      <h4>Google Maps</h4>
+      <p>Satellite view of the Murray-Darling Basin, pre-loaded with three zoom locations: a healthy river section with intact vegetation, an irrigated farmland area (cotton or rice fields), and a degraded section showing dry riverbeds or salt-affected soil.</p>
+      <h4>Fact card sets</h4>
+      <p>Four A5 laminated cards per pair. See printable template &ldquo;fact-cards-13&rdquo; below.</p>
+      <h4>Recording sheet</h4>
+      <p>A4 structured sheet with four headings matching fact card topics. One per student. See printable template &ldquo;recording-sheet-13&rdquo; below.</p>
+      <h4>Sentence starters</h4>
+      <p>A4 2-up sheet with three sentence frames for written response. Support option. See printable template &ldquo;sentence-starters-13&rdquo; below.</p>
+    </div></div>
+  </div>
+
+  <div class="collapsible" id="atlas-work">
+    <div class="collapsible-header" onclick="toggleCollapsible('atlas-work')">
+      <h3>Atlas Work</h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="collapsible-body"><div class="collapsible-content">
+      <p>Use the Australia physical map and river systems map to trace the Murray-Darling Basin&rsquo;s extent, from the Darling River in Queensland through to the Murray mouth in South Australia. Compare the Basin&rsquo;s location to the population distribution map from L11&ndash;12. Note that the Basin covers parts of Queensland, New South Wales, Victoria, and South Australia.</p>
+    </div></div>
+  </div>
+
+  <div class="collapsible" id="assessment">
+    <div class="collapsible-header" onclick="toggleCollapsible('assessment')">
+      <h3>Observational Assessment</h3>
+      <div class="collapsible-icon">&#9662;</div>
+    </div>
+    <div class="collapsible-body"><div class="collapsible-content">
+      <h4>What to look for</h4>
+      <ul>
+        <li>Can students trace the Basin&rsquo;s extent on the atlas and describe its physical geography?</li>
+        <li>Do pairs engage substantively with all four fact cards, or skim the surface?</li>
+        <li>Does discussion show cause-and-effect reasoning, not just description?</li>
+        <li>Does the written response include at least two specific consequences?</li>
+      </ul>
+      <h4>How to capture</h4>
+      <p>Phase 3 observation checklist. Note students who struggle with cause-and-effect language &ndash; they will need additional support for the L14 cross-case comparison.</p>
+      <h4>What it tells you</h4>
+      <p>Students who can identify consequences but cannot explain the chain of cause and effect will need a more structured scaffold for L14&rsquo;s comparison task. The written response is the primary data source.</p>
+    </div></div>
+  </div>
+
+  <h2 class="section-heading">Printable Templates</h2>
+
+  <div class="printable-section" id="fact-cards-13">
+    <div class="printable-header">
+      <h3>Fact Card Sets</h3>
+      <button class="print-btn" onclick="printTemplate('fact-cards-13','a4')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print A4
+      </button>
+    </div>
+    <div class="printable-body">
+      <div class="fact-card">
+        <div class="fact-card-title">Australia&rsquo;s Food Bowl</div>
+        <ul>
+          <li>The Murray-Darling Basin covers more than one million square kilometres across four states</li>
+          <li>About one-third of Australia&rsquo;s food is produced in the Basin</li>
+          <li>Major crops include cotton, rice, wheat, and citrus fruits</li>
+          <li>Over 2 million Australians depend on the Basin for their water supply</li>
+          <li>The Basin contains over 30,000 wetlands that support native plants and animals</li>
+        </ul>
+        <div class="fact-card-image">[Teacher: insert image]</div>
+        <div class="fact-card-provocation"><em>What would happen to Australia&rsquo;s food supply if the rivers stopped flowing?</em></div>
+      </div>
+
+      <div class="fact-card">
+        <div class="fact-card-title">Turning on the Taps</div>
+        <ul>
+          <li>From the early 1900s, governments built dams, weirs, and irrigation channels to redirect water for farming</li>
+          <li>The Snowy Mountains Scheme (1949&ndash;1974) diverted rivers inland to increase irrigation</li>
+          <li>By the 1990s, more water was being taken out of the rivers than nature could replace</li>
+          <li>During severe droughts, some sections of the river system stopped flowing entirely</li>
+          <li>The Murray-Darling Basin Plan (2012) tried to set limits on water extraction, but remains controversial</li>
+        </ul>
+        <div class="fact-card-image">[Teacher: insert image]</div>
+        <div class="fact-card-provocation"><em>If everyone agreed the rivers needed more water, why was it so hard to change?</em></div>
+      </div>
+
+      <div class="fact-card">
+        <div class="fact-card-title">What Went Wrong</div>
+        <ul>
+          <li>Reduced river flows mean less water for wetlands, floodplains, and native species</li>
+          <li>Rising salinity (salt levels) has damaged soil and made some farmland unusable</li>
+          <li>Algal blooms caused by low water levels and nutrient runoff have poisoned waterways</li>
+          <li>In 2019, up to one million fish died near Menindee in a mass fish kill linked to low oxygen levels</li>
+          <li>The Coorong wetland at the Murray mouth has shrunk dramatically, threatening migratory bird species</li>
+        </ul>
+        <div class="fact-card-image">[Teacher: insert image]</div>
+        <div class="fact-card-provocation"><em>When we see the consequences, should we stop farming in the Basin entirely?</em></div>
+      </div>
+
+      <div class="fact-card">
+        <div class="fact-card-title">River as Country</div>
+        <ul>
+          <li>For Aboriginal peoples, the Murray-Darling river system is Country &ndash; a living system with deep cultural, spiritual, and practical significance</li>
+          <li>The rivers and wetlands have sustained Aboriginal communities for tens of thousands of years, providing food, fresh water, and places for ceremony</li>
+          <li>Water extraction has damaged culturally significant wetlands, reduced fish stocks that communities depend on, and disrupted traditional land management practices</li>
+          <li>Aboriginal leaders have advocated for &ldquo;cultural water allocations&rdquo; &ndash; water set aside specifically to maintain the health of Country</li>
+          <li>The Barkandji, Ngarrindjeri, Yorta Yorta, and many other nations continue to fight for the river&rsquo;s health</li>
+        </ul>
+        <div class="fact-card-image">[Teacher: insert image]</div>
+        <div class="fact-card-provocation"><em>Whose voice should matter most when decisions are made about a shared river system?</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="printable-section" id="recording-sheet-13">
+    <div class="printable-header">
+      <h3>Investigation Recording Sheet</h3>
+      <button class="print-btn" onclick="printTemplate('recording-sheet-13','a4')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print A4
+      </button>
+    </div>
+    <div class="printable-body">
+      <div class="recording-sheet">
+        <div class="recording-sheet-title">Murray-Darling Basin Investigation</div>
+        <div class="recording-sheet-meta">
+          <div>
+            <label>Student name:</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Date:</label>
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="sheet-section">
+          <h4>Australia&rsquo;s Food Bowl &ndash; What role does the Basin play in Australian agriculture?</h4>
+          <p style="font-size:.85rem;color:var(--color-text-muted);margin-bottom:.5rem;"><em>Sentence starter: The Basin is important because&hellip;</em></p>
+          <div class="lines">
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+          </div>
+        </div>
+
+        <div class="sheet-section">
+          <h4>Turning on the Taps &ndash; How was water redirected, and what happened over time?</h4>
+          <p style="font-size:.85rem;color:var(--color-text-muted);margin-bottom:.5rem;"><em>Sentence starter: Over time, water extraction&hellip;</em></p>
+          <div class="lines">
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+          </div>
+        </div>
+
+        <div class="sheet-section">
+          <h4>What Went Wrong &ndash; What are the environmental consequences?</h4>
+          <p style="font-size:.85rem;color:var(--color-text-muted);margin-bottom:.5rem;"><em>Sentence starter: One major consequence is&hellip;</em></p>
+          <div class="lines">
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+          </div>
+        </div>
+
+        <div class="sheet-section">
+          <h4>River as Country &ndash; How have Indigenous communities been affected?</h4>
+          <p style="font-size:.85rem;color:var(--color-text-muted);margin-bottom:.5rem;"><em>Sentence starter: For Aboriginal peoples, the river&hellip;</em></p>
+          <div class="lines">
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="printable-section" id="sentence-starters-13">
+    <div class="printable-header">
+      <h3>Written Response Sentence Starters (2-up)</h3>
+      <button class="print-btn" onclick="printTemplate('sentence-starters-13','a4')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print A4
+      </button>
+    </div>
+    <div class="printable-body">
+      <div class="sentence-starters-slip">
+        <div class="slip-title">Murray-Darling Written Response &ndash; Sentence Starters</div>
+        <div class="slip-frame">
+          <strong>The Murray-Darling Basin has been changed by&hellip;</strong>
+        </div>
+        <div class="slip-frame">
+          <strong>One consequence of this is&hellip;</strong>
+        </div>
+        <div class="slip-frame">
+          <strong>The people most affected include&hellip; because&hellip;</strong>
+        </div>
+        <div class="slip-note">Write 3&ndash;5 sentences using these starters or your own words.</div>
+      </div>
+
+      <div style="border-top:1px dashed var(--color-sage-border);margin:1.5rem 0;"></div>
+
+      <div class="sentence-starters-slip">
+        <div class="slip-title">Murray-Darling Written Response &ndash; Sentence Starters</div>
+        <div class="slip-frame">
+          <strong>The Murray-Darling Basin has been changed by&hellip;</strong>
+        </div>
+        <div class="slip-frame">
+          <strong>One consequence of this is&hellip;</strong>
+        </div>
+        <div class="slip-frame">
+          <strong>The people most affected include&hellip; because&hellip;</strong>
+        </div>
+        <div class="slip-note">Write 3&ndash;5 sentences using these starters or your own words.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; Lesson 13 &middot; Draft</div>
+</div>
+
+<script>
+function toggleCollapsible(id){const el=document.getElementById(id);el.classList.toggle('open')}
+
+function updateQuantities() {
+  const n = parseInt(document.getElementById('classSize').value) || 28;
+  const pairs = Math.ceil(n / 2);
+  const supportCount = Math.max(4, Math.ceil(n * 0.2));
+  const supportPages = Math.ceil(supportCount / 2);
+
+  document.querySelectorAll('.print-item-qty').forEach(el => {
+    const rule = el.dataset.rule;
+    if (rule === 'each') el.textContent = n;
+    else if (rule === 'pair') el.textContent = pairs + ' sets';
+    else if (rule === 'support-2up') el.textContent = supportPages + ' pgs';
+  });
+}
+
+function printTemplate(id, size) {
+  const el = document.getElementById(id);
+  el.classList.add('print-target');
+  document.body.classList.add('printing-template-' + size);
+  window.print();
+  document.body.classList.remove('printing-template-' + size);
+  el.classList.remove('print-target');
+}
+
+document.addEventListener('DOMContentLoaded', updateQuantities);
+</script>
+</body>
+</html>

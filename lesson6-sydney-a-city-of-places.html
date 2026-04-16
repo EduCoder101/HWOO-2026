@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 6 &middot; Sydney &ndash; A City of Places | Place &amp; Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #F5F7F3;
+  --color-card: #FFFFFF;
+  --color-card-border: #D4DDCF;
+  --color-text: #2D3A2D;
+  --color-text-muted: #5E6E58;
+  --color-heading: #1B3A2A;
+  --color-accent: #3A7D5C;
+  --color-accent-light: #E2F0E8;
+  --color-accent-hover: #2D6148;
+  --color-sage: #6B8F71;
+  --color-sage-light: #EAF2EB;
+  --color-sage-border: #B8D4B8;
+  --color-support: #4A7FA0;
+  --color-support-light: #E4EEF5;
+  --color-extension: #7B6B9E;
+  --color-extension-light: #EEEAF5;
+  --color-stage-1: #3A7D5C;
+  --color-stage-2: #4A7FA0;
+  --color-stage-3: #8A6B3D;
+  --color-stage-4: #7B6B9E;
+  --color-divider: #C8D4C2;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
+  --shadow-hover: 0 4px 16px rgba(40,60,40,0.1);
+  --max-width: 1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem 1.5rem 4rem}
+.lesson-header{background:linear-gradient(135deg,#1B3A2A 0%,#2D5E40 100%);color:white;padding:2.5rem 2rem 2rem;border-radius:var(--radius);margin-bottom:1.5rem;position:relative;overflow:hidden}
+.lesson-header::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
+.lesson-header .phase-tag{display:inline-block;font-family:var(--font-body);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;background:rgba(255,255,255,.15);padding:.3em .8em;border-radius:20px;margin-bottom:1rem}
+.lesson-header h1{font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}
+.lesson-header .lesson-number{font-weight:400;opacity:.7}
+.lesson-header .subtitle{font-size:1.05rem;opacity:.85;font-weight:400}
+.lesson-summary{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-card)}
+.lesson-summary .summary-label{font-family:var(--font-display);font-size:.85rem;font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.lesson-summary ul{list-style:none;padding:0;margin:0}
+.lesson-summary li{position:relative;padding-left:1.25rem;margin-bottom:.35rem;font-size:.9rem;line-height:1.5}
+.lesson-summary li::before{content:'\203A';position:absolute;left:0;color:var(--color-accent);font-weight:700;font-size:1.1rem;line-height:1.35}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-bottom:2rem}
+.meta-item{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);padding:.85rem 1rem}
+.meta-item .meta-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:.25rem}
+.meta-item .meta-value{font-size:.9rem;line-height:1.45;color:var(--color-text)}
+.li-sc-card{background:var(--color-accent-light);border-left:4px solid var(--color-accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.5rem;margin-bottom:2.5rem}
+.li-sc-card h2{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--color-heading);margin-bottom:.5rem}
+.li-sc-card .li-text{font-size:1rem;margin-bottom:1rem;font-weight:500}
+.li-sc-card ul{list-style:none;padding:0}
+.li-sc-card li{position:relative;padding-left:1.5rem;margin-bottom:.4rem;font-size:.95rem}
+.li-sc-card li::before{content:'\2713';position:absolute;left:0;color:var(--color-accent);font-weight:700}
+.section-heading{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--color-heading);margin:2.5rem 0 1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--color-divider)}
+.stage-card{background:var(--color-card);border-radius:var(--radius);border:1px solid var(--color-card-border);box-shadow:var(--shadow-card);margin-bottom:1.5rem;overflow:hidden;transition:box-shadow .2s ease}
+.stage-card:hover{box-shadow:var(--shadow-hover)}
+.stage-card-header{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--color-card-border)}
+.stage-number{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:white;flex-shrink:0}
+.stage-1 .stage-number{background:var(--color-stage-1)}
+.stage-2 .stage-number{background:var(--color-stage-2)}
+.stage-3 .stage-number{background:var(--color-stage-3)}
+.stage-4 .stage-number{background:var(--color-stage-4)}
+.stage-card-header h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading)}
+.stage-card-header .stage-context{font-size:.8rem;color:var(--color-text-muted);font-weight:400}
+.stage-card-content{display:flex}
+.stage-card-body{flex:1;padding:1.5rem;min-width:0}
+.stage-card-body h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading);margin:1.25rem 0 .5rem}
+.stage-card-body h4:first-child{margin-top:0}
+.stage-card-body p{margin-bottom:.85rem;font-size:.95rem}
+.stage-card-body ul,.stage-card-body ol{padding-left:1.25rem;margin-bottom:.85rem}
+.stage-card-body li{margin-bottom:.35rem;font-size:.95rem}
+.diff-block{border-radius:var(--radius-sm);padding:.85rem 1rem;margin:.85rem 0;font-size:.9rem}
+.diff-block.extension{background:var(--color-extension-light);border-left:3px solid var(--color-extension)}
+.diff-block.support{background:var(--color-support-light);border-left:3px solid var(--color-support)}
+.diff-label{font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.diff-block.extension .diff-label{color:var(--color-extension)}
+.diff-block.support .diff-label{color:var(--color-support)}
+.stage-materials{width:220px;flex-shrink:0;background:var(--color-sage-light);border-left:1px solid var(--color-card-border);padding:1.25rem;font-size:.82rem;display:flex;flex-direction:column}
+.stage-materials-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-sage);margin-bottom:.75rem}
+.stage-materials ul{list-style:none;padding:0;margin:0}
+.stage-materials li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;line-height:1.4;color:var(--color-text)}
+.stage-materials li::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--color-sage)}
+.stage-materials .mat-note{font-size:.75rem;color:var(--color-text-muted);font-style:italic;display:block;margin-top:.15rem}
+.collapsible{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.collapsible-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;transition:background .15s ease}
+.collapsible-header:hover{background:var(--color-sage-light)}
+.collapsible-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-sage);margin:0}
+.collapsible-icon{width:24px;height:24px;border-radius:50%;background:var(--color-sage-light);display:flex;align-items:center;justify-content:center;color:var(--color-sage);font-size:.85rem;transition:transform .25s ease;flex-shrink:0}
+.collapsible.open .collapsible-icon{transform:rotate(180deg)}
+.collapsible-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.collapsible.open .collapsible-body{max-height:5000px}
+.collapsible-content{padding:0 1.25rem 1.25rem;font-size:.92rem}
+.collapsible-content h4{font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--color-heading);margin:1rem 0 .4rem}
+.collapsible-content h4:first-child{margin-top:0}
+.collapsible-content p{margin-bottom:.75rem}
+.collapsible-content ul{padding-left:1.25rem;margin-bottom:.75rem}
+.collapsible-content li{margin-bottom:.3rem}
+.page-print-bar{display:flex;justify-content:flex-end;margin-bottom:1.5rem}
+.page-print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5em 1.1em;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--color-text-muted);background:var(--color-card);border:1px solid var(--color-card-border);border-radius:6px;cursor:pointer;transition:all .15s ease}
+.page-print-btn:hover{background:var(--color-text);color:white;border-color:var(--color-text)}
+.page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
+
+/* Print Package */
+.print-package{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden;box-shadow:var(--shadow-card)}
+.print-package-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;background:var(--color-accent-light);border-bottom:1px solid var(--color-card-border);transition:background .15s ease}
+.print-package-header:hover{background:#D0E8D8}
+.print-package-header h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--color-accent);margin:0;display:flex;align-items:center;gap:.5rem}
+.print-package-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.print-package.open .print-package-body{max-height:3000px}
+.print-package.open .collapsible-icon{transform:rotate(180deg)}
+.print-package-content{padding:1.25rem}
+.class-size-input{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-card-border)}
+.class-size-input label{font-weight:600;font-size:.9rem;color:var(--color-heading)}
+.class-size-input input{width:70px;padding:.4rem .6rem;border:2px solid var(--color-card-border);border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--color-heading);text-align:center;transition:border-color .15s ease}
+.class-size-input input:focus{outline:none;border-color:var(--color-accent)}
+.print-item{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #EEF1EC;font-size:.88rem;gap:.75rem}
+.print-item:last-child{border-bottom:none}
+.print-item-info{flex:1}
+.print-item-name{font-weight:600;color:var(--color-heading);margin-bottom:.15rem}
+.print-item-detail{font-size:.78rem;color:var(--color-text-muted)}
+.print-item-qty{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--color-accent);min-width:50px;text-align:center}
+.print-item-action .separate-tag{font-size:.72rem;color:var(--color-text-muted);font-style:italic;white-space:nowrap}
+
+/* Printable Templates */
+.printable-section{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1rem;overflow:hidden}
+.printable-header{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;border-bottom:1px solid var(--color-card-border)}
+.printable-header h3{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading)}
+.print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.4em .9em;font-family:var(--font-body);font-size:.78rem;font-weight:600;color:var(--color-accent);background:var(--color-accent-light);border:1px solid var(--color-accent);border-radius:6px;cursor:pointer;transition:all .15s ease}
+.print-btn:hover{background:var(--color-accent);color:white}
+
+/* Map template */
+.map-template{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);padding:1rem;margin-bottom:.75rem;page-break-inside:avoid}
+.map-template h4{font-family:var(--font-display);font-size:.9rem;font-weight:600;color:var(--color-heading);margin-bottom:.5rem}
+.map-svg-container{display:flex;justify-content:center;margin-bottom:.5rem;background:white;border:1px solid var(--color-card-border);border-radius:var(--radius-sm);padding:.75rem}
+.map-svg-container svg{max-width:100%;height:auto;display:block}
+.map-title-line{border-bottom:1px solid var(--color-card-border);padding-bottom:.3rem;margin-bottom:.3rem;font-size:.75rem;color:var(--color-text-muted);}
+.map-name-line{font-size:.8rem;color:var(--color-text-muted);padding-top:.25rem;border-top:1px solid var(--color-card-border);}
+
+@media (max-width: 800px) {
+  .stage-card-content{flex-direction:column}
+  .stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}
+}
+@media print{
+  body{background:white;font-size:11pt}
+  .container{max-width:100%;padding:0}
+  .lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .stage-card,.collapsible,.printable-section{box-shadow:none;break-inside:avoid}
+  .collapsible-body{max-height:none!important}
+  .page-print-btn,.page-print-bar,.print-package{display:none}
+  .stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+body.printing-template-a4 .container>*:not(.print-target){display:none!important}
+body.printing-template-a4 .print-target{box-shadow:none!important;border:none!important;margin:0!important;width:100%!important}
+body.printing-template-a4 .print-target .printable-header{display:none!important}
+body.printing-template-a4 .print-target .printable-body{padding:.8cm 1cm}
+@page{margin:1cm}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Print Bar -->
+<div class="page-print-bar">
+  <button class="page-print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print Lesson
+  </button>
+</div>
+
+<!-- Lesson Header -->
+<div class="lesson-header">
+  <div class="phase-tag">Phase 2 &middot; City</div>
+  <h1><span class="lesson-number">Lesson 6 &middot;</span> Sydney &ndash; A City of Places</h1>
+  <div class="subtitle">Understanding Sydney&rsquo;s regional structure from CBD to outer suburbs</div>
+</div>
+
+<!-- Lesson Summary -->
+<div class="lesson-summary">
+  <div class="summary-label">Lesson at a Glance</div>
+  <ul>
+    <li>Google Maps zoom sequence from Roseville to Sydney: teacher pauses at 3&ndash;4 zoom levels; students observe what appears and disappears at each scale, discovering that city-scale geography reveals patterns (regions, transport corridors, green belts) invisible at street level</li>
+    <li>Explicit teaching of Sydney&rsquo;s structure: CBD (Central Business District), inner suburbs, middle suburbs, outer suburbs, Greater Sydney &ndash; use Google Maps to show the spatial arrangement radiating outward from the harbour</li>
+    <li>Key question: Why do you think the CBD is where it is? What physical features might have influenced that? (Seeds L7&rsquo;s topography content without pre-teaching it)</li>
+    <li>Students label a blank Sydney outline map with regions (A3, one per student &ndash; this is the collected assessment artefact)</li>
+    <li>Atlas investigation: students locate Sydney&rsquo;s harbour, river systems, national parks and western plains, adding these to their map</li>
+    <li>Class discussion comparing completed maps: which features appeared on most maps? How is Sydney&rsquo;s structure different from what we saw at local scale in Roseville?</li>
+  </ul>
+</div>
+
+<!-- Print Package -->
+<div class="print-package" id="print-package">
+  <div class="print-package-header" onclick="toggleCollapsible('print-package')">
+    <h3>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print Package
+    </h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="print-package-body">
+    <div class="print-package-content">
+      <div class="class-size-input">
+        <label for="classSize">Students in class:</label>
+        <input type="number" id="classSize" value="28" min="1" max="40" onchange="updateQuantities()" oninput="updateQuantities()">
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Sydney Outline Map &ndash; Core Version</div>
+          <div class="print-item-detail">A3. Shows coastline, major waterways as faint guides, compass rose. No labels. Students label five zones and add features from atlas.</div>
+        </div>
+        <div class="print-item-qty" data-rule="one-per-student">28 copies</div>
+        <div class="print-item-action">
+          <button class="print-btn" onclick="printTemplate('map-core-a3','a3')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Sydney Outline Map &ndash; Support Version</div>
+          <div class="print-item-detail">A3. Same as core but with five regional zones pre-labelled. Students focus on locating waterways and landforms.</div>
+        </div>
+        <div class="print-item-qty" data-rule="one-per-student">6&ndash;8</div>
+        <div class="print-item-action">
+          <button class="print-btn" onclick="printTemplate('map-support-a3','a3')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--color-card-border);">
+        <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);margin-bottom:.5rem;">Prepare Separately</div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Paper Atlas (Sydney/NSW Region)</div>
+          <div class="print-item-detail">School atlas open to Sydney/NSW page. One per student during Stage 3 for atlas investigation.</div>
+        </div>
+        <div class="print-item-qty">28 copies</div>
+        <div class="print-item-action"><span class="separate-tag">Source from school atlas set</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Google Maps Access</div>
+          <div class="print-item-detail">Computer/laptop and IWB or projector. Sydney overview pre-loaded for zoom sequence in Stages 1&ndash;2.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Check</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Coloured Pencils</div>
+          <div class="print-item-detail">For students to label and annotate maps in Stage 3. Students may use their own.</div>
+        </div>
+        <div class="print-item-qty">28 sets</div>
+        <div class="print-item-action"><span class="separate-tag">Class set</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Meta Grid -->
+<div class="meta-grid">
+  <div class="meta-item"><div class="meta-label">Teaching Mode</div><div class="meta-value">Explicit teaching then guided inquiry</div></div>
+  <div class="meta-item"><div class="meta-label">Grouping</div><div class="meta-value">Whole class, then individual map work</div></div>
+  <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">50 minutes</div></div>
+  <div class="meta-item"><div class="meta-label">Syllabus</div><div class="meta-value">HS3-GEO-01</div></div>
+  <div class="meta-item"><div class="meta-label">Prior Knowledge</div><div class="meta-value">Physical vs human features (L1); compass directions and map symbols (L2); grid references and scale (L3); local area features (L4); pull factors (L5)</div></div>
+  <div class="meta-item"><div class="meta-label">Enables</div><div class="meta-value">L7: physical features depend on knowing regional structure. L8: land use investigation builds on regional knowledge. CBD concept recurs throughout Phase 2&ndash;5.</div></div>
+</div>
+
+<!-- LI/SC Card -->
+<div class="li-sc-card">
+  <h2>Learning Intention</h2>
+  <p class="li-text">Identify the major regions and features of Sydney</p>
+  <h2>Success Criteria</h2>
+  <ul>
+    <li>Name and locate at least five Sydney regions on a map</li>
+    <li>Describe how Sydney&rsquo;s regions differ from each other</li>
+    <li>Explain what a CBD is and locate Sydney&rsquo;s CBD</li>
+  </ul>
+</div>
+
+<!-- Lesson Structure -->
+<h2 class="section-heading">Lesson Structure</h2>
+
+<!-- Stage 1: Scale Shift -->
+<div class="stage-card stage-1">
+  <div class="stage-card-header">
+    <div class="stage-number">1</div>
+    <div><h3>Scale Shift</h3><div class="stage-context">Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Teacher leads a Google Maps zoom sequence from street view of Roseville to a whole-of-Sydney view. Pause at 3&ndash;4 zoom levels. At each pause, students observe: <em>What can you see now that you couldn&rsquo;t before? What has disappeared?</em> The purpose is for students to discover that city-scale geography reveals patterns (regions, transport corridors, green belts) invisible at street level. This mirrors the L1 zoom but at greater scale and with more sophisticated observation.</p>
+      <p>Key observations to guide students toward:</p>
+      <ul>
+        <li>At street level (Roseville): individual shops, houses, local parks</li>
+        <li>At suburb level: clusters of amenities, school locations, main roads</li>
+        <li>At regional level: clear bands of different land uses radiating from the city centre</li>
+        <li>At city scale: the harbour dominates; suburbs are arranged in rough rings; roads and transport corridors form patterns</li>
+      </ul>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps <span class="mat-note">Sydney overview, pre-loaded on IWB/projector</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 2: Sydney's Structure -->
+<div class="stage-card stage-2">
+  <div class="stage-card-header">
+    <div class="stage-number">2</div>
+    <div><h3>Sydney&rsquo;s Structure</h3><div class="stage-context">Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Explicit teaching of Sydney&rsquo;s regional structure. Define and show on Google Maps the five zones:</p>
+      <ul>
+        <li><strong>CBD (Central Business District)</strong> &ndash; Sydney city centre, where the Circular Quay, Central Station, and major office towers cluster. The concentrated zone of administration, commerce, and services. High-rise buildings, no residential sprawl.</li>
+        <li><strong>Inner Suburbs</strong> &ndash; Paddington, Surry Hills, Marrickville, Strathfield, North Sydney. Within 5&ndash;10km of the CBD. Older, established residential areas with some mixed residential-commercial zones. Good public transport.</li>
+        <li><strong>Middle Suburbs</strong> &ndash; Chatswood, Parramatta, Bankstown, Zetland, Penrith. 15&ndash;25km from CBD. Newer suburban sprawl with lower-density housing, shopping centres, some secondary business districts.</li>
+        <li><strong>Outer Suburbs</strong> &ndash; Campbelltown, Wollongong region, Newcastle fringe. 30&ndash;50km from CBD. Car-dependent, newer housing estates, light industrial areas.</li>
+        <li><strong>Greater Sydney/Western Plains</strong> &ndash; Beyond 50km: rural properties, farmland, small towns, national parks.</li>
+      </ul>
+      <p>Key question: <em>Why do you think the CBD is where it is? What physical features might have influenced that?</em> Guide students to notice the harbour and Parramatta River. This seeds L7&rsquo;s topography content without pre-teaching it. Students should notice that the CBD sits on the harbour&rsquo;s deepest water and is protected by headlands. This was strategically important for transport and trade in the past.</p>
+      <p>Use Google Maps to show the spatial arrangement: CBD at the harbour, suburbs radiating outward in rough concentric bands. Overlay or highlight the main transport corridors &ndash; the M4, the rail lines, the motorways &ndash; and ask: <em>What do the roads tell you about how the city grew?</em></p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps <span class="mat-note">same setup as Stage 1, now with labelled regions</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 3: Map Labelling and Atlas Investigation -->
+<div class="stage-card stage-3">
+  <div class="stage-card-header">
+    <div class="stage-number">3</div>
+    <div><h3>Map Labelling and Atlas Investigation</h3><div class="stage-context">Individual</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Students receive a blank A3 Sydney outline map showing coastline and major waterways as faint guides but no labels. Task has two parts:</p>
+      <h4>Part 1 – Region Labelling</h4>
+      <p>Students label the five zones (CBD, inner suburbs, middle suburbs, outer suburbs, Greater Sydney/western plains) using the regional structure taught in Stage 2. They may refer to the Google Maps display (keep it projected) or use their own mental map. This tests their ability to spatially locate the regions based on the explicit teaching.</p>
+      <h4>Part 2 – Atlas Investigation</h4>
+      <p>Using the paper atlas (Sydney/NSW map), students locate and add the following features to their map:</p>
+      <ul>
+        <li>Sydney Harbour</li>
+        <li>Parramatta River</li>
+        <li>Georges River</li>
+        <li>Lane Cove River</li>
+        <li>Ku-ring-gai Chase National Park (northern)</li>
+        <li>Royal National Park (southern)</li>
+        <li>Blue Mountains (western edge)</li>
+      </ul>
+      <p>This is the assessed artefact &ndash; collected. Students should use coloured pencils to distinguish waterways and land features from regional labels. The atlas work is significant: this is the first time students are reading a city-scale atlas map, a significant step up from the local-scale maps used in Phase 1.</p>
+      <div class="diff-block extension">
+        <div class="diff-label">Extension</div>
+        <p>Students add brief annotations noting what type of area each region might be (residential, commercial, mixed) based on atlas and Google Maps clues. This previews L8 land use investigation. Push thinking: <em>Why do you think the outer suburbs are newer and more sprawling than the inner suburbs? What might be different about how people built them?</em></p>
+      </div>
+      <div class="diff-block support">
+        <div class="diff-label">Support</div>
+        <p>Use the support map with region names already labelled. Students focus on locating and adding waterways and landforms using the atlas rather than identifying regions from scratch. Pair with a stronger reader to model atlas navigation at city scale.</p>
+      </div>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Sydney outline map (core or support) <span class="mat-note">A3, one per student, printable template below</span></li>
+        <li>Paper atlas <span class="mat-note">Sydney/NSW page, one per student</span></li>
+        <li>Coloured pencils <span class="mat-note">students&rsquo; own or class set</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 4: Consolidation -->
+<div class="stage-card stage-4">
+  <div class="stage-card-header">
+    <div class="stage-number">4</div>
+    <div><h3>Consolidation</h3><div class="stage-context">Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Class discussion comparing completed maps. Key questions:</p>
+      <ul>
+        <li>Which features appeared on most maps and which were missed?</li>
+        <li>How is Sydney&rsquo;s structure different from what we saw at local scale in Roseville?</li>
+        <li>Why do the river systems matter to Sydney&rsquo;s structure? (They connect suburbs to the CBD for transport and define green spaces.)</li>
+        <li>Why do national parks matter? (They show the limits of urban sprawl and provide recreational pull factors.)</li>
+      </ul>
+      <p>This stage doubles as formative observation &ndash; circulate and note which students accurately located regions, read the atlas correctly, and can explain the spatial patterns.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li style="color:var(--color-text-muted);font-style:italic;">Students hold up their maps for display and discussion</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Reference -->
+<h2 class="section-heading">Reference</h2>
+
+<!-- Materials & Resources -->
+<div class="collapsible" id="materials">
+  <div class="collapsible-header" onclick="toggleCollapsible('materials')">
+    <h3>Materials &amp; Resources</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <ul>
+      <li>Google Maps (Sydney overview) – teacher display on IWB/projector, pre-loaded</li>
+      <li>Sydney outline map core version (A3, teacher-created or from template below) – one per student</li>
+      <li>Sydney outline map support version (A3, pre-labelled, teacher-created or from template below) – 6&ndash;8 copies</li>
+      <li>Paper atlas (Sydney/NSW region page) – one per student</li>
+      <li>Coloured pencils – class set or students&rsquo; own</li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- Atlas Work -->
+<div class="collapsible" id="atlas-work">
+  <div class="collapsible-header" onclick="toggleCollapsible('atlas-work')">
+    <h3>Atlas Work</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <p>In Stage 3, students use the Sydney/NSW atlas page to locate Sydney&rsquo;s harbour, river systems (Parramatta, Georges, Lane Cove), national parks, and western plains. This is the first city-scale atlas work in the unit &ndash; a significant step up from the local maps used in Phase 1. Students must read contour patterns, identify physical features from symbols and labels, and locate features on a much larger territory. Circulate and support students who struggle with scale or symbol reading; this difficulty signals a need for more atlas scaffolding in L7.</p>
+  </div></div>
+</div>
+
+<!-- Observational Assessment -->
+<div class="collapsible" id="assessment">
+  <div class="collapsible-header" onclick="toggleCollapsible('assessment')">
+    <h3>Observational Assessment</h3>
+    <div class="collapsible-icon">&#9662;</div>
+  </div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <h4>What to look for</h4>
+    <ul>
+      <li>Can students locate the CBD? Is it placed correctly at the harbour?</li>
+      <li>Are regions placed in roughly the correct spatial arrangement (bands radiating from the centre)?</li>
+      <li>Are waterways named and positioned accurately on the map?</li>
+      <li>Can students read the atlas at city scale, or do they struggle with the larger territory and symbols?</li>
+      <li>Do students use the Google Maps display to verify their labelling?</li>
+      <li>Can students explain why Sydney&rsquo;s structure differs from Roseville&rsquo;s?</li>
+    </ul>
+    <h4>How to capture</h4>
+    <p>Circulate during Stage 3 and note students who struggle with atlas navigation at city scale &ndash; this is a new skill and will take practice. Collect all maps. Check for: (1) correct regional placement, (2) at least 5&ndash;7 waterways or landmarks named, (3) CBD correctly located at the harbour, (4) regions roughly equidistant from the centre. Take photos of 2&ndash;3 exemplary maps and 2&ndash;3 that show common misconceptions for your records.</p>
+    <h4>What it tells you</h4>
+    <p>If students can&rsquo;t read the atlas at city scale, L7&rsquo;s relief map work will be harder. Pair these students with a stronger mapper in L7 for atlas work. If regional structure isn&rsquo;t secure (e.g. outer suburbs placed closer to the CBD), L8&rsquo;s land use investigation will lack the framework for comparing inner/middle/outer patterns. Strong responses that include annotations about land use types and can explain spatial patterns indicate readiness for the more analytical work in L8&ndash;9.</p>
+  </div></div>
+</div>
+
+<!-- Printable Templates -->
+<h2 class="section-heading">Printable Templates</h2>
+
+<!-- Sydney Outline Maps - Teacher Sourced -->
+<div class="printable-section" id="map-core-a3">
+  <div class="printable-header">
+    <h3>Sydney Outline Maps</h3>
+  </div>
+  <div class="printable-body">
+    <div class="map-note" style="padding:1.25rem;margin:0;">
+      <p style="font-weight:600;margin-bottom:.75rem;">Teacher-sourced maps required for this lesson</p>
+      <p style="margin-bottom:.75rem;">The outline maps for this lesson need to be sourced or created by the teacher, as auto-generated SVG maps do not produce print-quality geographic outlines.</p>
+      <h4 style="font-size:.85rem;margin-bottom:.5rem;">Core Version (A3, one per student)</h4>
+      <ul style="margin-left:1.25rem;margin-bottom:.75rem;">
+        <li>Blank outline map of Greater Sydney showing coastline and major waterways as faint guides</li>
+        <li>Compass rose included</li>
+        <li>No region labels &ndash; students label the five zones (CBD, inner suburbs, middle suburbs, outer suburbs, Greater Sydney/western plains)</li>
+        <li>Space for students to add features from atlas: harbour, rivers, national parks, western edge</li>
+        <li>Name and title line at the bottom</li>
+      </ul>
+      <h4 style="font-size:.85rem;margin-bottom:.5rem;">Support Version (A3, 6&ndash;8 copies)</h4>
+      <ul style="margin-left:1.25rem;margin-bottom:.75rem;">
+        <li>Same base map as the core version</li>
+        <li>Five regional zones pre-labelled (CBD, Inner Suburbs, Middle Suburbs, Outer Suburbs, Greater Sydney/Western Plains)</li>
+        <li>Students focus on locating and adding waterways and landforms from atlas</li>
+      </ul>
+      <p style="font-size:.82rem;color:var(--color-text-muted);"><strong>Suggested sources:</strong> Google Maps screenshot printed to A3, school atlas photocopied to A3, or a publisher outline map of Sydney. A clean Google Maps view with labels turned off works well for the core version.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="page-footer">Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; Lesson 6 &middot; Draft</div>
+
+</div>
+
+<script>
+function toggleCollapsible(id){const el=document.getElementById(id);el.classList.toggle('open')}
+
+function updateQuantities() {
+  const n = parseInt(document.getElementById('classSize').value) || 28;
+  document.querySelectorAll('.print-item-qty').forEach(el => {
+    const rule = el.dataset.rule;
+    if (rule === 'one-per-student') el.textContent = n + ' copies';
+  });
+}
+
+function printTemplate(id, size) {
+  const el = document.getElementById(id);
+  el.classList.add('print-target');
+  document.body.classList.add('printing-template-' + size);
+  window.print();
+  document.body.classList.remove('printing-template-' + size);
+  el.classList.remove('print-target');
+}
+
+document.addEventListener('DOMContentLoaded', updateQuantities);
+</script>
+</body>
+</html>

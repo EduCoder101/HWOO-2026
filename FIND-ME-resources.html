@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIND ME: Resources to Source | Place &amp; Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #F5F7F3;
+  --color-card: #FFFFFF;
+  --color-card-border: #D4DDCF;
+  --color-text: #2D3A2D;
+  --color-text-muted: #5E6E58;
+  --color-heading: #1B3A2A;
+  --color-accent: #3A7D5C;
+  --color-accent-light: #E2F0E8;
+  --color-sage: #6B8F71;
+  --color-sage-light: #EAF2EB;
+  --color-divider: #C8D4C2;
+  --color-found: #3A7D5C;
+  --color-found-bg: #E2F0E8;
+  --color-notfound: #C45B3E;
+  --color-notfound-bg: #FCEEE9;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
+  --max-width: 1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem 1.5rem 4rem}
+.page-header{background:linear-gradient(135deg,#1B3A2A 0%,#2D5E40 100%);color:white;padding:2.5rem 2rem 2rem;border-radius:var(--radius);margin-bottom:1.5rem;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
+.page-header h1{font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}
+.page-header .subtitle{font-size:1.05rem;opacity:.85;font-weight:400}
+.intro{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:2rem;box-shadow:var(--shadow-card);font-size:.92rem}
+.intro p{margin-bottom:.5rem}
+.intro p:last-child{margin-bottom:0}
+.progress-bar{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding:1rem 1.25rem;background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-card)}
+.progress-bar .progress-label{font-weight:600;font-size:.85rem;color:var(--color-heading);white-space:nowrap}
+.progress-track{flex:1;height:10px;background:var(--color-card-border);border-radius:5px;overflow:hidden}
+.progress-fill{height:100%;background:var(--color-found);border-radius:5px;transition:width .3s ease}
+.progress-count{font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--color-found);white-space:nowrap}
+.section-heading{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--color-heading);margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--color-divider)}
+.section-heading .lesson-tag{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-accent);display:block;margin-bottom:.25rem}
+.resource-card{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius-sm);margin-bottom:.75rem;overflow:hidden;box-shadow:var(--shadow-card);transition:border-color .2s}
+.resource-card.found{border-color:var(--color-found);background:var(--color-found-bg)}
+.resource-inner{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem}
+.resource-check{flex-shrink:0;margin-top:.15rem}
+.resource-check input{width:20px;height:20px;accent-color:var(--color-found);cursor:pointer}
+.resource-info{flex:1;min-width:0}
+.resource-name{font-weight:600;color:var(--color-heading);margin-bottom:.2rem;font-size:.95rem}
+.resource-detail{font-size:.82rem;color:var(--color-text-muted);line-height:1.5}
+.resource-lessons{display:flex;gap:.4rem;margin-top:.4rem;flex-wrap:wrap}
+.lesson-pill{font-size:.68rem;font-weight:600;padding:.15em .55em;border-radius:10px;background:var(--color-sage-light);color:var(--color-sage)}
+.resource-suggestion{font-size:.78rem;color:var(--color-accent);font-style:italic;margin-top:.3rem}
+.category-label{font-family:var(--font-display);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);margin:1.5rem 0 .5rem}
+.page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
+@media print{
+  body{background:white;font-size:11pt}
+  .container{max-width:100%;padding:.5rem}
+  .page-header{background:#1B3A2A!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .resource-card{box-shadow:none;break-inside:avoid}
+  .progress-bar{display:none}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="page-header">
+  <h1>FIND ME: Resources to Source</h1>
+  <div class="subtitle">Place &amp; Space: From Our Neighbourhood to the World &ndash; everything you need to track down before teaching</div>
+</div>
+
+<div class="intro">
+  <p>This file lists every resource you need to find, source, or create for the unit. It does not include things already built into the lesson files (printable templates) or standard classroom supplies (books, pencils, glue).</p>
+  <p>Tick items off as you find them. The progress bar updates automatically.</p>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-label">Progress:</div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="progress-count" id="progressCount">0 / 0</div>
+</div>
+
+<!-- ============================================ -->
+<!-- MAPS & ATLASES -->
+<!-- ============================================ -->
+
+<div class="category-label">Maps &amp; Atlases</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Paper atlases (class set)</div>
+      <div class="resource-detail">One per student. Must include: Sydney region page, NSW/Australia page, world map page with grid reference axes. Check the school library or geography department.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L1</span><span class="lesson-pill">L2</span><span class="lesson-pill">L3</span><span class="lesson-pill">L4</span><span class="lesson-pill">L5+</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Cammeraygal Country map</div>
+      <div class="resource-detail">Indigenous map of the local area showing Cammeraygal Country. Used as a primary source alongside modern maps, not as a supplement. Check school curriculum resources or contact your Aboriginal Education team.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L1</span><span class="lesson-pill">L4</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Six-map set of Roseville area</div>
+      <div class="resource-detail">Six A4 maps all showing the same area: satellite image, street map, train network map, topographic map, historical map, and Cammeraygal Country map. One set per pair. You will need to source and print each individually.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L1</span></div>
+      <div class="resource-suggestion">Satellite and street maps: screenshot from Google Maps. Train network: Transport NSW website. Topographic: NSW Spatial Services. Historical: search State Library of NSW digital collections.</div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Mercator and Gall-Peters projection images</div>
+      <div class="resource-detail">Two world map projections displayed side by side. Projected on IWB or printed A3. The visual contrast between the two drives the discussion.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L1</span></div>
+      <div class="resource-suggestion">Search "Mercator vs Gall-Peters" in Google Images. Many free comparison images available.</div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Printed local street map (Roseville/North Shore)</div>
+      <div class="resource-detail">A4 or A3 street map with landmarks, compass rose, and key. Needs minimum 10 identifiable landmarks and at least 8 map symbols visible at print scale.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L2</span></div>
+      <div class="resource-suggestion">Screenshot from Google Maps or OpenStreetMap. Add compass rose and key if not present.</div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Blank A3 world map (with country names and grid axes)</div>
+      <div class="resource-detail">One per pair. Must have grid reference axes along the edges (letters on one axis, numbers on the other). Country names should be visible but the map should otherwise be uncluttered.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L3</span></div>
+      <div class="resource-suggestion">Search "blank world map with grid references A3 printable" or create one from an outline map.</div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Blank A3 Australia map (with state names and grid axes)</div>
+      <div class="resource-detail">One per pair. Grid reference axes along edges, state/territory names visible. Used alongside the world map in the split-class activity.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L3</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Outline map of Roseville/North Shore (for annotation)</div>
+      <div class="resource-detail">A3 or larger blank map showing coastline, major roads, waterways, and grid reference axes but no feature labels. One per group. Used as the foundation for the annotated class map in Stage 3.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L4</span></div>
+      <div class="resource-suggestion">Trace or simplify a Google Maps satellite screenshot. Add grid axes.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PHOTOGRAPHS & IMAGES -->
+<!-- ============================================ -->
+
+<div class="category-label">Photographs &amp; Images</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Provocation photograph of Roseville</div>
+      <div class="resource-detail">High-resolution photograph of the school's immediate surroundings showing a mix of built and natural features. Projected on IWB or printed A3. This stays displayed through multiple stages.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L1</span></div>
+      <div class="resource-suggestion">Walk around the school and take a photo that shows both natural vegetation and built features (buildings, roads, signage) in one frame.</div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Place card photographs (16 images)</div>
+      <div class="resource-detail">Photographs for the place cards used in L3. Need images for 8 world locations (e.g. Machu Picchu, Great Barrier Reef, Sydney, etc.) and 8 Australian locations (e.g. Kakadu, Broken Hill, Hobart, Coober Pedy, etc.). Each image should be recognisable and printable at playing-card size.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L3</span></div>
+      <div class="resource-suggestion">Search for Creative Commons images. Wikimedia Commons is a good source for landmark photos.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- DIGITAL RESOURCES -->
+<!-- ============================================ -->
+
+<div class="category-label">Digital Resources (load before class)</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Google Maps &ndash; Roseville College (street view, satellite, terrain)</div>
+      <div class="resource-detail">Pre-load on the IWB computer before class. Start in street view at the school entrance. Test that satellite and terrain layers switch smoothly. Needs reliable internet.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L1</span><span class="lesson-pill">L2</span><span class="lesson-pill">L3</span><span class="lesson-pill">L4</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Compass rose drawing video</div>
+      <div class="resource-detail">YouTube instructional video (youtube.com/watch?v=swXwvbN_TC8). Students draw along. Test playback and check school firewall before the lesson.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L2</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">HTML symbol challenge (digital interactive)</div>
+      <div class="resource-detail">Digital map symbol identification activity loaded on tablets or laptops (one per pair). Requires WiFi. If unavailable, use the printed version instead.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L2</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PHYSICAL EQUIPMENT -->
+<!-- ============================================ -->
+
+<div class="category-label">Physical Equipment</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Real compasses (class set)</div>
+      <div class="resource-detail">One per pair minimum. Used for classroom compass work and the outdoor orienteering challenge. Check the science or geography department.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L2</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Butcher's paper for Question Wall</div>
+      <div class="resource-detail">One large sheet, headed "What do we want to know about places?" Displayed on the classroom wall for the entire unit. Position where students can see it from their seats.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L1</span><span class="lesson-pill">L3</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Large paper sheets (A2 or butcher's paper) for annotation</div>
+      <div class="resource-detail">One per group for the annotated feature map. Students mark physical and human features using colour coding.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L4</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Local landmarks word bank</div>
+      <div class="resource-detail">A4 sheet with 15&ndash;20 local features with simple illustrations or icons. For support students during the feature investigation. You will need to create this with Roseville-specific landmarks.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L4</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SETUP TASKS -->
+<!-- ============================================ -->
+
+<div class="category-label">Setup Tasks (do before the lesson)</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">Orienteering course (L2)</div>
+      <div class="resource-detail">Place orienteering instruction cards at locations around the school grounds. Mark a 10m distance with chalk or tape for stride calibration. Allow 15&ndash;20 minutes setup before the lesson.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L2</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="resource-card" data-resource>
+  <div class="resource-inner">
+    <div class="resource-check"><input type="checkbox" onchange="updateProgress()"></div>
+    <div class="resource-info">
+      <div class="resource-name">School grounds map (L2, optional)</div>
+      <div class="resource-detail">Simple A4 overhead view of the school grounds for the orienteering scaffold. Only given to students who request it. Create a basic sketch if one doesn't exist.</div>
+      <div class="resource-lessons"><span class="lesson-pill">L2</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-footer">Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; FIND ME Resources</div>
+
+</div>
+
+<script>
+function updateProgress() {
+  const cards = document.querySelectorAll('[data-resource]');
+  const checks = document.querySelectorAll('[data-resource] input[type="checkbox"]');
+  const found = Array.from(checks).filter(c => c.checked).length;
+  const total = checks.length;
+
+  document.getElementById('progressCount').textContent = found + ' / ' + total;
+  document.getElementById('progressFill').style.width = (total > 0 ? (found / total * 100) : 0) + '%';
+
+  // Toggle found state on cards
+  checks.forEach(c => {
+    const card = c.closest('[data-resource]');
+    card.classList.toggle('found', c.checked);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', updateProgress);
+</script>
+</body>
+</html>

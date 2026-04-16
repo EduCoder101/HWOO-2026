@@ -21,7 +21,7 @@
   --radius: 12px; --radius-sm: 8px;
   --shadow-card: 0 2px 8px rgba(40,60,40,0.06), 0 1px 3px rgba(40,60,40,0.04);
   --shadow-hover: 0 4px 16px rgba(40,60,40,0.1);
-  --max-width: 860px;
+  --max-width: 1160px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
@@ -59,12 +59,19 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .stage-5 .stage-number{background:var(--color-stage-5)}
 .stage-card-header h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--color-heading)}
 .stage-card-header .stage-context{font-size:.8rem;color:var(--color-text-muted);font-weight:400}
-.stage-card-body{padding:1.5rem}
+.stage-card-content{display:flex}
+.stage-card-body{flex:1;padding:1.5rem;min-width:0}
 .stage-card-body h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-heading);margin:1.25rem 0 .5rem}
 .stage-card-body h4:first-child{margin-top:0}
 .stage-card-body p{margin-bottom:.85rem;font-size:.95rem}
 .stage-card-body ul,.stage-card-body ol{padding-left:1.25rem;margin-bottom:.85rem}
 .stage-card-body li{margin-bottom:.35rem;font-size:.95rem}
+.stage-materials{width:220px;flex-shrink:0;background:var(--color-sage-light);border-left:1px solid var(--color-card-border);padding:1.25rem;font-size:.82rem;display:flex;flex-direction:column}
+.stage-materials-label{font-family:var(--font-display);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-sage);margin-bottom:.75rem}
+.stage-materials ul{list-style:none;padding:0;margin:0}
+.stage-materials li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;line-height:1.4;color:var(--color-text)}
+.stage-materials li::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--color-sage)}
+.stage-materials .mat-note{font-size:.75rem;color:var(--color-text-muted);font-style:italic;display:block;margin-top:.15rem}
 .diff-block{border-radius:var(--radius-sm);padding:.85rem 1rem;margin:.85rem 0;font-size:.9rem}
 .diff-block.extension{background:var(--color-extension-light);border-left:3px solid var(--color-extension)}
 .diff-block.support{background:var(--color-support-light);border-left:3px solid var(--color-support)}
@@ -108,7 +115,8 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .print-item-detail{font-size:.78rem;color:var(--color-text-muted)}
 .print-item-qty{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--color-accent);min-width:50px;text-align:center}
 .print-item-action .separate-tag{font-size:.72rem;color:var(--color-text-muted);font-style:italic;white-space:nowrap}
-@media print{body{background:white;font-size:11pt}.container{max-width:100%;padding:0}.lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-card,.collapsible{box-shadow:none;break-inside:avoid}.collapsible-body{max-height:none!important}.page-print-btn,.page-print-bar,.print-package{display:none}}
+@media (max-width: 800px){.stage-card-content{flex-direction:column}.stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}}
+@media print{body{background:white;font-size:11pt}.container{max-width:100%;padding:0}.lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-card,.collapsible{box-shadow:none;break-inside:avoid}.collapsible-body{max-height:none!important}.page-print-btn,.page-print-bar,.print-package{display:none}.stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -241,11 +249,19 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="stage-card stage-1">
   <div class="stage-card-header">
     <div class="stage-number">1</div>
-    <div><h3>Provocation</h3><div class="stage-context">Classroom · Whole class</div></div>
+    <div><h3>Provocation</h3><div class="stage-context">7 min &middot; Whole class</div></div>
   </div>
-  <div class="stage-card-body">
-    <p>Students write their own definition of geography in their books. Brief discussion without going into extensive detail – the purpose is to surface existing conceptions, not to teach the definition. The lesson will build the definition through experience.</p>
-    <p>Frame the lesson: we are going to start by thinking about how we can view and represent the world around us.</p>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Students write their own definition of geography in their books. Brief discussion without going into extensive detail – the purpose is to surface existing conceptions, not to teach the definition. The lesson will build the definition through experience.</p>
+      <p>Frame the lesson: we are going to start by thinking about how we can view and represent the world around us.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Provocation photograph of Roseville <span class="mat-note">A3 print or projected on IWB</span></li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -253,16 +269,24 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="stage-card stage-2">
   <div class="stage-card-header">
     <div class="stage-number">2</div>
-    <div><h3>Google Maps Zoom Sequence</h3><div class="stage-context">Classroom · Whole class · Interactive whiteboard</div></div>
+    <div><h3>Google Maps Zoom Sequence</h3><div class="stage-context">8 min &middot; Whole class</div></div>
   </div>
-  <div class="stage-card-body">
-    <p>Project Google Maps on the interactive whiteboard. Students note observations in their books throughout.</p>
-    <h4>Street view of Roseville College</h4>
-    <p>Students observe what they can see. Prompt them to notice small details: a stormwater drain, a street light – what does this imply about hidden infrastructure beneath the surface?</p>
-    <h4>Aerial view of Roseville College and surrounds</h4>
-    <p>Zoom out to show the train station, surrounding streets, and broader neighbourhood. Students write down all the features they observe (people, cars, trees, shade, sports courts, train station, shops, etc.).</p>
-    <h4>City-wide view</h4>
-    <p>Zoom out further. Discuss how individual features have become largely indistinguishable, but you gain a broader sense of urban density, green spaces, and transport corridors. The scale has changed what is visible and what matters.</p>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Project Google Maps on the interactive whiteboard. Students note observations in their books throughout.</p>
+      <h4>Street view of Roseville College</h4>
+      <p>Students observe what they can see. Prompt them to notice small details: a stormwater drain, a street light – what does this imply about hidden infrastructure beneath the surface?</p>
+      <h4>Aerial view of Roseville College and surrounds</h4>
+      <p>Zoom out to show the train station, surrounding streets, and broader neighbourhood. Students write down all the features they observe (people, cars, trees, shade, sports courts, train station, shops, etc.).</p>
+      <h4>City-wide view</h4>
+      <p>Zoom out further. Discuss how individual features have become largely indistinguishable, but you gain a broader sense of urban density, green spaces, and transport corridors. The scale has changed what is visible and what matters.</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps on IWB <span class="mat-note">pre-loaded at Roseville College street view</span></li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -270,15 +294,23 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="stage-card stage-3">
   <div class="stage-card-header">
     <div class="stage-number">3</div>
-    <div><h3>Categorisation</h3><div class="stage-context">Classroom · Whole class then individual</div></div>
+    <div><h3>Categorisation</h3><div class="stage-context">12 min &middot; Whole class then individual</div></div>
   </div>
-  <div class="stage-card-body">
-    <p>Ask students: in what ways might they organise all the things they've observed?</p>
-    <ul>
-      <li>Promote discussion about human-built vs natural/physical features of the landscape</li>
-      <li>Push them to think about how they can subcategorise the human-built observations (transport, services/shops, infrastructure, housing vs business areas, recreational, parks)</li>
-      <li>Create a class T-chart of Human / Physical on the board, then students group their ideas in their books into categories that emerge from the discussion</li>
-    </ul>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Ask students: in what ways might they organise all the things they've observed?</p>
+      <ul>
+        <li>Promote discussion about human-built vs natural/physical features of the landscape</li>
+        <li>Push them to think about how they can subcategorise the human-built observations (transport, services/shops, infrastructure, housing vs business areas, recreational, parks)</li>
+        <li>Create a class T-chart of Human / Physical on the board, then students group their ideas in their books into categories that emerge from the discussion</li>
+      </ul>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Provocation photograph <span class="mat-note">remains on display from Stage 1</span></li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -286,40 +318,48 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="stage-card stage-4">
   <div class="stage-card-header">
     <div class="stage-number">4</div>
-    <div><h3>Map Set</h3><div class="stage-context">Classroom · Table groups</div></div>
+    <div><h3>Map Set</h3><div class="stage-context">13 min &middot; Table groups</div></div>
   </div>
-  <div class="stage-card-body">
-    <p>Six maps printed A4, clipped or stapled as a set. Students may write notes directly on the maps – print one set per student if individual annotation is preferred, or one per table for shared scribing.</p>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Six maps printed A4, clipped or stapled as a set. Students may write notes directly on the maps – print one set per student if individual annotation is preferred, or one per table for shared scribing.</p>
 
-    <p>The six maps:</p>
-    <ol>
-      <li>Current Sydney satellite image, no labels (Google Maps screenshot)</li>
-      <li>Current Sydney street map with full labels and key (Google Maps screenshot)</li>
-      <li>Sydney train network map (Transport for NSW – transportnsw.info, freely available PDF)</li>
-      <li>Sydney topographic map (NSW Spatial Services – topo.maptiles.nsw.gov.au)</li>
-      <li>Historical Sydney map – teacher-sourced. Two suggested eras: goldfields-era and early 20th century. Select maps that show a recognisably different city.</li>
-      <li>Indigenous map of Cammeraygal Country – school-specific digital file (details to be supplied). This map sits alongside the others as an equal member of the set, not a supplementary resource.</li>
-    </ol>
+      <p>The six maps:</p>
+      <ol>
+        <li>Current Sydney satellite image, no labels (Google Maps screenshot)</li>
+        <li>Current Sydney street map with full labels and key (Google Maps screenshot)</li>
+        <li>Sydney train network map (Transport for NSW – transportnsw.info, freely available PDF)</li>
+        <li>Sydney topographic map (NSW Spatial Services – topo.maptiles.nsw.gov.au)</li>
+        <li>Historical Sydney map – teacher-sourced. Two suggested eras: goldfields-era and early 20th century. Select maps that show a recognisably different city.</li>
+        <li>Indigenous map of Cammeraygal Country – school-specific digital file (details to be supplied). This map sits alongside the others as an equal member of the set, not a supplementary resource.</li>
+      </ol>
 
-    <p>Students observe the different types of maps. Key questions: <em>How do these maps differ? What does this tell us about the purpose of maps?</em></p>
+      <p>Students observe the different types of maps. Key questions: <em>How do these maps differ? What does this tell us about the purpose of maps?</em></p>
 
-    <h4>Contrasting ways of representing and navigating place</h4>
-    <p>Once students have discussed the first five maps, draw attention to the Cammeraygal Country map. Key questions:</p>
-    <ul>
-      <li><em>What does this map show that the Google Maps view does not?</em></li>
-      <li><em>What does the Google Maps view show that this map does not?</em></li>
-      <li><em>If you wanted to understand what this place means to the people who have lived here for thousands of years, which map would you use? Why?</em></li>
-      <li><em>Are any of these maps the 'right' map, or do they each show something different about the same place?</em></li>
-    </ul>
-    <p>The point is not that one map is better than another, but that different peoples represent the same place in fundamentally different ways depending on their relationship with it. The five modern maps represent the landscape, transport, elevation and history. The Cammeraygal map represents connection, Country and belonging. Both are ways of navigating and understanding place – neither is complete without the other.</p>
+      <h4>Contrasting ways of representing and navigating place</h4>
+      <p>Once students have discussed the first five maps, draw attention to the Cammeraygal Country map. Key questions:</p>
+      <ul>
+        <li><em>What does this map show that the Google Maps view does not?</em></li>
+        <li><em>What does the Google Maps view show that this map does not?</em></li>
+        <li><em>If you wanted to understand what this place means to the people who have lived here for thousands of years, which map would you use? Why?</em></li>
+        <li><em>Are any of these maps the 'right' map, or do they each show something different about the same place?</em></li>
+      </ul>
+      <p>The point is not that one map is better than another, but that different peoples represent the same place in fundamentally different ways depending on their relationship with it. The five modern maps represent the landscape, transport, elevation and history. The Cammeraygal map represents connection, Country and belonging. Both are ways of navigating and understanding place – neither is complete without the other.</p>
 
-    <p>Follow up: <em>What does this tell us about how we can view our home, or other places on Earth?</em> The aim is to elicit the concept that we can observe and represent places with a purpose (physical landscape, environment, political, social/demographic, historical, cultural, spiritual) – and that the choice of representation shapes what we see and what we value.</p>
+      <p>Follow up: <em>What does this tell us about how we can view our home, or other places on Earth?</em> The aim is to elicit the concept that we can observe and represent places with a purpose (physical landscape, environment, political, social/demographic, historical, cultural, spiritual) – and that the choice of representation shapes what we see and what we value.</p>
 
-    <p>Students write down: <strong>'How we represent places impacts our decision making in how we manage them.'</strong></p>
+      <p>Students write down: <strong>'How we represent places impacts our decision making in how we manage them.'</strong></p>
 
-    <div class="diff-block extension">
-      <div class="diff-label">Extension</div>
-      Choose two maps from the set (including the Cammeraygal Country map as one option) and write three sentences explaining what each map is useful for and who might use it.
+      <div class="diff-block extension">
+        <div class="diff-label">Extension</div>
+        Choose two maps from the set (including the Cammeraygal Country map as one option) and write three sentences explaining what each map is useful for and who might use it.
+      </div>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Six-map set <span class="mat-note">A4, one set per pair: satellite, street, train network, topographic, historical, Cammeraygal Country</span></li>
+      </ul>
     </div>
   </div>
 </div>
@@ -328,18 +368,27 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 <div class="stage-card stage-5">
   <div class="stage-card-header">
     <div class="stage-number">5</div>
-    <div><h3>Projections Provocation and Question Wall</h3><div class="stage-context">Classroom · Whole class then individual</div></div>
+    <div><h3>Projections Provocation and Question Wall</h3><div class="stage-context">10 min &middot; Whole class then individual</div></div>
   </div>
-  <div class="stage-card-body">
-    <h4>Mercator and Gall-Peters projections</h4>
-    <p>Two side-by-side images of the world projected on the whiteboard: Mercator projection and Gall-Peters projection. Source via Google Images – no printing required.</p>
-    <p>Key questions: <em>What do you observe? What are the differences? Which is the right map?</em></p>
-    <p>Explain that the world map they are used to is not an accurate representation – the countries and continents are the wrong sizes, and the Gall-Peters projection is more accurate. Discuss the implications. Tie back to the key statement: <strong>'How we represent places impacts our decision making in how we manage them.'</strong></p>
-    <p>Students write down: <strong>'Geography isn't just about knowing where things are, it's about asking why we represent the world the way we do.'</strong></p>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <h4>Mercator and Gall-Peters projections</h4>
+      <p>Two side-by-side images of the world projected on the whiteboard: Mercator projection and Gall-Peters projection. Source via Google Images – no printing required.</p>
+      <p>Key questions: <em>What do you observe? What are the differences? Which is the right map?</em></p>
+      <p>Explain that the world map they are used to is not an accurate representation – the countries and continents are the wrong sizes, and the Gall-Peters projection is more accurate. Discuss the implications. Tie back to the key statement: <strong>'How we represent places impacts our decision making in how we manage them.'</strong></p>
+      <p>Students write down: <strong>'Geography isn't just about knowing where things are, it's about asking why we represent the world the way we do.'</strong></p>
 
-    <h4>Question wall</h4>
-    <p>One large sheet of butcher's paper displayed on the wall before the lesson begins, headed: <em>What do we want to know about places?</em> Post-it notes and pens at each table. Wall remains displayed for the duration of the unit – position it where students can see it from their seats if possible.</p>
-    <p>Students write down their questions, names attached. What do they want to know more about?</p>
+      <h4>Question wall</h4>
+      <p>One large sheet of butcher's paper displayed on the wall before the lesson begins, headed: <em>What do we want to know about places?</em> Post-it notes and pens at each table. Wall remains displayed for the duration of the unit – position it where students can see it from their seats if possible.</p>
+      <p>Students write down their questions, names attached. What do they want to know more about?</p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Mercator and Gall-Peters projections <span class="mat-note">projected on IWB or A3 print</span></li>
+        <li>Butcher's paper for Question Wall</li>
+      </ul>
+    </div>
   </div>
 </div>
 
