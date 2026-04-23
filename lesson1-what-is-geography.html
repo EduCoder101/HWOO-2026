@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 1 · What is Geography? | Place &amp; Space</title>
+<title>Lesson 1 &middot; What is Geography? | Place &amp; Space</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -96,6 +96,8 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .page-print-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5em 1.1em;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--color-text-muted);background:var(--color-card);border:1px solid var(--color-card-border);border-radius:6px;cursor:pointer;transition:all .15s ease}
 .page-print-btn:hover{background:var(--color-text);color:white;border-color:var(--color-text)}
 .page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--color-divider);font-size:.82rem;color:var(--color-text-muted)}
+
+/* Print Package */
 .print-package{background:var(--color-card);border:1px solid var(--color-card-border);border-radius:var(--radius);margin-bottom:1.5rem;overflow:hidden;box-shadow:var(--shadow-card)}
 .print-package-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none;background:var(--color-accent-light);border-bottom:1px solid var(--color-card-border);transition:background .15s ease}
 .print-package-header:hover{background:#D0E8D8}
@@ -106,7 +108,7 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .print-package-content{padding:1.25rem}
 .class-size-input{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--color-card-border)}
 .class-size-input label{font-weight:600;font-size:.9rem;color:var(--color-heading)}
-.class-size-input input{width:70px;padding:.4rem .6rem;border:2px solid var(--color-card-border);border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--color-heading);text-align:center}
+.class-size-input input{width:70px;padding:.4rem .6rem;border:2px solid var(--color-card-border);border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--color-heading);text-align:center;transition:border-color .15s ease}
 .class-size-input input:focus{outline:none;border-color:var(--color-accent)}
 .print-item{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #EEF1EC;font-size:.88rem;gap:.75rem}
 .print-item:last-child{border-bottom:none}
@@ -115,15 +117,20 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 .print-item-detail{font-size:.78rem;color:var(--color-text-muted)}
 .print-item-qty{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--color-accent);min-width:50px;text-align:center}
 .print-item-action .separate-tag{font-size:.72rem;color:var(--color-text-muted);font-style:italic;white-space:nowrap}
-@media (max-width: 800px){.stage-card-content{flex-direction:column}.stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}}
-@media print{body{background:white;font-size:11pt}.container{max-width:100%;padding:0}.lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-card,.collapsible{box-shadow:none;break-inside:avoid}.collapsible-body{max-height:none!important}.page-print-btn,.page-print-bar,.print-package{display:none}.stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* Part divider */
+.part-divider{display:flex;align-items:center;gap:1rem;margin:2.5rem 0 1.5rem}
+.part-divider-line{flex:1;height:2px;background:var(--color-divider)}
+.part-divider-label{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
 
 /* Home navigation bar */
 .home-nav{background:var(--color-card);border-bottom:1px solid var(--color-card-border);padding:.5rem 1.5rem;margin-bottom:0}
 .home-nav a{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--color-accent);text-decoration:none;transition:color .2s ease}
 .home-nav a:hover{color:var(--color-heading)}
 .home-nav svg{flex-shrink:0}
-@media print{.home-nav{display:none}}
+
+@media (max-width: 800px){.stage-card-content{flex-direction:column}.stage-materials{width:100%;border-left:none;border-top:1px solid var(--color-card-border)}}
+@media print{body{background:white;font-size:11pt}.container{max-width:100%;padding:0}.lesson-header{background:var(--color-heading)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-card,.collapsible{box-shadow:none;break-inside:avoid}.collapsible-body{max-height:none!important}.page-print-btn,.page-print-bar,.print-package{display:none}.stage-materials{background:#f5f8f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.home-nav{display:none}}
 </style>
 </head>
 <body>
@@ -141,22 +148,23 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 </div>
 
 <div class="lesson-header">
-  <div class="phase-tag">Phase 1 · Local</div>
-  <h1><span class="lesson-number">Lesson 1 ·</span> What is Geography?</h1>
-  <div class="subtitle">Introduction to geography, places and representation</div>
+  <div class="phase-tag">Phase 1 &middot; Local</div>
+  <h1><span class="lesson-number">Lesson 1 &middot;</span> What is Geography?</h1>
+  <div class="subtitle">Map types, urban and rural places, and introduction to our local area</div>
 </div>
 
 <div class="lesson-summary">
   <div class="summary-label">Lesson at a Glance</div>
   <ul>
-    <li>Students write their own definition of geography, then discuss as a class</li>
-    <li>Google Maps zoom sequence: start at street view of Roseville College, zoom out to aerial view, then to city-wide view – students note features at each scale</li>
-    <li>Students categorise their observations into human and physical features using a class T-chart, then group human features into subcategories</li>
-    <li>Six-map set at table groups (satellite, street, train network, topographic, historical, Cammeraygal Country) – students observe how different peoples represent the same place for different purposes</li>
-    <li>Discussion contrasting modern maps with the Cammeraygal Country map: different ways of navigating, understanding and belonging to place</li>
-    <li>Key statement: 'How we represent places impacts our decision making in how we manage them'</li>
-    <li>Mercator vs Gall-Peters projection provocation: which map is right?</li>
-    <li>Question wall launched: students post questions about places on butcher's paper (remains for the unit)</li>
+    <li><strong>Part A &ndash; Maps, Places and Settlement Types:</strong> Revise that geographers use tools (relief maps, compass directions, grid maps, legends) to navigate and locate places</li>
+    <li>Compare physical and political world maps &ndash; what each shows, how they differ, and why different map types exist</li>
+    <li>Introduce urban, rural and remote settlement types with definitions; establish a unit vocabulary display</li>
+    <li>Use Google Maps (map view) to locate and classify NSW places: Newcastle (urban), Wagga Wagga (rural), Menindee (remote)</li>
+    <li>Students locate and classify additional places on the map using geographical tools</li>
+    <li><strong>Part B &ndash; Our Local Area (if time allows):</strong> Google Maps zoom sequence from Roseville College street view to city-wide view</li>
+    <li>Categorise observations into human and physical features using a class T-chart</li>
+    <li>Six-map set at table groups &ndash; how different peoples represent the same place for different purposes</li>
+    <li>Mercator vs Gall-Peters projection provocation; student questions added to the vocabulary and question display</li>
   </ul>
 </div>
 
@@ -167,7 +175,7 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
       Preparation Checklist
     </h3>
-    <div class="collapsible-icon">▾</div>
+    <div class="collapsible-icon">&#9662;</div>
   </div>
   <div class="print-package-body">
     <div class="print-package-content">
@@ -176,10 +184,61 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
         <input type="number" id="classSize" value="28" min="1" max="40" onchange="updateQuantities()" oninput="updateQuantities()">
       </div>
 
+      <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);margin-bottom:.5rem;">Part A</div>
+
       <div class="print-item">
         <div class="print-item-info">
-          <div class="print-item-name">Map Set (6 maps × A4)</div>
-          <div class="print-item-detail">1 set per table group (or 1 per student for individual annotation). 6 pages per set.</div>
+          <div class="print-item-name">Physical World Map</div>
+          <div class="print-item-detail">Projected on IWB or wall map. Must show natural features: mountain ranges, rivers, deserts, oceans. Teacher-sourced.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Project or display</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Political World Map</div>
+          <div class="print-item-detail">Projected on IWB or wall map. Must show country borders, capital cities, labels. Teacher-sourced.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Project or display</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Google Maps Pre-loaded (Map View)</div>
+          <div class="print-item-detail">Open Google Maps on IWB in standard map view, zoomed to show NSW. Test navigating to Newcastle, Wagga Wagga and Menindee before the lesson.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Digital setup</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Vocabulary Display (Butcher&rsquo;s Paper)</div>
+          <div class="print-item-detail">One large sheet headed &lsquo;Geography Vocabulary&rsquo;. Write urban, rural and remote definitions during the lesson. Space below for student questions and additional vocabulary throughout the unit.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Prepare before lesson</span></div>
+      </div>
+
+      <div style="margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--color-card-border);">
+        <div style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);margin-bottom:.5rem;">Part B (if time allows)</div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Google Maps Pre-loaded (Street View)</div>
+          <div class="print-item-detail">Roseville College in street view on IWB. Can use the same Google Maps session from Part A.</div>
+        </div>
+        <div class="print-item-qty">1</div>
+        <div class="print-item-action"><span class="separate-tag">Digital setup</span></div>
+      </div>
+
+      <div class="print-item">
+        <div class="print-item-info">
+          <div class="print-item-name">Map Set (6 maps &times; A4)</div>
+          <div class="print-item-detail">1 set per table group. 6 pages per set: satellite, street, train network, topographic, historical, Cammeraygal Country.</div>
         </div>
         <div class="print-item-qty" data-rule="table-sets">5 sets</div>
         <div class="print-item-action"><span class="separate-tag">Print from sources</span></div>
@@ -197,7 +256,7 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
       <div class="print-item">
         <div class="print-item-info">
           <div class="print-item-name">Mercator and Gall-Peters Projection Images</div>
-          <div class="print-item-detail">Projected side by side on interactive whiteboard. Source via Google Images.</div>
+          <div class="print-item-detail">Projected side by side on IWB. Source via Google Images.</div>
         </div>
         <div class="print-item-qty">1</div>
         <div class="print-item-action"><span class="separate-tag">Project digitally</span></div>
@@ -205,29 +264,11 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 
       <div class="print-item">
         <div class="print-item-info">
-          <div class="print-item-name">Butcher's Paper (Question Wall)</div>
-          <div class="print-item-detail">1 large sheet. Head with: 'What do we want to know about places?' Display before lesson.</div>
-        </div>
-        <div class="print-item-qty">1</div>
-        <div class="print-item-action"><span class="separate-tag">Prepare before lesson</span></div>
-      </div>
-
-      <div class="print-item">
-        <div class="print-item-info">
-          <div class="print-item-name">Post-it Notes and Pens</div>
-          <div class="print-item-detail">At each table group.</div>
+          <div class="print-item-name">Post-it Notes</div>
+          <div class="print-item-detail">At each table group, for student questions on the vocabulary display.</div>
         </div>
         <div class="print-item-qty" data-rule="tables">5 tables</div>
         <div class="print-item-action"><span class="separate-tag">Distribute</span></div>
-      </div>
-
-      <div class="print-item">
-        <div class="print-item-info">
-          <div class="print-item-name">Google Maps Pre-loaded</div>
-          <div class="print-item-detail">Roseville College in street view on interactive whiteboard. Test before lesson.</div>
-        </div>
-        <div class="print-item-qty">1</div>
-        <div class="print-item-action"><span class="separate-tag">Digital setup</span></div>
       </div>
 
     </div>
@@ -236,80 +277,207 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 
 <div class="meta-grid">
   <div class="meta-item"><div class="meta-label">Teaching Mode</div><div class="meta-value">Explicit teaching</div></div>
-  <div class="meta-item"><div class="meta-label">Grouping</div><div class="meta-value">Whole class then individual</div></div>
-  <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">50 minutes</div></div>
+  <div class="meta-item"><div class="meta-label">Grouping</div><div class="meta-value">Whole class, then individual</div></div>
+  <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">Double lesson (Part A + Part B)</div></div>
   <div class="meta-item"><div class="meta-label">Syllabus</div><div class="meta-value">HS3-GEO-01, HS3-ACH-01</div></div>
-  <div class="meta-item"><div class="meta-label">Prior Knowledge</div><div class="meta-value">None – this is the unit's opening lesson</div></div>
-  <div class="meta-item"><div class="meta-label">Enables</div><div class="meta-value">All subsequent lessons. Establishes physical/human distinction, atlas familiarity, question wall, and the key provocation about representation</div></div>
+  <div class="meta-item"><div class="meta-label">Prior Knowledge</div><div class="meta-value">None &ndash; this is the unit&rsquo;s opening lesson. Students may have encountered compass directions, grid references and map symbols in earlier stages.</div></div>
+  <div class="meta-item"><div class="meta-label">Enables</div><div class="meta-value">All subsequent lessons. Establishes physical/human distinction, map types, urban/rural/remote vocabulary, and the key provocation about representation.</div></div>
 </div>
 
 <div class="li-sc-card">
   <h2>Learning Intention</h2>
-  <p class="li-text">Understand that geography is the study of places, people and environments.</p>
+  <p class="li-text">Understand that geography is the study of places, people and environments, and that geographers use different types of maps and tools to navigate and locate places.</p>
   <h2>Success Criteria</h2>
   <ul>
-    <li>Define geography in my own words</li>
+    <li>Identify tools geographers use to navigate and locate places</li>
+    <li>Explain the difference between physical and political maps</li>
+    <li>Define urban, rural and remote and classify places into these categories</li>
+    <li>Locate places on a map using geographical tools</li>
     <li>Identify and categorise physical and human features in an image</li>
-    <li>Ask at least one geographical question about a place</li>
   </ul>
 </div>
 
 <h2 class="section-heading">Lesson Structure</h2>
 
-<!-- STAGE 1: Provocation -->
+<!-- ═══════════════════════════════ -->
+<!--         P A R T   A            -->
+<!-- ═══════════════════════════════ -->
+
+<div class="part-divider">
+  <div class="part-divider-line"></div>
+  <div class="part-divider-label">Part A &ndash; Maps, Places and Settlement Types</div>
+  <div class="part-divider-line"></div>
+</div>
+
+<!-- STAGE 1: Geographers' Tools -->
 <div class="stage-card stage-1">
   <div class="stage-card-header">
     <div class="stage-number">1</div>
-    <div><h3>Provocation</h3><div class="stage-context">7 min &middot; Whole class</div></div>
+    <div><h3>Geographers&rsquo; Tools</h3><div class="stage-context">Whole class</div></div>
   </div>
   <div class="stage-card-content">
     <div class="stage-card-body">
-      <p>Students write their own definition of geography in their books. Brief discussion without going into extensive detail – the purpose is to surface existing conceptions, not to teach the definition. The lesson will build the definition through experience.</p>
-      <p>Frame the lesson: we are going to start by thinking about how we can view and represent the world around us.</p>
+      <p>Introduce the idea that geographers use specific tools to navigate and locate places. Surface what students already know &ndash; some may recall tools from earlier years, others will be starting fresh. The purpose is activation, not assessment.</p>
+      <p>Key tools to name and briefly describe: <strong>relief maps</strong> (show the shape of the land &ndash; mountains, valleys, plains), <strong>compass directions</strong> (north, south, east, west and in-between), <strong>grid maps</strong> (use a grid to pinpoint locations), and <strong>legends</strong> (explain what symbols on a map mean). Students do not need to master these yet; they will be taught explicitly in subsequent lessons.</p>
     </div>
     <div class="stage-materials">
       <div class="stage-materials-label">Materials</div>
       <ul>
-        <li>Provocation photograph of Roseville <span class="mat-note">A3 print or projected on IWB</span></li>
+        <li>None required <span class="mat-note">Discussion only</span></li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- STAGE 2: Google Maps Zoom Sequence -->
+<!-- STAGE 2: Physical and Political Maps -->
 <div class="stage-card stage-2">
   <div class="stage-card-header">
     <div class="stage-number">2</div>
-    <div><h3>Google Maps Zoom Sequence</h3><div class="stage-context">8 min &middot; Whole class</div></div>
+    <div><h3>Physical and Political Maps</h3><div class="stage-context">Whole class</div></div>
   </div>
   <div class="stage-card-content">
     <div class="stage-card-body">
-      <p>Project Google Maps on the interactive whiteboard. Students note observations in their books throughout.</p>
-      <h4>Street view of Roseville College</h4>
-      <p>Students observe what they can see. Prompt them to notice small details: a stormwater drain, a street light – what does this imply about hidden infrastructure beneath the surface?</p>
-      <h4>Aerial view of Roseville College and surrounds</h4>
-      <p>Zoom out to show the train station, surrounding streets, and broader neighbourhood. Students write down all the features they observe (people, cars, trees, shade, sports courts, train station, shops, etc.).</p>
-      <h4>City-wide view</h4>
-      <p>Zoom out further. Discuss how individual features have become largely indistinguishable, but you gain a broader sense of urban density, green spaces, and transport corridors. The scale has changed what is visible and what matters.</p>
+      <h4>Physical world map</h4>
+      <p>Display a physical world map. Establish that <strong>physical maps</strong> show natural features of the Earth &ndash; mountain ranges, rivers, deserts, oceans, plains. Point out how colour is used to represent elevation and terrain.</p>
+
+      <h4>Political world map</h4>
+      <p>Display a political world map alongside (or after) the physical map. Establish that <strong>political maps</strong> show human features &ndash; country borders, capital cities, states and territories.</p>
+
+      <h4>Comparing the two maps</h4>
+      <p>Key questions:</p>
+      <ul>
+        <li><em>What is similar between the two maps?</em> (Each shows features; each is a world map.)</li>
+        <li><em>What is different between the two maps?</em> (The types of features shown.)</li>
+        <li><em>Why is there more than one type of map?</em> (Different map types show different information; different map types have different purposes.)</li>
+      </ul>
+      <p>The core idea to land: maps are tools built for a purpose. The type of map you choose depends on what you need to find out.</p>
     </div>
     <div class="stage-materials">
       <div class="stage-materials-label">Materials</div>
       <ul>
-        <li>Google Maps on IWB <span class="mat-note">pre-loaded at Roseville College street view</span></li>
+        <li>Physical world map <span class="mat-note">Projected on IWB or wall map. Teacher-sourced.</span></li>
+        <li>Political world map <span class="mat-note">Projected on IWB or wall map. Teacher-sourced.</span></li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- STAGE 3: Categorisation -->
+<!-- STAGE 3: Urban, Rural and Remote -->
 <div class="stage-card stage-3">
   <div class="stage-card-header">
     <div class="stage-number">3</div>
-    <div><h3>Categorisation</h3><div class="stage-context">12 min &middot; Whole class then individual</div></div>
+    <div><h3>Urban, Rural and Remote</h3><div class="stage-context">Whole class</div></div>
   </div>
   <div class="stage-card-content">
     <div class="stage-card-body">
-      <p>Ask students: in what ways might they organise all the things they've observed?</p>
+      <p>Introduce three terms that describe the types of places people live in Australia. For each term, give the definition and ask students to suggest examples from their own experience before confirming.</p>
+      <ul>
+        <li><strong>Urban</strong> &ndash; places where many people live close together, such as towns and cities. These areas have lots of buildings, transport and services.</li>
+        <li><strong>Rural</strong> &ndash; places that are outside towns and cities. They usually have more open space, farms and smaller communities.</li>
+        <li><strong>Remote</strong> &ndash; places far from towns and cities, often harder to reach. Fewer people live there, and access to services such as schools or hospitals can take longer.</li>
+      </ul>
+      <p>Add the three terms and definitions to the <strong>vocabulary display</strong> (butcher&rsquo;s paper). Explain that this display will grow throughout the unit as new geographical vocabulary is introduced. Leave space below for student questions about places, which will be added later.</p>
+
+      <div class="diff-block support">
+        <div class="diff-label">Support</div>
+        For students unfamiliar with the concept, anchor each term to a concrete image: &lsquo;Think of a city like Sydney &ndash; that&rsquo;s urban. Think of a town surrounded by farms &ndash; that&rsquo;s rural. Think of a place so far away it takes hours to drive to the nearest shop &ndash; that&rsquo;s remote.&rsquo;
+      </div>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Vocabulary display <span class="mat-note">Butcher&rsquo;s paper, prepared before lesson</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 4: Locating Places in NSW -->
+<div class="stage-card stage-4">
+  <div class="stage-card-header">
+    <div class="stage-number">4</div>
+    <div><h3>Locating Places in NSW</h3><div class="stage-context">Whole class, then individual</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <h4>Worked examples</h4>
+      <p>Open Google Maps in map view on the IWB, zoomed to show NSW. Locate three places as worked examples:</p>
+      <ul>
+        <li><strong>Newcastle</strong> (urban) &ndash; large city, dense streets, visible infrastructure</li>
+        <li><strong>Wagga Wagga</strong> (rural) &ndash; smaller town, open land surrounding it, farms visible</li>
+        <li><strong>Menindee</strong> (remote) &ndash; small settlement, vast distances to nearest towns, sparse features</li>
+      </ul>
+      <p>For each place, model how to locate it: use the search function, then orient using natural and human features visible on the map around that location, and its proximity to other known places. Discuss what features on the map tell us whether a place is urban, rural or remote.</p>
+
+      <h4>Student practice</h4>
+      <p>Select individual students to locate a stated place on the projected map using geographical tools (search function, compass directions, nearby landmarks and features). After locating the place, the student classifies it as urban, rural or remote and explains their reasoning.</p>
+      <p>Suggested places: Broken Hill, Wollongong, Coffs Harbour, Tibooburra, Cobar. Choose a mix that gives students practice with each category.</p>
+
+      <div class="diff-block extension">
+        <div class="diff-label">Extension</div>
+        After classifying a place, describe what geographical features on the map helped you decide. For example: &lsquo;I can see the streets are spread apart and there is farmland around it, so I think it is rural.&rsquo;
+      </div>
+
+      <div class="diff-block support">
+        <div class="diff-label">Support</div>
+        Narrow the task: provide two options (&lsquo;Do you think this is urban or rural?&rsquo;) rather than three. Point out specific features on the map to guide the student&rsquo;s reasoning.
+      </div>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps on IWB <span class="mat-note">Map view, zoomed to NSW</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ -->
+<!--         P A R T   B            -->
+<!-- ═══════════════════════════════ -->
+
+<div class="part-divider">
+  <div class="part-divider-line"></div>
+  <div class="part-divider-label">Part B &ndash; Our Local Area (if time allows)</div>
+  <div class="part-divider-line"></div>
+</div>
+
+<!-- STAGE 5: Google Maps Zoom Sequence -->
+<div class="stage-card stage-5">
+  <div class="stage-card-header">
+    <div class="stage-number">5</div>
+    <div><h3>Google Maps Zoom Sequence</h3><div class="stage-context">Whole class</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Transition from the NSW-wide view to a focus on the local area. Students have just been locating places across the state; now they zoom into a place they know well.</p>
+      <p>Project Google Maps on the IWB. Students note observations in their books throughout.</p>
+      <h4>Street view of Roseville College</h4>
+      <p>Students observe what they can see. Prompt them to notice small details: a stormwater drain, a street light &ndash; what does this imply about hidden infrastructure beneath the surface?</p>
+      <h4>Aerial view of Roseville College and surrounds</h4>
+      <p>Zoom out to show the train station, surrounding streets, and broader neighbourhood. Students write down all the features they observe (people, cars, trees, shade, sports courts, train station, shops, etc.).</p>
+      <h4>City-wide view</h4>
+      <p>Zoom out further. Individual features become largely indistinguishable, but the broader sense of urban density, green spaces, and transport corridors emerges. The scale has changed what is visible and what matters.</p>
+      <p>Connect back to Part A: <em>Based on what we can see, would we classify Roseville as urban, rural or remote? What features tell us that?</em></p>
+    </div>
+    <div class="stage-materials">
+      <div class="stage-materials-label">Materials</div>
+      <ul>
+        <li>Google Maps on IWB <span class="mat-note">Switch to street view at Roseville College</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 6: Categorisation -->
+<div class="stage-card stage-1">
+  <div class="stage-card-header">
+    <div class="stage-number">6</div>
+    <div><h3>Categorisation</h3><div class="stage-context">Whole class, then individual</div></div>
+  </div>
+  <div class="stage-card-content">
+    <div class="stage-card-body">
+      <p>Ask students: in what ways might they organise all the things they have observed?</p>
       <ul>
         <li>Promote discussion about human-built vs natural/physical features of the landscape</li>
         <li>Push them to think about how they can subcategorise the human-built observations (transport, services/shops, infrastructure, housing vs business areas, recreational, parks)</li>
@@ -319,30 +487,30 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
     <div class="stage-materials">
       <div class="stage-materials-label">Materials</div>
       <ul>
-        <li>Provocation photograph <span class="mat-note">remains on display from Stage 1</span></li>
+        <li>None required <span class="mat-note">Board work and student books</span></li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- STAGE 4: Map Set -->
-<div class="stage-card stage-4">
+<!-- STAGE 7: Map Set -->
+<div class="stage-card stage-2">
   <div class="stage-card-header">
-    <div class="stage-number">4</div>
-    <div><h3>Map Set</h3><div class="stage-context">13 min &middot; Table groups</div></div>
+    <div class="stage-number">7</div>
+    <div><h3>Map Set</h3><div class="stage-context">Table groups</div></div>
   </div>
   <div class="stage-card-content">
     <div class="stage-card-body">
-      <p>Six maps printed A4, clipped or stapled as a set. Students may write notes directly on the maps – print one set per student if individual annotation is preferred, or one per table for shared scribing.</p>
+      <p>Six maps printed A4, clipped or stapled as a set. Students may write notes directly on the maps &ndash; print one set per student if individual annotation is preferred, or one per table for shared scribing.</p>
 
       <p>The six maps:</p>
       <ol>
         <li>Current Sydney satellite image, no labels (Google Maps screenshot)</li>
         <li>Current Sydney street map with full labels and key (Google Maps screenshot)</li>
-        <li>Sydney train network map (Transport for NSW – transportnsw.info, freely available PDF)</li>
-        <li>Sydney topographic map (NSW Spatial Services – topo.maptiles.nsw.gov.au)</li>
-        <li>Historical Sydney map – teacher-sourced. Two suggested eras: goldfields-era and early 20th century. Select maps that show a recognisably different city.</li>
-        <li>Indigenous map of Cammeraygal Country – school-specific digital file (details to be supplied). This map sits alongside the others as an equal member of the set, not a supplementary resource.</li>
+        <li>Sydney train network map (Transport for NSW &ndash; transportnsw.info, freely available PDF)</li>
+        <li>Sydney topographic map (NSW Spatial Services &ndash; topo.maptiles.nsw.gov.au)</li>
+        <li>Historical Sydney map &ndash; teacher-sourced. Two suggested eras: goldfields-era and early 20th century. Select maps that show a recognisably different city.</li>
+        <li>Indigenous map of Cammeraygal Country &ndash; school-specific digital file (details to be supplied). This map sits alongside the others as an equal member of the set, not a supplementary resource.</li>
       </ol>
 
       <p>Students observe the different types of maps. Key questions: <em>How do these maps differ? What does this tell us about the purpose of maps?</em></p>
@@ -353,13 +521,13 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
         <li><em>What does this map show that the Google Maps view does not?</em></li>
         <li><em>What does the Google Maps view show that this map does not?</em></li>
         <li><em>If you wanted to understand what this place means to the people who have lived here for thousands of years, which map would you use? Why?</em></li>
-        <li><em>Are any of these maps the 'right' map, or do they each show something different about the same place?</em></li>
+        <li><em>Are any of these maps the &lsquo;right&rsquo; map, or do they each show something different about the same place?</em></li>
       </ul>
-      <p>The point is not that one map is better than another, but that different peoples represent the same place in fundamentally different ways depending on their relationship with it. The five modern maps represent the landscape, transport, elevation and history. The Cammeraygal map represents connection, Country and belonging. Both are ways of navigating and understanding place – neither is complete without the other.</p>
+      <p>The point is not that one map is better than another, but that different peoples represent the same place in fundamentally different ways depending on their relationship with it. The five modern maps represent the landscape, transport, elevation and history. The Cammeraygal map represents connection, Country and belonging. Both are ways of navigating and understanding place &ndash; neither is complete without the other.</p>
 
-      <p>Follow up: <em>What does this tell us about how we can view our home, or other places on Earth?</em> The aim is to elicit the concept that we can observe and represent places with a purpose (physical landscape, environment, political, social/demographic, historical, cultural, spiritual) – and that the choice of representation shapes what we see and what we value.</p>
+      <p>Follow up: <em>What does this tell us about how we can view our home, or other places on Earth?</em> The aim is to elicit the concept that we can observe and represent places with a purpose (physical landscape, environment, political, social/demographic, historical, cultural, spiritual) &ndash; and that the choice of representation shapes what we see and what we value.</p>
 
-      <p>Students write down: <strong>'How we represent places impacts our decision making in how we manage them.'</strong></p>
+      <p>Students write down: <strong>&lsquo;How we represent places impacts our decision making in how we manage them.&rsquo;</strong></p>
 
       <div class="diff-block extension">
         <div class="diff-label">Extension</div>
@@ -369,35 +537,36 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
     <div class="stage-materials">
       <div class="stage-materials-label">Materials</div>
       <ul>
-        <li>Six-map set <span class="mat-note">A4, one set per pair: satellite, street, train network, topographic, historical, Cammeraygal Country</span></li>
+        <li>Six-map set <span class="mat-note">A4, one set per table group</span></li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- STAGE 5: Projections & Question Wall -->
-<div class="stage-card stage-5">
+<!-- STAGE 8: Projections & Vocabulary Display -->
+<div class="stage-card stage-3">
   <div class="stage-card-header">
-    <div class="stage-number">5</div>
-    <div><h3>Projections Provocation and Question Wall</h3><div class="stage-context">10 min &middot; Whole class then individual</div></div>
+    <div class="stage-number">8</div>
+    <div><h3>Projections Provocation and Student Questions</h3><div class="stage-context">Whole class, then individual</div></div>
   </div>
   <div class="stage-card-content">
     <div class="stage-card-body">
       <h4>Mercator and Gall-Peters projections</h4>
-      <p>Two side-by-side images of the world projected on the whiteboard: Mercator projection and Gall-Peters projection. Source via Google Images – no printing required.</p>
+      <p>Two side-by-side images of the world projected on the whiteboard: Mercator projection and Gall-Peters projection. Source via Google Images &ndash; no printing required.</p>
       <p>Key questions: <em>What do you observe? What are the differences? Which is the right map?</em></p>
-      <p>Explain that the world map they are used to is not an accurate representation – the countries and continents are the wrong sizes, and the Gall-Peters projection is more accurate. Discuss the implications. Tie back to the key statement: <strong>'How we represent places impacts our decision making in how we manage them.'</strong></p>
-      <p>Students write down: <strong>'Geography isn't just about knowing where things are, it's about asking why we represent the world the way we do.'</strong></p>
+      <p>Explain that the world map they are used to is not an accurate representation &ndash; the countries and continents are the wrong sizes, and the Gall-Peters projection is more accurate. Discuss the implications. Tie back to the key statement: <strong>&lsquo;How we represent places impacts our decision making in how we manage them.&rsquo;</strong></p>
+      <p>Students write down: <strong>&lsquo;Geography isn&rsquo;t just about knowing where things are, it&rsquo;s about asking why we represent the world the way we do.&rsquo;</strong></p>
 
-      <h4>Question wall</h4>
-      <p>One large sheet of butcher's paper displayed on the wall before the lesson begins, headed: <em>What do we want to know about places?</em> Post-it notes and pens at each table. Wall remains displayed for the duration of the unit – position it where students can see it from their seats if possible.</p>
-      <p>Students write down their questions, names attached. What do they want to know more about?</p>
+      <h4>Student questions</h4>
+      <p>Return to the vocabulary display (butcher&rsquo;s paper) from Part A. Below the urban/rural/remote definitions, there is space for student questions. Post-it notes and pens at each table.</p>
+      <p>Students write down their questions about places, names attached. The display remains visible for the duration of the unit &ndash; position it where students can see it from their seats if possible. New vocabulary and questions are added throughout the unit.</p>
     </div>
     <div class="stage-materials">
       <div class="stage-materials-label">Materials</div>
       <ul>
-        <li>Mercator and Gall-Peters projections <span class="mat-note">projected on IWB or A3 print</span></li>
-        <li>Butcher's paper for Question Wall</li>
+        <li>Mercator and Gall-Peters projections <span class="mat-note">Projected on IWB</span></li>
+        <li>Vocabulary display <span class="mat-note">Continues from Part A</span></li>
+        <li>Post-it notes <span class="mat-note">At each table group</span></li>
       </ul>
     </div>
   </div>
@@ -407,49 +576,62 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.65;color:var(--co
 
 <!-- Materials -->
 <div class="collapsible" id="materials">
-  <div class="collapsible-header" onclick="toggleCollapsible('materials')"><h3>Materials &amp; Resources</h3><div class="collapsible-icon">▾</div></div>
+  <div class="collapsible-header" onclick="toggleCollapsible('materials')"><h3>Materials &amp; Resources</h3><div class="collapsible-icon">&#9662;</div></div>
   <div class="collapsible-body"><div class="collapsible-content">
-    <h4>Stage 2 – Google Maps</h4>
+    <h4>Part A &ndash; Stages 1&ndash;4</h4>
     <ul>
-      <li><strong>Google Maps</strong> – projected on interactive whiteboard. Pre-load Roseville College in street view before the lesson. <a href="https://www.google.com/maps/@-33.7834,151.1868,17z" target="_blank">Approximate location</a></li>
-      <li><strong>Interactive whiteboard</strong> – for the zoom sequence and later for projections.</li>
+      <li><strong>Physical world map</strong> &ndash; projected on IWB or classroom wall map. Must show natural features: mountain ranges, rivers, deserts, oceans, terrain colour. Teacher-sourced (online image or existing wall map).</li>
+      <li><strong>Political world map</strong> &ndash; projected on IWB or classroom wall map. Must show country borders, capital cities, state/territory labels. Teacher-sourced (online image or existing wall map).</li>
+      <li><strong>Google Maps</strong> &ndash; projected on IWB in standard map view, zoomed to NSW. Used to locate Newcastle, Wagga Wagga, Menindee and additional places. <a href="https://www.google.com/maps/@-32.5,147.5,6z" target="_blank">Approximate starting view</a>.</li>
+      <li><strong>Vocabulary display</strong> &ndash; one large sheet of butcher&rsquo;s paper headed &lsquo;Geography Vocabulary&rsquo;. Urban, rural and remote definitions are added during Stage 3. Space below for student questions (added in Part B, Stage 8). Display on the wall before the lesson begins. Remains for the unit.</li>
     </ul>
-    <h4>Stage 4 – Map Set</h4>
+    <h4>Part B &ndash; Stages 5&ndash;8</h4>
     <ul>
-      <li><strong>Sydney satellite image</strong> – no labels. Google Maps screenshot, printed A4. One per table group or one per student.</li>
-      <li><strong>Sydney street map</strong> – with full labels and key. Google Maps screenshot, printed A4.</li>
-      <li><strong>Sydney train network map</strong> – Transport for NSW. <a href="https://transportnsw.info" target="_blank">transportnsw.info</a>, freely available PDF. Printed A4.</li>
-      <li><strong>Sydney topographic map</strong> – NSW Spatial Services. <a href="https://topo.maptiles.nsw.gov.au" target="_blank">topo.maptiles.nsw.gov.au</a>. Printed A4.</li>
-      <li><strong>Historical Sydney map</strong> – teacher-sourced. Two suggested eras: goldfields-era and early 20th century. Select maps that show a recognisably different city. Printed A4.</li>
-      <li><strong>Indigenous map of Cammeraygal Country</strong> – school-specific digital file. Details (title, creator, access path) to be supplied. Printed A4 or projected. This is the sixth map in the set, not a supplement.</li>
+      <li><strong>Google Maps (Street View)</strong> &ndash; switch from map view to street view at Roseville College. <a href="https://www.google.com/maps/@-33.7834,151.1868,17z" target="_blank">Approximate location</a>.</li>
+      <li><strong>Sydney satellite image</strong> &ndash; no labels. Google Maps screenshot, printed A4. One per table group or one per student.</li>
+      <li><strong>Sydney street map</strong> &ndash; with full labels and key. Google Maps screenshot, printed A4.</li>
+      <li><strong>Sydney train network map</strong> &ndash; Transport for NSW. <a href="https://transportnsw.info" target="_blank">transportnsw.info</a>, freely available PDF. Printed A4.</li>
+      <li><strong>Sydney topographic map</strong> &ndash; NSW Spatial Services. <a href="https://topo.maptiles.nsw.gov.au" target="_blank">topo.maptiles.nsw.gov.au</a>. Printed A4.</li>
+      <li><strong>Historical Sydney map</strong> &ndash; teacher-sourced. Two suggested eras: goldfields-era and early 20th century. Select maps that show a recognisably different city. Printed A4.</li>
+      <li><strong>Indigenous map of Cammeraygal Country</strong> &ndash; school-specific digital file. Details (title, creator, access path) to be supplied. Printed A4 or projected. This is the sixth map in the set, not a supplement.</li>
+      <li><strong>Mercator and Gall-Peters projection images</strong> &ndash; sourced via Google Images. Projected side by side &ndash; no printing required.</li>
+      <li><strong>Post-it notes</strong> &ndash; at each table, for student questions on the vocabulary display.</li>
     </ul>
-    <h4>Stage 5 – Projections and Question Wall</h4>
-    <ul>
-      <li><strong>Mercator and Gall-Peters projection images</strong> – sourced via Google Images. Projected side by side – no printing required.</li>
-      <li><strong>Butcher's paper</strong> – one large sheet, headed 'What do we want to know about places?' Display on the wall before the lesson begins.</li>
-      <li><strong>Post-it notes and pens</strong> – at each table.</li>
-    </ul>
+  </div></div>
+</div>
+
+<!-- Teaching Notes -->
+<div class="collapsible" id="teaching-notes">
+  <div class="collapsible-header" onclick="toggleCollapsible('teaching-notes')"><h3>Teaching Notes</h3><div class="collapsible-icon">&#9662;</div></div>
+  <div class="collapsible-body"><div class="collapsible-content">
+    <h4>Part A as core content</h4>
+    <p>Part A is the core teaching content for this lesson. Part B extends into the local area and should follow naturally if time allows. If the lesson runs as a single period rather than a double, Part A stands alone and Part B can be picked up at the start of Lesson 2.</p>
+    <h4>Prior learning</h4>
+    <p>The tools revision in Stage 1 (relief maps, compass directions, grid maps, legends) assumes no prior mastery. Some students may recall these from Stage 2 geography; others will encounter them for the first time. Frame the revision as light activation (&lsquo;you may have seen some of these before&rsquo;) rather than a check for understanding. These tools are taught explicitly in Lessons 2 and 3.</p>
+    <h4>Urban, rural and remote definitions</h4>
+    <p>The definitions used in this lesson are drawn from the Australian Bureau of Statistics. &lsquo;Urban&rsquo; and &lsquo;rural&rsquo; are reasonably intuitive; &lsquo;remote&rsquo; is the term students are least likely to have encountered. Anchor it concretely &ndash; distance from services, travel time, population density.</p>
   </div></div>
 </div>
 
 <!-- Observational Assessment -->
 <div class="collapsible" id="assessment">
-  <div class="collapsible-header" onclick="toggleCollapsible('assessment')"><h3>Observational Assessment</h3><div class="collapsible-icon">▾</div></div>
+  <div class="collapsible-header" onclick="toggleCollapsible('assessment')"><h3>Observational Assessment</h3><div class="collapsible-icon">&#9662;</div></div>
   <div class="collapsible-body"><div class="collapsible-content">
     <h4>What to look for</h4>
     <ul>
-      <li><strong>Physical vs human features:</strong> Can students distinguish between physical and human features, or do they conflate them? This is the most important thing to note – if the distinction isn't landing, build a 5-minute recap into the start of L2.</li>
-      <li><strong>Question quality:</strong> Are the questions on the question wall geographical in nature (about places, environments, why things are where they are) or more general?</li>
-      <li><strong>Participation:</strong> Who contributes during the zoom sequence? Note quieter students who may need more structured entry points in coming lessons.</li>
+      <li><strong>Physical vs political maps:</strong> Can students articulate the difference between what a physical map shows and what a political map shows? This is the foundational distinction for map literacy in the unit.</li>
+      <li><strong>Urban, rural and remote classification:</strong> When asked to classify a place on Google Maps, can students use visible features to justify their choice? Note students who rely on the label alone vs those who reference what they see on the map.</li>
+      <li><strong>Physical vs human features (Part B):</strong> Can students distinguish between physical and human features, or do they conflate them? This is the most important thing to note from Part B &ndash; if the distinction is not landing, build a recap into the start of L2.</li>
+      <li><strong>Participation:</strong> Who contributes during whole-class discussions? Note quieter students who may need more structured entry points in coming lessons.</li>
     </ul>
     <h4>How to capture</h4>
-    <p>Use the Phase 1 checklist. After the lesson, mark the 'Distinguishes human/physical features' column – ✓, ✓+, –, or ? – based on the categorisation work collected and observations during Stage 3.</p>
+    <p>Use the Phase 1 checklist. After the lesson, mark columns for &lsquo;Distinguishes map types&rsquo; and &lsquo;Classifies urban/rural/remote&rsquo; &ndash; &#10003;, &#10003;+, &ndash;, or ? &ndash; based on the Google Maps activity and class discussion.</p>
     <h4>What it tells you</h4>
-    <p>If more than a third of the class is unclear on the physical/human distinction, don't move on and hope it consolidates. Build a 5-minute recap into the start of L2.</p>
+    <p>If more than a third of the class is unclear on the physical/human distinction or cannot use map features to classify places, build a recap into the start of L2 before introducing compass directions and symbols.</p>
   </div></div>
 </div>
 
-<div class="page-footer">Year 5 Geography: Place &amp; Space · Roseville College · Lesson 1 · Draft</div>
+<div class="page-footer">Year 5 Geography: Place &amp; Space &middot; Roseville College &middot; Lesson 1 &middot; Draft</div>
 </div>
 
 <script>
@@ -457,7 +639,7 @@ function toggleCollapsible(id){const el=document.getElementById(id);el.classList
 
 function updateQuantities() {
   const n = parseInt(document.getElementById('classSize').value) || 28;
-  const tables = Math.ceil(n / 5); // approx 5 per table
+  const tables = Math.ceil(n / 5);
   document.querySelectorAll('.print-item-qty').forEach(el => {
     const rule = el.dataset.rule;
     if (rule === 'table-sets') el.textContent = tables + ' sets';
